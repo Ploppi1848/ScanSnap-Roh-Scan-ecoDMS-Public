@@ -5226,6 +5226,177 @@ def _set_status_unbekannt_v573(meta: dict, feld: str) -> None:
         meta["DOKUMENTTYP_STATUS"] = "UNBEKANNT"
 
 
+SAFE_META_PROTECTED_FIELDS = {"LIEFERANT", "DOKUMENTTYP", "RECHNR", "KUNDENNR", "GESAMTBETRAG"}
+
+
+def _safe_meta_norm(value) -> str:
+    return re.sub(r"\s+", " ", str(value or "").strip())
+
+
+def _safe_meta_norm_key(value) -> str:
+    value = _safe_meta_norm(value).lower()
+    value = value.replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
+    return re.sub(r"[^a-z0-9]+", " ", value).strip()
+
+
+def _safe_meta_is_plausible(field: str, value) -> bool:
+    value = _safe_meta_norm(value)
+    if not value:
+        return False
+    value_l = _safe_meta_norm_key(value)
+    if value_l in {"unbekannt", "unknown", "leer", "none", "zugang", "zugang:", "lieferadresse"}:
+        return False
+    field = str(field or "").upper()
+    if field == "LIEFERANT":
+        if len(value) < 3 or len(value.split()) >= 9:
+            return False
+        if value_l in {"rechnung", "rechnungsnummer", "kundennummer", "auftrag", "bestellung", "datum", "betreff"}:
+            return False
+    if field == "DOKUMENTTYP":
+        return value_l not in {"unbekannt", "unknown"}
+    if field in {"RECHNR", "KUNDENNR"}:
+        digits = re.sub(r"\D", "", value)
+        return len(digits) >= 3 or bool(re.search(r"[A-Z]{1,6}[- /]?\d{2,}", value, re.IGNORECASE))
+    if field == "GESAMTBETRAG":
+        return bool(re.search(r"\d+[,.]\d{2}|\d{3,}", value))
+    return bool(value)
+
+
+def _safe_meta_is_configured_supplier(value: str) -> bool:
+    try:
+        return bool(ist_lieferant_konfiguriert_v551(value))
+    except Exception:
+        return False
+
+
+def _safe_meta_supplier_score(value: str) -> int:
+    value = _safe_meta_norm(value)
+    if not _safe_meta_is_plausible("LIEFERANT", value):
+        return -100
+    key = _safe_meta_norm_key(value)
+    words = [w for w in value.split() if w.strip()]
+    score = 20
+    if _safe_meta_is_configured_supplier(value):
+        score += 70
+    if re.search(r"\b(GmbH|AG|eG|KG|UG|GbR|mbB|e\.K\.|Bank|Sparkasse|Bausparkasse|Amtsgericht|Stadt|Rathaus|Versicherung|Therapie|Praxis)\b", value, re.IGNORECASE):
+        score += 25
+    if len(words) >= 2:
+        score += 10
+    if len(value) >= 12:
+        score += 10
+    if len(value) <= 6 or len(words) == 1:
+        score -= 15
+    if key in {"stadt", "rathaus", "bank", "therapie", "lieferadresse", "rechnung", "information", "zugang"}:
+        score -= 40
+    if len(words) >= 7:
+        score -= 35
+    return score
+
+
+def _safe_meta_supplier_decision(current: str, new_value: str) -> tuple[bool, str]:
+    cur_score = _safe_meta_supplier_score(current)
+    new_score = _safe_meta_supplier_score(new_value)
+    cur_key = _safe_meta_norm_key(current)
+    new_key = _safe_meta_norm_key(new_value)
+    if cur_key == new_key:
+        return True, "normalisierte Lieferantenvariante"
+    if new_score < 0:
+        return False, "schwaecherer Kandidat"
+    if _safe_meta_is_configured_supplier(new_value) and not _safe_meta_is_configured_supplier(current):
+        return True, "besserer Kandidat aus Lieferanten-Konfiguration"
+    if new_score >= cur_score + 20:
+        return True, "besserer Lieferantenkandidat"
+    if cur_key and new_key and len(new_key) > len(cur_key) + 6 and cur_key in new_key and new_score >= cur_score:
+        return True, "laengerer plausibler Firmenname"
+    return False, "schwaecherer Kandidat"
+
+
+_SAFE_META_GENERIC_DOCTYPES = {"", "unbekannt", "unknown", "sonstiges", "dokument", "schreiben", "information", "rechnung"}
+_SAFE_META_SPECIFIC_DOCTYPES = {
+    "informationsschreiben", "info schreiben", "kuendigung", "kundigung", "bescheid",
+    "hundesteuerbescheid", "kontoauszug", "lieferschein", "kassenbon", "angebot",
+    "bestellbestaetigung", "bestellbestatigung", "ermittlungsverfahren",
+    "polizeibehoerde", "versicherungsunterlagen", "versicherung", "darlehensvertrag",
+}
+
+
+def _safe_meta_doctype_key(value: str) -> str:
+    return _safe_meta_norm_key(value)
+
+
+def _safe_meta_doctype_decision(current: str, new_value: str) -> tuple[bool, str]:
+    cur = _safe_meta_doctype_key(current)
+    new = _safe_meta_doctype_key(new_value)
+    if cur == new:
+        return True, "normalisierte Dokumenttypvariante"
+    cur_generic = cur in _SAFE_META_GENERIC_DOCTYPES
+    new_generic = new in _SAFE_META_GENERIC_DOCTYPES
+    if cur == "rechnung" and new != "rechnung" and not new_generic:
+        return True, "spezifischer Dokumenttyp ersetzt Rechnung"
+    if cur not in {"", "unbekannt", "unknown"} and cur != "rechnung" and new == "rechnung":
+        return False, "Rechnung-Fallback wuerde spezifischen Dokumenttyp ersetzen"
+    if cur_generic and not new_generic:
+        return True, "besserer Kandidat: spezifischer Dokumenttyp"
+    if new in _SAFE_META_SPECIFIC_DOCTYPES and cur not in _SAFE_META_SPECIFIC_DOCTYPES:
+        return True, "besserer Kandidat: bekannter spezifischer Dokumenttyp"
+    if not cur and new:
+        return True, "leeres Feld gefuellt"
+    return False, "schwaecherer Kandidat"
+
+
+def safe_set_meta(meta: dict, field: str, value, reason: str = "", force: bool = False) -> bool:
+    """Setzt kritische Meta-Felder nur, wenn ein vorhandener plausibler Wert nicht verschlechtert wird."""
+    if meta is None:
+        return False
+    field = str(field or "").upper()
+    new_value = _safe_meta_norm(value)
+    if not new_value:
+        return safe_clear_meta(meta, field, reason=reason, force=force)
+    current = _safe_meta_norm(meta.get(field, ""))
+    if force or field not in SAFE_META_PROTECTED_FIELDS:
+        meta[field] = new_value
+        return True
+    if not _safe_meta_is_plausible(field, current):
+        meta[field] = new_value
+        logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen leerem/schwachem Ausgangswert ({reason})")
+        return True
+    if _safe_meta_norm_key(current) == _safe_meta_norm_key(new_value):
+        meta[field] = new_value
+        logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen normalisierter Variante ({reason})")
+        return True
+    if field == "LIEFERANT":
+        allowed, why = _safe_meta_supplier_decision(current, new_value)
+        if allowed:
+            meta[field] = new_value
+            logging.info(f"SAFE_META: LIEFERANT='{new_value}' erlaubt wegen {why}; vorher '{current}' ({reason})")
+            return True
+        logging.info(f"SAFE_META: LIEFERANT bleibt '{current}', '{new_value}' blockiert wegen {why} ({reason})")
+        return False
+    if field == "DOKUMENTTYP":
+        allowed, why = _safe_meta_doctype_decision(current, new_value)
+        if allowed:
+            meta[field] = new_value
+            logging.info(f"SAFE_META: DOKUMENTTYP='{new_value}' erlaubt wegen {why}; vorher '{current}' ({reason})")
+            return True
+        logging.info(f"SAFE_META: DOKUMENTTYP bleibt '{current}', '{new_value}' blockiert wegen {why} ({reason})")
+        return False
+    logging.info(f"SAFE_META: {field} bleibt '{current}', spaeter Wert '{new_value}' blockiert wegen schwaecherer Kandidat ({reason})")
+    return False
+
+
+def safe_clear_meta(meta: dict, field: str, reason: str = "", force: bool = False) -> bool:
+    """Leert kritische Meta-Felder nicht still, wenn bereits ein plausibler Wert vorhanden ist."""
+    if meta is None:
+        return False
+    field = str(field or "").upper()
+    current = _safe_meta_norm(meta.get(field, ""))
+    if force or field not in SAFE_META_PROTECTED_FIELDS or not _safe_meta_is_plausible(field, current):
+        meta[field] = ""
+        return True
+    logging.info(f"SAFE_META: {field}='{current}' blockiert wegen leer wuerde plausiblen Wert loeschen ({reason})")
+    return False
+
+
 def erkenne_lieferant_v3(text: str, bisher: str = "") -> str:
     """V5.7.3: Stark belastbare Lieferanten vor Mapping-Treffern.
 
@@ -5614,7 +5785,7 @@ def _enthaelt(text: str, *begriffe: str) -> bool:
 
 def _clear_invoice_fields_for_non_invoice(meta_daten: dict, keep_date: bool = True) -> None:
     for key in ["RECHNR", "KUNDENNR", "AUFTRAGNR", "BESTELLNR", "LIEFERSCHEINNR", "VERSICHERUNGSNR", "GESAMTBETRAG"]:
-        meta_daten[key] = ""
+        safe_clear_meta(meta_daten, key, reason="non-invoice clearing")
     if not keep_date:
         meta_daten["RECHDATUM"] = ""
 
@@ -8678,16 +8849,16 @@ def _has_580(text: str, pattern: str) -> bool:
 
 def _set_580(meta: dict, lieferant: str | None = None, dokumenttyp: str | None = None) -> None:
     if lieferant is not None:
-        meta["LIEFERANT"] = lieferant
-        meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
+        if safe_set_meta(meta, "LIEFERANT", lieferant, reason="5.8.0 set"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
     if dokumenttyp is not None:
-        meta["DOKUMENTTYP"] = dokumenttyp
-        meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
+        if safe_set_meta(meta, "DOKUMENTTYP", dokumenttyp, reason="5.8.0 set"):
+            meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
 
 
 def _clear_nummern_580(meta: dict, *felder: str) -> None:
     for feld in felder:
-        meta[feld] = ""
+        safe_clear_meta(meta, feld, reason="5.8.0 pauschales Nummern-Clearing")
 
 
 def _ist_label_oder_satz_lieferant_580(value: str) -> bool:
@@ -9549,7 +9720,7 @@ def _versicherungsnummer_lvm_591(text: str) -> str:
 
 def _clear_bank_invoice_fields_591(meta: dict) -> None:
     for feld in ["RECHNR", "KUNDENNR", "AUFTRAGNR", "BESTELLNR", "LIEFERSCHEINNR", "GESAMTBETRAG"]:
-        meta[feld] = ""
+        safe_clear_meta(meta, feld, reason="5.9.1 Bank-/Info-Clearing")
 
 
 def _apply_restklassifizierung_591(text: str, pdf_pfad, meta: dict) -> dict:
@@ -9752,11 +9923,11 @@ def _has_593(text: str, pattern: str) -> bool:
 
 def _set_known_593(meta: dict, lieferant: str | None = None, dokumenttyp: str | None = None) -> None:
     if lieferant is not None:
-        meta["LIEFERANT"] = lieferant
-        meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
+        if safe_set_meta(meta, "LIEFERANT", lieferant, reason="5.9.3 known"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
     if dokumenttyp is not None:
-        meta["DOKUMENTTYP"] = dokumenttyp
-        meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
+        if safe_set_meta(meta, "DOKUMENTTYP", dokumenttyp, reason="5.9.3 known"):
+            meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
 
 
 def _date_from_filename_593(name: str) -> str:
@@ -9787,9 +9958,9 @@ def _set_date_if_better_593(meta: dict, datum: str) -> None:
 
 def _clear_invoice_numbers_593(meta: dict, keep_amount: bool = True) -> None:
     for feld in ["RECHNR", "KUNDENNR", "AUFTRAGNR", "BESTELLNR", "LIEFERSCHEINNR"]:
-        meta[feld] = ""
+        safe_clear_meta(meta, feld, reason="5.9.3 Invoice-Nummern-Clearing")
     if not keep_amount:
-        meta["GESAMTBETRAG"] = ""
+        safe_clear_meta(meta, "GESAMTBETRAG", reason="5.9.3 Invoice-Betrag-Clearing")
 
 
 def _cleanup_bad_values_593(meta: dict) -> None:
@@ -10235,11 +10406,11 @@ def _has_5102(text: str, pattern: str) -> bool:
 
 def _set_status_5102(meta: dict, lieferant: str | None = None, dokumenttyp: str | None = None) -> None:
     if lieferant is not None:
-        meta["LIEFERANT"] = lieferant
-        meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
+        if safe_set_meta(meta, "LIEFERANT", lieferant, reason="5.10.2 status"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT" if lieferant else "UNBEKANNT"
     if dokumenttyp is not None:
-        meta["DOKUMENTTYP"] = dokumenttyp
-        meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
+        if safe_set_meta(meta, "DOKUMENTTYP", dokumenttyp, reason="5.10.2 status"):
+            meta["DOKUMENTTYP_STATUS"] = "BEKANNT" if dokumenttyp else "UNBEKANNT"
 
 
 def _date_from_name_5102(name: str) -> str:
@@ -10628,14 +10799,14 @@ def _text_600(text: str, pdf_pfad=None, meta=None) -> str:
 
 def _set_lieferant_600(meta: dict, name: str):
     if name:
-        meta["LIEFERANT"] = name
-        meta["LIEFERANT_STATUS"] = "BEKANNT"
+        if safe_set_meta(meta, "LIEFERANT", name, reason="6.0 Lieferant"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT"
 
 
 def _set_typ_600(meta: dict, typ: str):
     if typ:
-        meta["DOKUMENTTYP"] = typ
-        meta["DOKUMENTTYP_STATUS"] = "BEKANNT"
+        if safe_set_meta(meta, "DOKUMENTTYP", typ, reason="6.0 Dokumenttyp"):
+            meta["DOKUMENTTYP_STATUS"] = "BEKANNT"
 
 
 def _only_if_empty_600(meta: dict, key: str, value: str):

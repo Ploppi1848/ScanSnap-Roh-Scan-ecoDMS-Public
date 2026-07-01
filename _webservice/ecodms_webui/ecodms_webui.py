@@ -3922,9 +3922,10 @@ def massentest_quality_snapshot(rows: list[dict[str, str]]) -> dict:
     """Stabiler Qualitaets-Snapshot fuer Buildvergleiche."""
     rows = list(rows or [])
     green = yellow = red = 0
+    generated_at = datetime.now()
     snapshot: dict = {
         "schema": "massentest_quality_snapshot_v1",
-        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "generated_at": generated_at.strftime("%Y-%m-%d %H:%M:%S.%f")[:-3],
         "app_version": APP_VERSION,
         "document_count": len(rows),
         "ampel": {"gruen": 0, "gelb": 0, "rot": 0},
@@ -4113,9 +4114,13 @@ def massentest_quality_snapshot_save(rows: list[dict[str, str]] | None = None) -
     ensure_dirs()
     rows = massentest_read_results() if rows is None else rows
     snapshot = massentest_quality_snapshot(list(rows or []))
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     build = massentest_quality_snapshot_slug(snapshot.get("app_version") or APP_VERSION)
     path = MASSTEST_SNAPSHOT_DIR / f"quality_snapshot_{stamp}_{build}.json"
+    counter = 1
+    while path.exists():
+        path = MASSTEST_SNAPSHOT_DIR / f"quality_snapshot_{stamp}_{counter:02d}_{build}.json"
+        counter += 1
     path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8")
     return path
 
@@ -4137,7 +4142,7 @@ def massentest_quality_snapshot_load(filename: str) -> dict:
 def massentest_quality_snapshot_list() -> list[dict]:
     ensure_dirs()
     out: list[dict] = []
-    for path in sorted(MASSTEST_SNAPSHOT_DIR.glob("quality_snapshot_*.json"), reverse=True):
+    for path in sorted((p for p in MASSTEST_SNAPSHOT_DIR.glob("quality_snapshot_*.json") if p.is_file()), key=lambda p: p.stat().st_mtime, reverse=True):
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
             docs = data.get("documents") or {}
@@ -4506,7 +4511,9 @@ def massentest_quality_analysis_page(snapshot_a: str = "", snapshot_b: str = "",
           <button class='btn' type='submit'>Snapshots vergleichen</button>
         </form>
         """
-    if snapshot_a and snapshot_b:
+    if snapshot_a and snapshot_b and Path(snapshot_a).name == Path(snapshot_b).name:
+        compare_html = render_message_box("Bitte zwei unterschiedliche Snapshots auswählen.", "Buildvergleich nicht möglich", "warning")
+    elif snapshot_a and snapshot_b:
         try:
             base_snapshot = massentest_quality_snapshot_load(snapshot_a)
             target_snapshot = massentest_quality_snapshot_load(snapshot_b)
