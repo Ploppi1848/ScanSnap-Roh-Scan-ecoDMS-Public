@@ -1,0 +1,31 @@
+# Etikettendruck über Brother b-PAC / P-touch Vorlage
+# 0 = aus, 1 = ein
+ETIKETTENDRUCK=1
+
+# Automatischer Druck nach erfolgreicher Übergabe an ecoDMS
+# 0 = aus, 1 = ein
+AUTOMATISCH_DRUCKEN=0
+
+# Etikettenarchiv als CSV + TXT je Etikett
+# 0 = aus, 1 = ein
+ETIKETTEN_ARCHIV=1
+
+# Windows-Druckername
+DRUCKER=Brother QL-1110NWB
+
+# P-touch Editor Vorlage mit den Objektnamen:
+# QR_BOX
+# TXT_BOX
+# TXT_MONAT_JAHR
+# TXT_NUMMER
+# TXT_CODE
+VORLAGE=C:\ScanSnap_Roh-Scan-ecoDMS\_etiketten\BOX_ETIKETT.lbx
+
+# 32-Bit Python für b-PAC
+PYTHON32=C:\Users\H.-G. Hepp\AppData\Local\Programs\Python\Python314-32\python.exe
+
+# Separates Brother-Druckscript
+DRUCKSCRIPT=C:\ScanSnap_Roh-Scan-ecoDMS\_service\brother_box_drucken.py
+
+# Timeout für Druckscript
+TIMEOUT_SEKUNDEN=30

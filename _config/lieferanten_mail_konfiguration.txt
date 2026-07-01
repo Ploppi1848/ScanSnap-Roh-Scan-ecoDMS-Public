@@ -1,0 +1,7 @@
+# Lieferantenerkennung anhand Mail-Absender
+# Format:
+# Lieferant|DomainOderMail1;DomainOderMail2
+#
+Amazon|amazon.de;amazon.com
+Telekom|telekom.de;t-online.de
+Stadtwerke Bochum|stadtwerke-bochum.de

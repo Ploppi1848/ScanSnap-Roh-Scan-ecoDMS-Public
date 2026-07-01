@@ -1,0 +1,18 @@
+# Feldname|QRPrefix|Typ|Priorität|QR_Aktiv|Schlüsselwörter
+# 0 = kein Zusatz-QR-Code, nur Log
+# 1 = Zusatz-QR-Code erzeugen
+# Feld	Bedeutung
+# Feldname	Nur für das Protokoll
+# QRPrefix	Was im QR-Code gespeichert wird
+# Typ	datum oder text
+# Priorität	Reihenfolge der Verarbeitung
+# QR_Aktiv	1 = QR erzeugen, 0 = nur suchen
+# Schlüsselwörter	
+# Suchbegriffe getrennt durch ;
+
+Rechnungsdatum|RECHDATUM|datum|1|1|Rechnungsdatum;Rechnung vom;Belegdatum;Datum;den
+Rechnungsnummer|RECHNR|text|2|1|Rechnungsnummer;Rechnung Nr.;Re.-Nr.;Rechn.-Nr.;Invoice No
+Kundennummer|KUNDENNR|text|3|1|Kundennummer;Kunden-Nr.;Kd.-Nr.;Kundennr.
+Auftragsnummer|AUFTRAGNR|text|4|1|Auftragsnummer;Auftrag Nr.;Auftrag-Nr.;Order No
+Bestellnummer|BESTELLNR|text|5|1|Bestellnummer;Bestell-Nr.;Bestellung;Order Number
+Lieferscheinnummer|LIEFERSCHEINNR|text|6|1|Lieferscheinnummer;Lieferschein-Nr.;LS-Nr.;Lieferschein

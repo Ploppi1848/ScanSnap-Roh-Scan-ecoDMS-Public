@@ -1,0 +1,105 @@
+# Lieferanten-Erkennung
+# Format:
+# Anzeigename|Suchwort1;Suchwort2;Suchwort3
+#
+Apple|Apple Distribution;Apple Bestellnummer;Apple Rechnung
+BAUHAUS|BAUHAUS;bauhaus.info
+BORA|BORA Lüftungstechnik;mybora.com
+Böttcher AG|Böttcher AG;Büromarkt Böttcher
+Hornbach|HORNBACH;hornbach.com
+LVM|LVM Versicherung;Landwirtschaftlicher Versicherungsverein Münster
+REWE|REWE;Abholavis;rewe.de
+Alltours|alltours;alltours flugreisen
+Stoov|STOOV;Stoov Germany
+Profi-Poolwelt|Profi-Poolwelt;Freizeitwelt-Online
+Kaffee Henk|Koffie Henk;Kaffee Henk
+Tibisco|Tibisco Haustier-Service;Tibisco
+Telekom|Telekom Deutschland GmbH;Deutsche Telekom;telekom.de
+Stadtwerke Bochum|Stadtwerke Bochum;stadtwerke-bochum.de
+Reichelt Elektronik GmbH|reichelt elektronik;www.reichelt.de
+SodaBär EU e.K. Daniel Bär|SodaBär;www.sodabaer.de 
+Pool-Bedarf.de|Pool-Bedarf;www.pool-bedarf.de
+Tiemeyer|Tiemeyer;Tiemeyer automobile;tiemeyer.de
+Edeka Foodservice Stiftung & Co. KG|Edeka Foodservice Stiftung & Co. KG
+Skyline Therapie Bochum GmbH Huestraße 17-19, 44787 Bochum Physiotherapie & Ergotherapie|Skyline Therapie Bochum GmbH Huestraße 17-19, 44787 Bochum Physiotherapie & Ergotherapie
+Slotcarscheune|Slotcarscheune
+Vorwerk|Vorwerk
+ADAC e.V. : Mitgliedschaft & Versicherungen : 81360 München|ADAC e.V. : Mitgliedschaft & Versicherungen : 81360 München
+Amazon|Amazon
+Otto (GmbH & Co KG)|Otto (GmbH & Co KG)
+Johannes Jacobi GmbH + Auf der Heide 10 » 44803 Bochum|Johannes Jacobi GmbH + Auf der Heide 10 » 44803 Bochum
+AfB DE gemeinnützige GmbH|AfB DE gemeinnützige GmbH
+Bundesagentur für Arbeit|Bundesagentur für Arbeit
+AIDA Cruises|AIDA Cruises
+ALDI|ALDI
+All For One Group AG|All For One Group AG
+adidas|adidas
+All for One Group SE|All for One Group SE
+HOTEL ARADOR|HOTEL ARADOR
+Dr. Till Erben Tierärztliche Praxis|Dr. Till Erben Tierärztliche Praxis
+4komma5 GmbH (4komma5.de), Am Gabelsberg 7, 04808 Lossatal|4komma5 GmbH (4komma5.de), Am Gabelsberg 7, 04808 Lossatal
+IO HAWK|IO HAWK
+IBIS Fulda City|IBIS Fulda City
+Mauer & Partner Rechtsanwälte mbB|Mauer & Partner Rechtsanwälte mbB
+KFW|KFW
+Skechers|Skechers
+Allianz Lebensversicherungs-AG|Allianz Lebensversicherungs-AG
+All in One24|All in One24
+Kärcher|Kärcher
+ADAC Reiserücktritts-Versicherung|ADAC Reiserücktritts-Versicherung
+Godehardt|Godehardt
+Amtsgericht Bochum|Amtsgericht Bochum
+Godehardt Kunst & Rahmen|Godehardt Kunst & Rahmen
+Handwerksbetrieb Kend|Handwerksbetrieb Kend
+AA-Kaminwelt / ofen.de|AA-Kaminwelt / ofen.de
+LABOKLIN GmbH & Co. KG|LABOKLIN GmbH & Co. KG
+Boels Rental Germany GmbH|Boels Rental Germany GmbH
+Podologische Fachpraxis von Allmen|Podologische Fachpraxis von Allmen
+Santander Consumer Bank|Santander Consumer Bank
+Debeka Krankenversicherung|Debeka Krankenversicherung
+Orthopädische Facharztpraxis Dr. med. Uta Neukirchen|Orthopädische Facharztpraxis Dr. med. Uta Neukirchen
+EDEKA Foodservice|EDEKA Foodservice
+Skyline Therapie Bochum GmbH|Skyline Therapie Bochum GmbH
+Santander Consumer Bank AG|Santander Consumer Bank AG
+Dr. med. Fahim Ayami|Dr. med. Fahim Ayami
+die smarte werkstatt|die smarte werkstatt
+ALLPAX GmbH & Co. KG|ALLPAX GmbH & Co. KG
+Hauptzollamt Dortmund|Hauptzollamt Dortmund
+Ruhr Apotheke|Ruhr Apotheke
+Roger Petry|Roger Petry
+Tierärzte IVC Evidensia GmbH|Tierärzte IVC Evidensia GmbH
+architekturbedarf.de|architekturbedarf.de
+Pﬂanzensofort GmbH|Pﬂanzensofort GmbH
+ADAC Versicherung AG|ADAC Versicherung AG
+Klinik Tecklenburger Land|Klinik Tecklenburger Land
+Hotel Restaurant WINZERHOF|Hotel Restaurant WINZERHOF
+Bausparkasse Schwäbisch Hall AG|Bausparkasse Schwäbisch Hall AG
+Deutsche Kreditbank AG|Deutsche Kreditbank AG
+Elliot GmbH|Elliot GmbH
+Franke GmbH|Franke GmbH
+Hanse Merkur Speziale Krankenversicherung AG|Hanse Merkur Speziale Krankenversicherung AG
+VfL Bochum 1848 GmbH & Co. KGaA|VfL Bochum 1848 GmbH & Co. KGaA
+Luttermann GmbH|Luttermann GmbH
+Privatbrauerei Moritz Fiege GmbH & Co. KG|Privatbrauerei Moritz Fiege GmbH & Co. KG
+Tierarztpraxis|Tierarztpraxis
+Sparda-Bank West eG|Sparda-Bank West eG
+Techniker Krankenkasse|Techniker Krankenkasse
+Weicken & Schmidt GmbH|Weicken & Schmidt GmbH
+Lexware|Lexware
+VfL Bochum 1848|VfL Bochum 1848
+Westdeutsche Allgemeine Zeitung|Westdeutsche Allgemeine Zeitung
+Hagebau|Hagebau
+Axa Versicherung AG|Axa Versicherung AG
+Stadt Bochum|Stadt Bochum
+Rechtsanwälte Leones|Rechtsanwälte Leones
+Bonprix|Bonprix
+Polizeipräsidium Bochum|Polizeipräsidium Bochum
+Skyline Therapie Bochum|Skyline Therapie Bochum
+Maingau Energie|Maingau Energie
+Genius|Genius
+megi mobility GmbH|megi mobility GmbH
+MMS E-COMMERCE GMBH|MMS E-COMMERCE GMBH
+Schlüssel-Müller-Tresore GmbH|Schlüssel-Müller-Tresore GmbH
+Sparkasse Bochum|Sparkasse Bochum
+Rossmann|Rossmann
+Allgemeiner deutscher Fahrradclub|Allgemeiner deutscher Fahrradclub

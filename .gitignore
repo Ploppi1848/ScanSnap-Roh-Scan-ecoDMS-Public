@@ -1,0 +1,100 @@
+# -------------------------------------------------------
+# Python
+# -------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+
+# Virtuelle Umgebungen
+.venv/
+venv/
+env/
+
+# -------------------------------------------------------
+# Logs / Debug / temporär
+# -------------------------------------------------------
+_logs/
+_debug_text/
+_arbeit/
+_fehler/
+_gefiltert/
+_erledigt/
+
+*.log
+*.tmp
+
+# -------------------------------------------------------
+# Eingänge
+# -------------------------------------------------------
+ecodms_scan_input/
+mail_input/
+_mail/
+
+# -------------------------------------------------------
+# Testdokumente
+# -------------------------------------------------------
+_testdokumente_v5_5/
+
+# -------------------------------------------------------
+# Massentest
+# -------------------------------------------------------
+_massentest/entpackt/
+_massentest/verarbeitet/
+_massentest/fehler/
+_massentest/viewer/
+_massentest/logs/
+
+# Keine PDFs versionieren
+_massentest/**/*.pdf
+*.pdf
+
+# Optional (vorerst NICHT ignorieren):
+# massentest_sollwerte.json
+# massentest_ergebnisse.json
+
+# -------------------------------------------------------
+# Große Tools / SDKs
+# -------------------------------------------------------
+Poppler/
+_brother_sdk/
+
+# -------------------------------------------------------
+# Archive
+# -------------------------------------------------------
+*.zip
+_archiv/
+
+# Alte Archivstände nicht versionieren
+_service/Archiv/
+_webservice/ecodms_webui/ecodms_webui_archiv/
+
+# -------------------------------------------------------
+# Brother-Ausgaben
+# -------------------------------------------------------
+_etiketten_archiv/
+
+# -------------------------------------------------------
+# Web-Test
+# -------------------------------------------------------
+_web_test/*
+!_web_test/
+!_web_test/**/*.testmeta
+
+# -------------------------------------------------------
+# Windows
+# -------------------------------------------------------
+Thumbs.db
+Desktop.ini
+
+# Backup-Dateien
+*.bak
+
+# Massentest-Ergebnisse
+_massentest/ergebnisse/massentest_ergebnisse.csv
+_massentest/ergebnisse/massentest_ergebnisse.json
+_massentest/ergebnisse/massentest_fortschritt.json
+
+# Build-Backups
+_release_4_0/*backup*/

@@ -1,0 +1,16 @@
+# Lernliste Lieferanten
+# Neue unbekannte Lieferanten werden hier automatisch eingetragen.
+# Geprüfte Zeilen können nach lieferanten_konfiguration.txt übernommen werden.
+2026-06-27 21:22:19|Lieferant|Massage|ptlyslo polnt Rechnung 28.03.2025_009.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:22:58|Lieferant|Kündigung des bestehenden Mietvertrags|Nikolaos Rigas Vertrag 30.11.2021.pdf|Dokumenttyp=Bescheinigung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:36:33|Lieferant|Waage:|Flascheral Norge sch Kassenzettel.pdf|Dokumenttyp=Kassenbon; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:36:38|Lieferant|HanseMerkur Speziale Krankenversicherung AG|Hanse Merkur Information 30.06.2025.pdf|Dokumenttyp=Unbekannt; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:36:51|Lieferant|Physio Point|ptlyslo polnt Rechnung 28.03.2025.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:36:59|Lieferant|Staatsanwaltschaft Bochum|Staatsanwaltschaft Anderes 04.11.2019.pdf|Dokumenttyp=Ermittlungsverfahren; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 21:37:04|Lieferant|U you Bochum-Weitmar|U_you Bochum-Weitmar _ Rechnung 07.07.25.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:04:45|Lieferant|Samstag 11. Apr.|13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf|Dokumenttyp=Information; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:04:46|Lieferant|■Schließanlagen|29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:04:51|Lieferant|Deutsche Post AG|Deutsche Post AG Information 09.03.2020.pdf|Dokumenttyp=Information; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:04:53|Lieferant|DHL Paket GmbH|DHL Paket GmbH Anderes 14.10.2024.pdf|Dokumenttyp=Kassenbon; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:04:56|Lieferant|Dr. med. dent. Axel Vieler|Dr. med.dent.Axel Rechnung 15.04.2026.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-06-27 22:05:14|Lieferant|Tintenfass|Tintenfass Kassenzettel 28.01.2026.pdf|Dokumenttyp=Kassenbon; Quelle=Dokumentenscan; MailAbsender=; Betreff=

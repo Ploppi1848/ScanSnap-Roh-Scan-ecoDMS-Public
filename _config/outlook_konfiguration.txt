@@ -1,0 +1,19 @@
+# Outlook Mail Watcher Konfiguration
+OUTLOOK_AKTIV=1
+INTERVALL_SEKUNDEN=30
+NUR_PDF=1
+NUR_UNGELESENE=0
+NACH_EXPORT_KATEGORIE_SETZEN=1
+KATEGORIE=ecoDMS archiviert
+NACH_EXPORT_ALS_GELESEN_MARKIEREN=0
+MAX_MAILS_PRO_LAUF=25
+DATEINAME_MIT_ABSENDER=1
+DATEINAME_MIT_DATUM=1
+META_DATEI_ERZEUGEN=1
+
+# 1 = alle Posteingänge aller Outlook-Konten prüfen
+# 0 = nur Standard-Posteingang prüfen
+ALLE_POSTEINGAENGE_PRUEFEN=1
+
+# 1 = jede geprüfte Mail und jeden Anhang ins Log schreiben
+MAIL_DEBUG_LOG=0

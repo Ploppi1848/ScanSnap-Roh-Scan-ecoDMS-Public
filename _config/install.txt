@@ -1,0 +1,16 @@
+Python 3.14 x64
+
+Zusätzliche Komponenten:
+- Poppler
+  C:\ScanSnap_Roh-Scan-ecoDMS\Poppler
+
+- Tesseract OCR
+  C:\Program Files\Tesseract-OCR
+
+Powershell
+Python Pakete:
+pip install -r requirements.txt
+
+CMD
+sc create EcoDMSScanDienst binPath= "\"C:\Users\H.-G. Hepp\AppData\Local\Programs\Python\Python314\python.exe\" \"C:\ScanSnap_Roh-Scan-ecoDMS\_service\ecodms_scan_service.py\"" start= auto
+sc description EcoDMSScanDienst "ecoDMS Scan-Service Version 3.3.0"

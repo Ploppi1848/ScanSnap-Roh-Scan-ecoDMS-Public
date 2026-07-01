@@ -1,0 +1,12 @@
+Danach in CMD als Admin:
+
+cd C:\ScanSnap_Roh-Scan-ecoDMS\_service
+
+python outlook_windows_service.py install
+python outlook_windows_service.py update
+
+net start EcoDMSOutlookWatcher
+
+sc query EcoDMSOutlookWatcher
+
+C:\ScanSnap_Roh-Scan-ecoDMS\_logs\outlook_mail_watcher.log

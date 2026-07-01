@@ -1,0 +1,59 @@
+ecoDMS-Projekt Stand für neuen Chat
+
+Projektpfad:
+C:\ScanSnap_Roh-Scan-ecoDMS
+
+Hauptdateien:
+_service\ecodms_scan_service.py
+_service\outlook_mail_watcher.py
+
+Wichtige Ordner:
+_config
+_logs
+_debug_text
+ecodms_scan_input
+mail_input
+_arbeit
+_erledigt
+_fehler
+_gefiltert
+_etiquetten_archiv
+
+Aktueller Stand:
+- Scan-Service erzeugt Metadatenseite auf Seite 2.
+- Outlook-Mail-Watcher speichert neue PDF-Anhänge in mail_input und erzeugt .meta-Dateien.
+- Outlook-Dokumente bekommen BOXCODE_ANZEIGE=Outlook, QR/Etikett/Zähler sind für Outlook standardmäßig deaktiviert.
+- SMTP-Mailversand für Lernlisten funktioniert.
+- Lernlisten-Fix V5.5.1: Lieferant/Dokumenttyp gelten nur als BEKANNT, wenn sie wirklich in der jeweiligen Konfigurationsdatei stehen.
+- V5.5.2: Performance-Fix, OCR/Text wird pro Dokumentteil nur einmal gelesen und für Filter + Metadaten gemeinsam genutzt.
+- V5.5.2: OCR-Müll als Lieferant wird verworfen.
+
+Zuletzt wichtige Konfigurationsdateien:
+_config\lieferanten_konfiguration.txt
+_config\dokumenttypen_konfiguration.txt
+_config\felder_konfiguration.txt
+_config\dokumentfilter_konfiguration.txt
+_config\import_optionen_konfiguration.txt
+_config\benachrichtigung_konfiguration.txt
+_config\lieferanten_lernliste.txt
+_config\dokumenttypen_lernliste.txt
+
+SMTP-Konfiguration:
+_config\benachrichtigung_konfiguration.txt
+Für T-Online:
+SMTP_SERVER=securesmtp.t-online.de
+SMTP_PORT=587
+SMTP_STARTTLS=1
+SMTP_BENUTZER=<mailadresse>
+SMTP_PASSWORT=<email-passwort/app-passwort>
+ABSENDER=<mailadresse>
+EMPFAENGER=<mailadresse>
+
+Offene Themen:
+1. Weboberfläche FastAPI lokal unter http://127.0.0.1:8000
+2. Lernlisten in Weboberfläche: übernehmen, ignorieren, löschen
+3. Konfigurationsdateien in Weboberfläche editieren
+4. Logs anzeigen und filtern
+5. Status Scan-Service / Outlook-Watcher anzeigen
+6. Testbereich für PDF mit Anzeige erkannter Metadaten und Debug-Text
+7. Weitere Erkennungsverbesserung aus PDF-Testbestand

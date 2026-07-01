@@ -1,0 +1,14 @@
+# Testdaten für ecoDMS-Metadatenblatt
+# 0 = aus, 1 = ein
+TESTDATEN_AKTIV=0
+
+# Diese Werte werden nur verwendet, wenn TESTDATEN_AKTIV=1
+# und das jeweilige Feld per OCR nicht gefunden wurde.
+LIEFERANT=Testlieferant GmbH
+DOKUMENTTYP=Rechnung
+RECHDATUM=13.05.2019
+RECHNR=2026-12345
+KUNDENNR=998877
+AUFTRAGNR=AUF-55555
+BESTELLNR=PO-45678
+LIEFERSCHEINNR=LS-123456

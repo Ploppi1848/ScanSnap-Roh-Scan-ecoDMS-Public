@@ -1,0 +1,5 @@
+Danach in CMD als Admin:
+
+cd C:\ScanSnap_Roh-Scan-ecoDMS\_service
+python ecodms_windows_service.py update
+python ecodms_windows_service.py start

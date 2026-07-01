@@ -1,0 +1,47 @@
+# Dokumenttypen-Erkennung
+# Format:
+# Dokumenttyp|Suchwort1;Suchwort2;Suchwort3
+#
+Abholavis|Abholavis
+Bestellbestätigung|Bestellbestätigung;Bestätigung Ihrer Bestellung
+Reisebestätigung|Rechnung und Bestätigung;Buchungs-/Rechnungsnummer;Reisebestätigung
+Rechnung|Rechnung;Invoice;Servicerechnung;Beitragsrechnung;Rechnung Nr.;Rechnungsnummer
+Gutschrift|Gutschrift;Credit Note;Stornorechnung
+Mahnung|Mahnung;Zahlungserinnerung
+Lieferschein|Lieferschein;Delivery Note;LS-Nr.
+Angebot|Angebot;Kostenvoranschlag;Offer
+Auftragsbestätigung|Auftragsbestätigung;Auftragsbestaetigung;Kaufauftrag;Bestätigung Ihres Auftrags
+Kassenbon|Kassenbon;Kassenzettel;Bon;Quittung;Kartenzahlung
+Behörde|Behörde
+Bescheid|Bescheid
+Bewilligungsbescheid|Bewilligungsbescheid
+stationären Rehabilitationsmaßnahme. Ich bin darüber informiert, dass It. Rentenversicherungs; Quelle=Dokumentenscan|stationären Rehabilitationsmaßnahme. Ich bin darüber informiert, dass It. Rentenversicherungs; Quelle=Dokumentenscan
+Informationsschreiben|Informationsschreiben
+Abwesenheitserklärung|Abwesenheitserklärung
+Rechnung Reisekosten|Rechnung Reisekosten
+Bescheinigung|Bescheinigung
+Informationsschreiben Bank|Informationsschreiben Bank
+Versicherung|Versicherung
+Dokumenation|Dokumenation
+Medizinischer Fragebogen|Medizinischer Fragebogen
+Finanzierungsantrag|Finanzierungsantrag
+Zeitungsartikel|Zeitungsartikel
+Leistungsmitteilung|Leistungsmitteilung
+Ärztliche Bescheinigung|Ärztliche Bescheinigung
+Bedienungsanleitung|Bedienungsanleitung
+Finanzierung|Finanzierung
+Rezept|Rezept
+Kraftfahrzeugsteuerbescheid|Kraftfahrzeugsteuerbescheid
+Information|Information
+Kündigung|Kündigung
+Darlehensvertrag|Darlehensvertrag
+Reservierung|Reservierung
+Kontoauszug|Kontoauszug
+Vorvertragliche Informationen|Vorvertragliche Informationen
+Bußgeld|Bußgeld
+Schreiben Rechtsanwalt|Schreiben Rechtsanwalt
+Polizeibehörde|Polizeibehörde
+Zählerstandserfassung|Zählerstandserfassung
+Hundesteuerbescheid|Hundesteuerbescheid
+Informationsschreiben Datenschutz|Informationsschreiben Datenschutz
+Kaufvertrag|Kaufvertrag

@@ -1,0 +1,6 @@
+# Import-Optionen
+# Outlook-Dokumente haben keinen Papierordner-Bezug.
+# 0 = aus, 1 = ein
+OUTLOOK_BOXCODE=0
+OUTLOOK_ETIKETTENDRUCK=0
+OUTLOOK_ZAEHLER_ERHOEHEN=0

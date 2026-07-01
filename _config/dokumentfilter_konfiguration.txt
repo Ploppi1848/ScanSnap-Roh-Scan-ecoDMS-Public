@@ -1,0 +1,5 @@
+# Dokumentfilter für nicht benötigte Anhänge
+# Einzelnes AGB ist absichtlich NICHT enthalten, da AGB oft nur im Footer vorkommt.
+DOKUMENTFILTER_AKTIV=1
+GEFILTERTE_DOKUMENTE_ARCHIVIEREN=1
+SUCHBEGRIFFE=Allgemeine Geschäftsbedingungen;Widerrufsbelehrung;Widerrufsrecht;Datenschutzerklärung;Privacy Policy;Terms and Conditions;Rücksendeinformationen;Retoureninformationen

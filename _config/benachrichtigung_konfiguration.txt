@@ -1,0 +1,17 @@
+# ecoDMS Benachrichtigungskonfiguration V5.5
+BENACHRICHTIGUNG_AKTIV=1
+BENACHRICHTIGUNG_MODUS=SMTP
+
+# T-Online:
+SMTP_SERVER=securesmtp.t-online.de
+SMTP_PORT=587
+SMTP_STARTTLS=1
+
+# Hier deine SMTP-Zugangsdaten eintragen.
+# Bei vielen Anbietern ist ein App-Passwort erforderlich.
+SMTP_BENUTZER=hepp_bo@t-online.de
+SMTP_PASSWORT=vdx1tus1970
+ABSENDER=h.g.hepp@t-online.de
+EMPFAENGER=h.g.hepp@t-online.de
+
+MAIL_BETREFF=ecoDMS Lernliste - neuer Eintrag
