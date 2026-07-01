@@ -45,6 +45,7 @@ MASSTEST_LOG_DIR = MASSTEST_DIR / "logs"
 MASSTEST_RESULTS_DIR = MASSTEST_DIR / "ergebnisse"
 MASSTEST_RESULTS_JSON = MASSTEST_RESULTS_DIR / "massentest_ergebnisse.json"
 MASSTEST_RESULTS_CSV = MASSTEST_RESULTS_DIR / "massentest_ergebnisse.csv"
+MASSTEST_SNAPSHOT_DIR = MASSTEST_RESULTS_DIR / "snapshots"
 # Ab 3.5.8: dauerhafte Referenz-/Sollwertablage.
 # Diese Datei darf bei Ergebnis löschen / Reset NICHT entfernt werden.
 MASSTEST_REFERENCES_JSON = MASSTEST_RESULTS_DIR / "massentest_sollwerte.json"
@@ -101,7 +102,7 @@ def ensure_dirs() -> None:
     """
     for p in [
         BASE_DIR, SERVICE_DIR, CONFIG_DIR, LOG_DIR, DEBUG_TEXT_DIR,
-        TEST_DIR, EXPECTED_DIR, REPORTS_DIR, STATUS_DIR, MASSTEST_DIR, MASSTEST_ZIP_DIR, MASSTEST_UNPACKED_DIR, MASSTEST_DONE_DIR, MASSTEST_ERROR_DIR, MASSTEST_LOG_DIR, MASSTEST_RESULTS_DIR, *FOLDERS.values()
+        TEST_DIR, EXPECTED_DIR, REPORTS_DIR, STATUS_DIR, MASSTEST_DIR, MASSTEST_ZIP_DIR, MASSTEST_UNPACKED_DIR, MASSTEST_DONE_DIR, MASSTEST_ERROR_DIR, MASSTEST_LOG_DIR, MASSTEST_RESULTS_DIR, MASSTEST_SNAPSHOT_DIR, *FOLDERS.values()
     ]:
         try:
             p.mkdir(parents=True, exist_ok=True)
@@ -3918,15 +3919,15 @@ def massentest_quality_ampel(diff_count: int) -> tuple[str, str, str]:
 
 
 def massentest_quality_snapshot(rows: list[dict[str, str]]) -> dict:
-    """Buildvergleich-Vorbereitung: stabiler Snapshot ohne Vergleichslogik.
-
-    Sprint 2A erzeugt nur die Datenstruktur. Ein spaeterer Sprint kann zwei
-    solcher Snapshots vergleichen, ohne die Massentestdaten neu zu interpretieren.
-    """
+    """Stabiler Qualitaets-Snapshot fuer Buildvergleiche."""
+    rows = list(rows or [])
+    green = yellow = red = 0
     snapshot: dict = {
         "schema": "massentest_quality_snapshot_v1",
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "app_version": APP_VERSION,
+        "document_count": len(rows),
+        "ampel": {"gruen": 0, "gelb": 0, "rot": 0},
         "documents": {},
         "fields": {},
     }
@@ -3938,6 +3939,13 @@ def massentest_quality_snapshot(rows: list[dict[str, str]]) -> dict:
             continue
         diff_labels: set[str] = set()
         soll_count, diffs = massentest_diff_details(row)
+        ampel_key, _ampel_symbol, _ampel_text = massentest_quality_ampel(len(diffs))
+        if ampel_key == "gruen":
+            green += 1
+        elif ampel_key == "gelb":
+            yellow += 1
+        else:
+            red += 1
         for label, _soll, _ist in diffs:
             diff_labels.add(label)
         field_state = {}
@@ -3957,6 +3965,7 @@ def massentest_quality_snapshot(rows: list[dict[str, str]]) -> dict:
             "abweichungen": len(diffs),
             "fields": field_state,
         }
+    snapshot["ampel"] = {"gruen": green, "gelb": yellow, "rot": red}
     return snapshot
 
 
@@ -4076,6 +4085,150 @@ def massentest_quality_analysis_table(rows: list[dict], columns: list[tuple[str,
     for row in rows:
         body += "<tr>" + "".join(f"<td>{esc(row.get(key, ''))}</td>" for _label, key in columns) + "</tr>"
     return f"<table><tr>{head}</tr>{body}</table>"
+
+
+def massentest_quality_snapshot_slug(value: str) -> str:
+    slug = re.sub(r"[^A-Za-z0-9]+", "_", str(value or "").strip()).strip("_").lower()
+    return slug[:60] or "build"
+
+
+def massentest_quality_snapshot_path(filename: str) -> Path:
+    safe_name = Path(str(filename or "")).name
+    if not safe_name or not safe_name.endswith(".json"):
+        raise HTTPException(status_code=400, detail="Ungueltiger Snapshot")
+    path = MASSTEST_SNAPSHOT_DIR / safe_name
+    try:
+        resolved = path.resolve()
+        base = MASSTEST_SNAPSHOT_DIR.resolve()
+        if base not in resolved.parents and resolved != base:
+            raise HTTPException(status_code=400, detail="Ungueltiger Snapshot")
+    except HTTPException:
+        raise
+    except Exception:
+        raise HTTPException(status_code=400, detail="Ungueltiger Snapshot")
+    return path
+
+
+def massentest_quality_snapshot_save(rows: list[dict[str, str]] | None = None) -> Path:
+    ensure_dirs()
+    rows = massentest_read_results() if rows is None else rows
+    snapshot = massentest_quality_snapshot(list(rows or []))
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    build = massentest_quality_snapshot_slug(snapshot.get("app_version") or APP_VERSION)
+    path = MASSTEST_SNAPSHOT_DIR / f"quality_snapshot_{stamp}_{build}.json"
+    path.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding="utf-8")
+    return path
+
+
+def massentest_quality_snapshot_load(filename: str) -> dict:
+    path = massentest_quality_snapshot_path(filename)
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="Snapshot nicht gefunden")
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Snapshot nicht lesbar: {e}")
+    if not isinstance(data, dict) or data.get("schema") != "massentest_quality_snapshot_v1":
+        raise HTTPException(status_code=400, detail="Snapshot-Schema nicht passend")
+    data["_filename"] = path.name
+    return data
+
+
+def massentest_quality_snapshot_list() -> list[dict]:
+    ensure_dirs()
+    out: list[dict] = []
+    for path in sorted(MASSTEST_SNAPSHOT_DIR.glob("quality_snapshot_*.json"), reverse=True):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            docs = data.get("documents") or {}
+            out.append({
+                "datei": path.name,
+                "erstellt": data.get("generated_at", ""),
+                "build": data.get("app_version", ""),
+                "dokumente": data.get("document_count", len(docs)),
+            })
+        except Exception:
+            out.append({"datei": path.name, "erstellt": "nicht lesbar", "build": "", "dokumente": ""})
+    return out
+
+
+def massentest_quality_snapshot_compare(base: dict, target: dict) -> dict:
+    base_docs = base.get("documents") or {}
+    target_docs = target.get("documents") or {}
+    categories = {
+        "verbessert": 0,
+        "verschlechtert": 0,
+        "unveraendert": 0,
+        "neu_auffaellig": 0,
+        "nicht_mehr_auffaellig": 0,
+    }
+    field_summary: dict[str, dict[str, int]] = {}
+    doc_rows: list[dict] = []
+
+    def field_bucket(label: str) -> dict[str, int]:
+        return field_summary.setdefault(label, {"verbessert": 0, "verschlechtert": 0, "unveraendert": 0})
+
+    for row_id in sorted(set(base_docs.keys()) | set(target_docs.keys())):
+        old = base_docs.get(row_id) or {}
+        new = target_docs.get(row_id) or {}
+        old_diff = int(old.get("abweichungen") or 0)
+        new_diff = int(new.get("abweichungen") or 0)
+        old_bad = bool(old_diff > 0)
+        new_bad = bool(new_diff > 0)
+        if old_bad and not new_bad:
+            category = "nicht_mehr_auffaellig"
+        elif not old_bad and new_bad:
+            category = "neu_auffaellig"
+        elif new_diff < old_diff:
+            category = "verbessert"
+        elif new_diff > old_diff:
+            category = "verschlechtert"
+        else:
+            category = "unveraendert"
+        categories[category] += 1
+
+        old_fields = old.get("fields") or {}
+        new_fields = new.get("fields") or {}
+        changed_fields: list[str] = []
+        for label in sorted(set(old_fields.keys()) | set(new_fields.keys())):
+            old_state = old_fields.get(label)
+            new_state = new_fields.get(label)
+            if old_state == "abweichung" and new_state == "ok":
+                field_bucket(label)["verbessert"] += 1
+                changed_fields.append(f"{label}: besser")
+            elif old_state == "ok" and new_state == "abweichung":
+                field_bucket(label)["verschlechtert"] += 1
+                changed_fields.append(f"{label}: schlechter")
+            elif old_state == new_state and old_state:
+                field_bucket(label)["unveraendert"] += 1
+
+        doc_rows.append({
+            "row_id": row_id,
+            "datei": new.get("datei") or old.get("datei") or row_id,
+            "vorher": old_diff,
+            "nachher": new_diff,
+            "bewertung": category.replace("_", " "),
+            "felder": ", ".join(changed_fields) or "-",
+        })
+
+    doc_rows.sort(key=lambda x: (
+        0 if x["bewertung"] in {"verschlechtert", "neu auffaellig"} else 1,
+        -int(x["nachher"]),
+        str(x["datei"]).lower(),
+    ))
+    field_rows = [
+        {"feld": label, **values}
+        for label, values in field_summary.items()
+        if values.get("verbessert") or values.get("verschlechtert")
+    ]
+    field_rows.sort(key=lambda x: (-int(x.get("verschlechtert", 0)), -int(x.get("verbessert", 0)), str(x.get("feld", ""))))
+    return {
+        "base": base.get("_filename", ""),
+        "target": target.get("_filename", ""),
+        "summary": categories,
+        "documents": doc_rows,
+        "fields": field_rows,
+    }
 
 
 def massentest_filter_rows(rows: list[dict[str, str]], pruefstatus: str = "alle", q: str = "") -> list[dict[str, str]]:
@@ -4254,11 +4407,18 @@ def massentest_grouped_overview_html(rows: list[dict[str, str]], q: str = "") ->
     ])
 
 
+@app.post("/test/massentest/analysis/snapshot")
+def massentest_quality_snapshot_save_route() -> RedirectResponse:
+    path = massentest_quality_snapshot_save()
+    return RedirectResponse(f"/test/massentest/analysis?snapshot_saved={quote(path.name)}", status_code=303)
+
+
 @app.get("/test/massentest/analysis", response_class=HTMLResponse)
-def massentest_quality_analysis_page() -> HTMLResponse:
+def massentest_quality_analysis_page(snapshot_a: str = "", snapshot_b: str = "", snapshot_saved: str = "") -> HTMLResponse:
     rows = massentest_read_results()
     analysis = massentest_quality_analysis(rows)
     ampel = analysis.get("ampel", {})
+    snapshots = massentest_quality_snapshot_list()
     field_table = massentest_quality_analysis_table(
         analysis.get("fields", [])[:20],
         [
@@ -4318,12 +4478,81 @@ def massentest_quality_analysis_page() -> HTMLResponse:
         "schema": snapshot.get("schema", ""),
         "documents": len((snapshot.get("documents") or {})),
         "fields": len((snapshot.get("fields") or {})),
-        "baseline": "noch nicht vorhanden",
+        "baseline": f"{len(snapshots)} gespeicherte Snapshot(s)",
     }
+    saved_msg = ""
+    if snapshot_saved:
+        saved_msg = render_message_box(f"Gespeichert: {snapshot_saved}", "Snapshot gespeichert", "success")
+    snapshot_table = massentest_quality_analysis_table(
+        snapshots,
+        [("Snapshot", "datei"), ("Erstellt", "erstellt"), ("Build", "build"), ("Dokumente", "dokumente")],
+        "Noch keine gespeicherten Snapshots.",
+    )
+    options = "".join(
+        f"<option value='{quote(str(item.get('datei','')))}' {'selected' if item.get('datei') == snapshot_a else ''}>{esc(str(item.get('erstellt') or ''))} · {esc(str(item.get('build') or ''))} · {esc(str(item.get('datei') or ''))}</option>"
+        for item in snapshots
+    )
+    options_b = "".join(
+        f"<option value='{quote(str(item.get('datei','')))}' {'selected' if item.get('datei') == snapshot_b else ''}>{esc(str(item.get('erstellt') or ''))} · {esc(str(item.get('build') or ''))} · {esc(str(item.get('datei') or ''))}</option>"
+        for item in snapshots
+    )
+    compare_form = ""
+    compare_html = "<p class='muted small'>Für einen Buildvergleich werden mindestens zwei gespeicherte Snapshots benötigt.</p>"
+    if len(snapshots) >= 1:
+        compare_form = f"""
+        <form method='get' action='/test/massentest/analysis' class='toolbar' style='align-items:end;gap:10px;flex-wrap:wrap'>
+          <label class='small'><b>Basis</b><br><select name='snapshot_a' style='min-width:320px;max-width:100%'>{options}</select></label>
+          <label class='small'><b>Vergleich</b><br><select name='snapshot_b' style='min-width:320px;max-width:100%'>{options_b}</select></label>
+          <button class='btn' type='submit'>Snapshots vergleichen</button>
+        </form>
+        """
+    if snapshot_a and snapshot_b:
+        try:
+            base_snapshot = massentest_quality_snapshot_load(snapshot_a)
+            target_snapshot = massentest_quality_snapshot_load(snapshot_b)
+            cmp_result = massentest_quality_snapshot_compare(base_snapshot, target_snapshot)
+            summary = cmp_result.get("summary", {})
+            docs_table_compare = massentest_quality_analysis_table(
+                cmp_result.get("documents", [])[:80],
+                [
+                    ("Bewertung", "bewertung"),
+                    ("Dokument", "datei"),
+                    ("Vorher", "vorher"),
+                    ("Nachher", "nachher"),
+                    ("Feldänderungen", "felder"),
+                ],
+                "Keine Dokumentänderungen.",
+            )
+            fields_compare = massentest_quality_analysis_table(
+                cmp_result.get("fields", []),
+                [
+                    ("Feld", "feld"),
+                    ("Verbessert", "verbessert"),
+                    ("Verschlechtert", "verschlechtert"),
+                    ("Unverändert", "unveraendert"),
+                ],
+                "Keine Feldänderungen zwischen den Snapshots.",
+            )
+            compare_html = f"""
+            <div class='legend'>
+              <span><b>Verbessert</b> {summary.get('verbessert', 0)}</span>
+              <span><b>Verschlechtert</b> {summary.get('verschlechtert', 0)}</span>
+              <span><b>Unverändert</b> {summary.get('unveraendert', 0)}</span>
+              <span><b>Neu auffällig</b> {summary.get('neu_auffaellig', 0)}</span>
+              <span><b>Nicht mehr auffällig</b> {summary.get('nicht_mehr_auffaellig', 0)}</span>
+            </div>
+            <h3>Betroffene Felder</h3>
+            {fields_compare}
+            <h3>Betroffene Dokumente</h3>
+            {docs_table_compare}
+            """
+        except HTTPException as e:
+            compare_html = render_message_box(str(e.detail), "Buildvergleich nicht möglich", "warning")
     body = f"""
     <div class='top-actions'><div><b>Qualitätsanalyse</b><br><span class='muted small'>Automatische Auswertung der vorhandenen Massentest-Ergebnisse.</span></div><a class='btn2' href='/test'>← Zurück zur Dokumentenprüfung</a></div>
+    {saved_msg}
     <div class='card'>
-      <div class='section-head'><h2>Automatische Qualitätsanalyse</h2><span class='count-badge'>Sprint 2A</span></div>
+      <div class='section-head'><h2>Automatische Qualitätsanalyse</h2><span class='count-badge'>Sprint 2B</span></div>
       <p class='muted'>Diese Auswertung nutzt nur vorhandene Massentest-Ergebnisse und gespeicherte Sollwerte. Es wird keine Erkennungslogik ausgeführt oder verändert.</p>
       <div class='grid'>
         <div class='metric'><div class='label'>Dokumente</div><div class='num'>{analysis.get('total', 0)}</div></div>
@@ -4332,6 +4561,20 @@ def massentest_quality_analysis_page() -> HTMLResponse:
         <div class='metric'><div class='label'>🔴 viele Abweichungen</div><div class='num bad'>{ampel.get('rot', 0)}</div></div>
       </div>
       <p class='toolbar'><a class='btn2' href='/test/chatgpt-active?scope=active&bereich=Massentest'>Aufgabenexport öffnen</a> <a class='btn2' href='/test/massentest'>Massentest öffnen</a></p>
+    </div>
+    <div class='card'>
+      <div class='section-head'><h2>Qualitäts-Snapshots</h2><span class='count-badge'>{len(snapshots)} Snapshot(s)</span></div>
+      <p class='muted small'>Snapshots speichern den aktuellen Qualitätsstand separat unter _massentest/ergebnisse/snapshots. Die Massentest-Ergebnisdatei wird dadurch nicht verändert.</p>
+      <form method='post' action='/test/massentest/analysis/snapshot' data-progress='0' data-working='Qualitäts-Snapshot wird gespeichert ...'>
+        <button class='btn' type='submit'>Aktuellen Snapshot speichern</button>
+      </form>
+      <div style='margin-top:14px'>{snapshot_table}</div>
+    </div>
+    <div class='card'>
+      <div class='section-head'><h2>Buildvergleich</h2><span class='count-badge'>Snapshot-Vergleich</span></div>
+      <p class='muted small'>Vergleicht zwei gespeicherte Snapshots je Dokument und Feld: verbessert, verschlechtert, unverändert, neu auffällig oder nicht mehr auffällig.</p>
+      {compare_form}
+      {compare_html}
     </div>
     <div class='card'>
       <h2>Prioritätenliste</h2>
@@ -4351,8 +4594,8 @@ def massentest_quality_analysis_page() -> HTMLResponse:
       {docs_table}
     </div>
     <div class='card'>
-      <h2>Buildvergleich vorbereitet</h2>
-      <p class='muted'>Sprint 2A speichert noch keinen zweiten Build und vergleicht keine Builds. Die interne Snapshot-Struktur ist vorbereitet, damit Sprint 2B zwei Stände vergleichen kann.</p>
+      <h2>Snapshot-Struktur</h2>
+      <p class='muted'>Technische Übersicht der aktuell erzeugbaren Snapshot-Daten.</p>
       <div class='legend'>
         <span><b>Schema</b> {esc(snapshot_summary['schema'])}</span>
         <span><b>Dokumente</b> {snapshot_summary['documents']}</span>
