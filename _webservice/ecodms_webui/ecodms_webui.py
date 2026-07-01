@@ -3908,6 +3908,176 @@ def massentest_compare_marker(row: dict[str, str]) -> str:
     return f"<span class='warntext'>{len(diffs)} Abweichung(en)</span>"
 
 
+def massentest_quality_ampel(diff_count: int) -> tuple[str, str, str]:
+    """Einfache Sprint-2A-Ampel fuer Dokumentabweichungen."""
+    if diff_count <= 0:
+        return "gruen", "🟢", "keine Abweichungen"
+    if diff_count <= 2:
+        return "gelb", "🟡", "wenige Abweichungen"
+    return "rot", "🔴", "viele Abweichungen"
+
+
+def massentest_quality_snapshot(rows: list[dict[str, str]]) -> dict:
+    """Buildvergleich-Vorbereitung: stabiler Snapshot ohne Vergleichslogik.
+
+    Sprint 2A erzeugt nur die Datenstruktur. Ein spaeterer Sprint kann zwei
+    solcher Snapshots vergleichen, ohne die Massentestdaten neu zu interpretieren.
+    """
+    snapshot: dict = {
+        "schema": "massentest_quality_snapshot_v1",
+        "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "app_version": APP_VERSION,
+        "documents": {},
+        "fields": {},
+    }
+    for label, _ist_key, _soll_key in MASSTEST_COMPARE:
+        snapshot["fields"][label] = {"checked": 0, "ok": 0, "abweichung": 0}
+    for row in rows or []:
+        row_id = str(row.get("id") or row.get("row_id") or row.get("alter_dateiname") or "").strip()
+        if not row_id:
+            continue
+        diff_labels: set[str] = set()
+        soll_count, diffs = massentest_diff_details(row)
+        for label, _soll, _ist in diffs:
+            diff_labels.add(label)
+        field_state = {}
+        for label, _ist_key, soll_key in MASSTEST_COMPARE:
+            has_soll = bool(str(row.get(soll_key, "") or "").strip())
+            if not has_soll:
+                continue
+            state = "abweichung" if label in diff_labels else "ok"
+            field_state[label] = state
+            snapshot["fields"].setdefault(label, {"checked": 0, "ok": 0, "abweichung": 0})
+            snapshot["fields"][label]["checked"] += 1
+            snapshot["fields"][label][state] += 1
+        snapshot["documents"][row_id] = {
+            "datei": str(row.get("alter_dateiname") or row.get("pdf_datei") or ""),
+            "status": massentest_row_status(row),
+            "sollfelder": soll_count,
+            "abweichungen": len(diffs),
+            "fields": field_state,
+        }
+    return snapshot
+
+
+def massentest_quality_analysis(rows: list[dict[str, str]] | None = None) -> dict:
+    """Automatische Sprint-2A-Qualitaetsanalyse auf Basis vorhandener Soll/Ist-Daten."""
+    if rows is None:
+        rows = massentest_read_results()
+    rows = list(rows or [])
+
+    def inc(bucket: dict[str, int], key: str, amount: int = 1) -> None:
+        key = str(key or "").strip() or "nicht angegeben"
+        bucket[key] = int(bucket.get(key, 0)) + amount
+
+    field_docs: dict[str, set[str]] = {}
+    field_checked: dict[str, int] = {}
+    supplier_errors: dict[str, int] = {}
+    supplier_docs: dict[str, set[str]] = {}
+    doctype_errors: dict[str, int] = {}
+    doctype_docs: dict[str, set[str]] = {}
+    documents: list[dict] = []
+    green = yellow = red = 0
+
+    for row in rows:
+        doc_id = str(row.get("id") or row.get("row_id") or row.get("alter_dateiname") or "").strip()
+        name = str(row.get("alter_dateiname") or row.get("pdf_datei") or row.get("neuer_dateiname") or doc_id).strip()
+        supplier = str(row.get("soll_lieferant") or row.get("lieferant") or "").strip() or "nicht angegeben"
+        doctype = str(row.get("soll_dokumenttyp") or row.get("dokumenttyp") or "").strip() or "nicht angegeben"
+        soll_count, diffs = massentest_diff_details(row)
+        diff_count = len(diffs)
+        ampel_key, ampel_symbol, ampel_text = massentest_quality_ampel(diff_count)
+        if ampel_key == "gruen":
+            green += 1
+        elif ampel_key == "gelb":
+            yellow += 1
+        else:
+            red += 1
+        diff_labels = {label for label, _soll, _ist in diffs}
+        for label, _ist_key, soll_key in MASSTEST_COMPARE:
+            if str(row.get(soll_key, "") or "").strip():
+                field_checked[label] = field_checked.get(label, 0) + 1
+        for label, _soll, _ist in diffs:
+            field_docs.setdefault(label, set()).add(doc_id or name)
+        if diff_count:
+            inc(supplier_errors, supplier, diff_count)
+            supplier_docs.setdefault(supplier, set()).add(doc_id or name)
+            inc(doctype_errors, doctype, diff_count)
+            doctype_docs.setdefault(doctype, set()).add(doc_id or name)
+        documents.append({
+            "id": doc_id,
+            "datei": name,
+            "lieferant": supplier,
+            "dokumenttyp": doctype,
+            "sollfelder": soll_count,
+            "abweichungen": diff_count,
+            "ampel": ampel_key,
+            "ampel_symbol": ampel_symbol,
+            "ampel_text": ampel_text,
+            "felder": sorted(diff_labels),
+        })
+
+    field_rows = []
+    for label, _ist_key, _soll_key in MASSTEST_COMPARE:
+        docs = field_docs.get(label, set())
+        checked = int(field_checked.get(label, 0))
+        deviations = len(docs)
+        ok_count = max(0, checked - deviations)
+        hit_rate = int(round(ok_count * 100 / checked)) if checked else 0
+        field_rows.append({
+            "feld": label,
+            "geprueft": checked,
+            "abweichende_dokumente": deviations,
+            "ok": ok_count,
+            "trefferquote": hit_rate,
+            "trend": "Vergleich vorbereitet",
+        })
+    field_rows.sort(key=lambda x: (-int(x["abweichende_dokumente"]), str(x["feld"])))
+
+    top_suppliers = [
+        {"lieferant": k, "abweichungen": v, "dokumente": len(supplier_docs.get(k, set()))}
+        for k, v in supplier_errors.items()
+    ]
+    top_suppliers.sort(key=lambda x: (-int(x["abweichungen"]), -int(x["dokumente"]), str(x["lieferant"])))
+    top_doctypes = [
+        {"dokumenttyp": k, "abweichungen": v, "dokumente": len(doctype_docs.get(k, set()))}
+        for k, v in doctype_errors.items()
+    ]
+    top_doctypes.sort(key=lambda x: (-int(x["abweichungen"]), -int(x["dokumente"]), str(x["dokumenttyp"])))
+    documents.sort(key=lambda x: (-int(x["abweichungen"]), str(x["datei"]).lower()))
+    priority = [
+        {"bereich": row["feld"], "potenzial_dokumente": row["abweichende_dokumente"]}
+        for row in field_rows if int(row["abweichende_dokumente"]) > 0
+    ]
+    priority.sort(key=lambda x: (-int(x["potenzial_dokumente"]), str(x["bereich"])))
+
+    return {
+        "total": len(rows),
+        "ampel": {"gruen": green, "gelb": yellow, "rot": red},
+        "fields": field_rows,
+        "suppliers": top_suppliers,
+        "doctypes": top_doctypes,
+        "documents": documents,
+        "priority": priority,
+        "buildvergleich": {
+            "ready": True,
+            "baseline_available": False,
+            "snapshot_schema": "massentest_quality_snapshot_v1",
+            "current_snapshot": massentest_quality_snapshot(rows),
+        },
+    }
+
+
+def massentest_quality_analysis_table(rows: list[dict], columns: list[tuple[str, str]], empty: str = "Keine Daten.") -> str:
+    if not rows:
+        return f"<p class='muted small'>{esc(empty)}</p>"
+    head = "".join(f"<th>{esc(label)}</th>" for label, _key in columns)
+    body = ""
+    for row in rows:
+        body += "<tr>" + "".join(f"<td>{esc(row.get(key, ''))}</td>" for _label, key in columns) + "</tr>"
+    return f"<table><tr>{head}</tr>{body}</table>"
+
+
 def massentest_filter_rows(rows: list[dict[str, str]], pruefstatus: str = "alle", q: str = "") -> list[dict[str, str]]:
     out = rows[:]
     if pruefstatus and pruefstatus != "alle":
@@ -4082,6 +4252,116 @@ def massentest_grouped_overview_html(rows: list[dict[str, str]], q: str = "") ->
         massentest_section_html("✓ Technisch bestanden – noch fachlich zu prüfen", "success_pending", rows, open_section=True, aufgaben_cache=aufgaben_cache),
         massentest_section_html("✓ Technisch bestanden – fachlich validiert", "success_validated", rows, open_section=True, aufgaben_cache=aufgaben_cache),
     ])
+
+
+@app.get("/test/massentest/analysis", response_class=HTMLResponse)
+def massentest_quality_analysis_page() -> HTMLResponse:
+    rows = massentest_read_results()
+    analysis = massentest_quality_analysis(rows)
+    ampel = analysis.get("ampel", {})
+    field_table = massentest_quality_analysis_table(
+        analysis.get("fields", [])[:20],
+        [
+            ("Feld", "feld"),
+            ("Geprüft", "geprueft"),
+            ("OK", "ok"),
+            ("Abweichende Dokumente", "abweichende_dokumente"),
+            ("Trefferquote %", "trefferquote"),
+            ("Buildvergleich", "trend"),
+        ],
+    )
+    supplier_table = massentest_quality_analysis_table(
+        analysis.get("suppliers", [])[:15],
+        [("Lieferant", "lieferant"), ("Abweichungen", "abweichungen"), ("Dokumente", "dokumente")],
+        "Keine Lieferantenabweichungen.",
+    )
+    doctype_table = massentest_quality_analysis_table(
+        analysis.get("doctypes", [])[:15],
+        [("Dokumenttyp", "dokumenttyp"), ("Abweichungen", "abweichungen"), ("Dokumente", "dokumente")],
+        "Keine Dokumenttypabweichungen.",
+    )
+    docs_for_table = []
+    for row in analysis.get("documents", [])[:20]:
+        docs_for_table.append({
+            "ampel": f"{row.get('ampel_symbol','')} {row.get('ampel_text','')}",
+            "datei": row.get("datei", ""),
+            "abweichungen": row.get("abweichungen", 0),
+            "felder": ", ".join(row.get("felder") or []),
+            "lieferant": row.get("lieferant", ""),
+            "dokumenttyp": row.get("dokumenttyp", ""),
+        })
+    docs_table = massentest_quality_analysis_table(
+        docs_for_table,
+        [
+            ("Ampel", "ampel"),
+            ("Dokument", "datei"),
+            ("Abweichungen", "abweichungen"),
+            ("Felder", "felder"),
+            ("Lieferant", "lieferant"),
+            ("Dokumenttyp", "dokumenttyp"),
+        ],
+        "Keine Dokumentabweichungen.",
+    )
+    priority_rows = []
+    for item in analysis.get("priority", [])[:12]:
+        priority_rows.append({
+            "bereich": f"{item.get('bereich', '')} verbessern",
+            "potenzial": f"{item.get('potenzial_dokumente', 0)} Dokument(e)",
+        })
+    priority_table = massentest_quality_analysis_table(
+        priority_rows,
+        [("Qualitätshebel", "bereich"), ("Potenzial", "potenzial")],
+        "Aktuell kein priorisierbarer Qualitätshebel aus Abweichungen ableitbar.",
+    )
+    snapshot = analysis.get("buildvergleich", {}).get("current_snapshot", {})
+    snapshot_summary = {
+        "schema": snapshot.get("schema", ""),
+        "documents": len((snapshot.get("documents") or {})),
+        "fields": len((snapshot.get("fields") or {})),
+        "baseline": "noch nicht vorhanden",
+    }
+    body = f"""
+    <div class='top-actions'><div><b>Qualitätsanalyse</b><br><span class='muted small'>Automatische Auswertung der vorhandenen Massentest-Ergebnisse.</span></div><a class='btn2' href='/test'>← Zurück zur Dokumentenprüfung</a></div>
+    <div class='card'>
+      <div class='section-head'><h2>Automatische Qualitätsanalyse</h2><span class='count-badge'>Sprint 2A</span></div>
+      <p class='muted'>Diese Auswertung nutzt nur vorhandene Massentest-Ergebnisse und gespeicherte Sollwerte. Es wird keine Erkennungslogik ausgeführt oder verändert.</p>
+      <div class='grid'>
+        <div class='metric'><div class='label'>Dokumente</div><div class='num'>{analysis.get('total', 0)}</div></div>
+        <div class='metric'><div class='label'>🟢 keine Abweichungen</div><div class='num ok'>{ampel.get('gruen', 0)}</div></div>
+        <div class='metric'><div class='label'>🟡 wenige Abweichungen</div><div class='num warntext'>{ampel.get('gelb', 0)}</div></div>
+        <div class='metric'><div class='label'>🔴 viele Abweichungen</div><div class='num bad'>{ampel.get('rot', 0)}</div></div>
+      </div>
+      <p class='toolbar'><a class='btn2' href='/test/chatgpt-active?scope=active&bereich=Massentest'>Aufgabenexport öffnen</a> <a class='btn2' href='/test/massentest'>Massentest öffnen</a></p>
+    </div>
+    <div class='card'>
+      <h2>Prioritätenliste</h2>
+      <p class='muted small'>Automatisch berechnet: Ein Feld mit vielen abweichenden Dokumenten hat den größten möglichen Qualitätsgewinn.</p>
+      {priority_table}
+    </div>
+    <div class='card'>
+      <h2>Felder mit den meisten Abweichungen</h2>
+      {field_table}
+    </div>
+    <div class='grid'>
+      <div class='card'><h2>Lieferanten mit vielen Fehlern</h2>{supplier_table}</div>
+      <div class='card'><h2>Dokumenttypen mit vielen Fehlern</h2>{doctype_table}</div>
+    </div>
+    <div class='card'>
+      <h2>Dokumente mit den meisten Abweichungen</h2>
+      {docs_table}
+    </div>
+    <div class='card'>
+      <h2>Buildvergleich vorbereitet</h2>
+      <p class='muted'>Sprint 2A speichert noch keinen zweiten Build und vergleicht keine Builds. Die interne Snapshot-Struktur ist vorbereitet, damit Sprint 2B zwei Stände vergleichen kann.</p>
+      <div class='legend'>
+        <span><b>Schema</b> {esc(snapshot_summary['schema'])}</span>
+        <span><b>Dokumente</b> {snapshot_summary['documents']}</span>
+        <span><b>Felder</b> {snapshot_summary['fields']}</span>
+        <span><b>Baseline</b> {esc(snapshot_summary['baseline'])}</span>
+      </div>
+    </div>
+    """
+    return layout("Dokumentenprüfung", body)
 
 
 @app.get("/test/massentest", response_class=HTMLResponse)
@@ -6177,7 +6457,7 @@ def testcenter_overview() -> HTMLResponse:
       <div class='hub-grid'>
         <a class='hint hub-card' href='/test/einzeltest' style='text-decoration:none;color:inherit'><div class='section-head'><b>Einzeldokument</b><span class='count-badge'>{stats['pdfs']}</span></div><div class='muted small'>Einzelne PDFs testen und Soll/Ist prüfen.</div><div class='hub-action'><span class='btn2'>Einzeldokument öffnen</span></div></a>
         <a class='hint hub-card' href='/test/massentest' style='text-decoration:none;color:inherit'><div class='section-head'><b>Massentest</b><span class='count-badge'>{mt_total}</span></div><div class='muted small'>{mt_summary}<br>Referenzen und Sollwerte sind hier eingeordnet.</div><div class='hub-action'><span class='btn2'>Massentest öffnen</span></div></a>
-        <a class='hint hub-card' href='/test/chatgpt-active?scope=active&bereich=Massentest' style='text-decoration:none;color:inherit'><div class='section-head'><b>Berichte / Auswertungen</b><span class='count-badge'>Export</span></div><div class='muted small'>Aktive Aufgaben, Qualitätsauswertung und Regression als Kopiervorlage.</div><div class='hub-action'><span class='btn2'>Berichte öffnen</span></div></a>
+        <a class='hint hub-card' href='/test/massentest/analysis' style='text-decoration:none;color:inherit'><div class='section-head'><b>Berichte / Auswertungen</b><span class='count-badge'>Analyse</span></div><div class='muted small'>Automatische Qualitätsanalyse, Prioritäten und Regression als Kopiervorlage.</div><div class='hub-action'><span class='btn2'>Berichte öffnen</span></div></a>
       </div>
     </div>
     """
