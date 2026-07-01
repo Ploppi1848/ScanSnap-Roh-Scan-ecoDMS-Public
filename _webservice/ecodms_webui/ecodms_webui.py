@@ -324,14 +324,14 @@ def layout(title: str, body: str) -> HTMLResponse:
     .massentest-review-card .folder-name{white-space:normal!important;overflow-wrap:anywhere!important;word-break:break-word!important}
 
     /* WebUI 4.0 Build 8: Fachliche Schnellpruefung, eigene Wrapper gegen globale Karten-/Grid-Regeln */
-    .qc-fast-card{overflow-x:auto!important}
+    .qc-fast-card{overflow-x:hidden!important}
     .qc-fast-review{display:grid!important;grid-template-columns:minmax(420px,48%) minmax(460px,52%)!important;gap:16px!important;align-items:start!important;width:100%!important;min-width:900px!important}
     .qc-fast-pdf{grid-column:1!important;min-width:0!important;position:sticky!important;top:72px!important;align-self:start!important}
     .qc-fast-pdf iframe{display:block!important;width:100%!important;height:calc(100vh - 118px)!important;min-height:560px!important;border:1px solid #dbe3ef!important;border-radius:14px!important;background:white!important;margin:0!important}
-    .qc-fast-pdf .qc-pdf-pan-shell{position:relative!important;width:100%!important;height:calc(100vh - 118px)!important;min-height:560px!important;overflow:auto!important;border:1px solid #dbe3ef!important;border-radius:14px!important;background:white!important;cursor:grab!important}
+    .qc-fast-pdf .qc-pdf-pan-shell{position:relative!important;width:100%!important;height:calc(100vh - 118px)!important;min-height:560px!important;overflow:auto!important;overscroll-behavior:contain!important;scrollbar-gutter:stable both-edges!important;border:1px solid #dbe3ef!important;border-radius:14px!important;background:white!important;cursor:grab!important}
     .qc-fast-pdf .qc-pdf-pan-shell.dragging{cursor:grabbing!important;user-select:none!important}
-    .qc-fast-pdf .qc-pdf-pan-shell iframe{height:100%!important;min-height:100%!important;border:0!important;border-radius:0!important}
-    .qc-pdf-pan-capture{position:absolute!important;inset:0!important;z-index:2!important;background:transparent!important;cursor:grab!important}
+    .qc-fast-pdf .qc-pdf-pan-shell iframe{width:calc(140% + 72px)!important;height:calc(126% + 56px)!important;min-width:calc(140% + 72px)!important;min-height:calc(126% + 56px)!important;border:0!important;border-radius:0!important;pointer-events:none!important}
+    .qc-pdf-pan-capture{position:absolute!important;left:0!important;top:0!important;right:22px!important;bottom:22px!important;z-index:2!important;background:transparent!important;cursor:grab!important;touch-action:none!important}
     .qc-pdf-pan-shell.dragging .qc-pdf-pan-capture{cursor:grabbing!important}
     .qc-pdf-pan-hint{font-size:12px!important;color:#64748b!important;margin-top:6px!important}
     .qc-fast-panel{grid-column:2!important;min-width:0!important;position:sticky!important;top:72px!important;max-height:calc(100vh - 118px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding-right:4px!important;align-self:start!important}
@@ -353,7 +353,7 @@ def layout(title: str, body: str) -> HTMLResponse:
     </style>"""
     scan_version = get_scan_service_version() if 'get_scan_service_version' in globals() else ''
     scan_version_text = f" · Scan-Service v{scan_version}" if scan_version else ''
-    return HTMLResponse(f"<!doctype html><html lang='de'><head><meta charset='utf-8'><title>{esc(title)}</title>{css}<script>function copyText(id){{const el=document.getElementById(id); if(!el)return; el.select(); el.setSelectionRange(0,999999); navigator.clipboard?navigator.clipboard.writeText(el.value):document.execCommand('copy');}}let workingPoll=null;function updateWorkingProgress(d){{try{{const pct=document.getElementById('workingProgressText');const bar=document.getElementById('workingProgressBar');const file=document.getElementById('workingFile');if(!d)return;const p=Number(d.percent||0);if(pct){{const total=Number(d.total||0);const cur=Number(d.current||0);pct.textContent=total?('Dokument '+cur+' von '+total+' · '+p+' %'):(p+' %');}}if(bar)bar.style.width=Math.max(0,Math.min(100,p))+'%';if(file)file.textContent=d.current_file?('Aktuell: '+d.current_file):(d.message||'');}}catch(e){{}}}}function startWorkingProgress(){{if(workingPoll)clearInterval(workingPoll);workingPoll=setInterval(async()=>{{try{{const r=await fetch('/test/massentest/progress?ts='+Date.now(),{{cache:'no-store'}});if(r.ok)updateWorkingProgress(await r.json());}}catch(e){{}}}},900);}}function showWorking(text,useProgress=true){{const ov=document.getElementById('workingOverlay'); if(!ov)return; if(workingPoll){{clearInterval(workingPoll);workingPoll=null;}} const msg=document.getElementById('workingText'); if(msg&&text)msg.textContent=text; const pct=document.getElementById('workingProgressText'); if(pct)pct.textContent=useProgress?'Fortschritt wird vorbereitet ...':'Sollwerte für dieses Dokument werden gespeichert ...'; const bar=document.getElementById('workingProgressBar'); if(bar)bar.style.width='0%'; const file=document.getElementById('workingFile'); if(file)file.textContent=''; ov.style.display='flex'; if(useProgress)startWorkingProgress();}}document.addEventListener('DOMContentLoaded',()=>{{document.querySelectorAll('form').forEach(f=>{{f.addEventListener('submit',(e)=>{{setTimeout(()=>{{if(!e.defaultPrevented)showWorking(f.getAttribute('data-working')||'Bitte warten – die WebUI arbeitet ...',f.getAttribute('data-progress')!=='0');}},80);}});}});document.querySelectorAll('a[data-working]').forEach(a=>a.addEventListener('click',()=>showWorking(a.getAttribute('data-working'),a.getAttribute('data-progress')!=='0')));}});</script></head><body><div id='workingOverlay' class='working-overlay'><div class='working-box'><div class='spinner'></div><div><div class='working-title'>Verarbeitung läuft</div><div id='workingText' class='working-sub'>Bitte warten – die WebUI arbeitet ...</div><div id='workingProgressText' class='working-sub' style='margin-top:8px;font-weight:900'>Fortschritt wird vorbereitet ...</div><div class='progress-wrap' style='margin-top:8px;width:320px;max-width:100%'><div id='workingProgressBar' class='progress-bar' style='width:0%'></div></div><div id='workingFile' class='working-sub' style='margin-top:6px;max-width:340px;word-break:break-word'></div></div></div></div><div class='top'><div class='top-line'><h1>ecoDMS Control Center <span class='muted small'>WebUI {APP_VERSION}{scan_version_text}</span></h1><div class='area-badges'>{area_badges}</div></div></div><div class='nav'>{nav}</div><main class='wrap'>{body}</main><div id='ecoConfirmModal' class='eco-modal-backdrop' role='dialog' aria-modal='true' aria-hidden='true'><div id='ecoConfirmBox' class='eco-modal'><div class='eco-modal-head'><h2 id='ecoConfirmTitle' class='eco-modal-title'>Aktion bestätigen</h2></div><div class='eco-modal-body'><div id='ecoConfirmMessage' class='eco-modal-message'></div><div id='ecoConfirmDetails' class='eco-modal-details' style='display:none'></div></div><div class='eco-modal-actions'><button id='ecoConfirmNo' class='eco-modal-cancel' type='button'>Nein, abbrechen</button><button id='ecoConfirmYes' class='eco-modal-ok' type='button'>Ja, ausführen</button></div></div></div><script>let ecoPendingForm=null;let ecoPendingSubmitter=null;function ecoShowConfirm(form,submitter){{ecoPendingForm=form;ecoPendingSubmitter=submitter||null;const modal=document.getElementById('ecoConfirmModal');const box=document.getElementById('ecoConfirmBox');const title=document.getElementById('ecoConfirmTitle');const msg=document.getElementById('ecoConfirmMessage');const det=document.getElementById('ecoConfirmDetails');const yes=document.getElementById('ecoConfirmYes');if(!modal||!box)return false;const src=submitter||form;title.textContent=src.getAttribute('data-confirm-title')||form.getAttribute('data-confirm-title')||'Aktion bestätigen';msg.textContent=src.getAttribute('data-confirm-message')||form.getAttribute('data-confirm-message')||'Diese Aktion wirklich ausführen?';const details=src.getAttribute('data-confirm-details')||form.getAttribute('data-confirm-details')||'';det.textContent=details;det.style.display=details?'block':'none';box.className='eco-modal '+(src.getAttribute('data-confirm-kind')||form.getAttribute('data-confirm-kind')||'');yes.textContent=src.getAttribute('data-confirm-ok')||form.getAttribute('data-confirm-ok')||'Ja, ausführen';modal.style.display='flex';modal.setAttribute('aria-hidden','false');return false;}}function ecoCloseConfirm(){{const modal=document.getElementById('ecoConfirmModal');if(modal){{modal.style.display='none';modal.setAttribute('aria-hidden','true');}}ecoPendingForm=null;ecoPendingSubmitter=null;}}function initPdfPanning(){{document.querySelectorAll('[data-pdf-pan]').forEach(shell=>{{const capture=shell.querySelector('.qc-pdf-pan-capture')||shell;const frame=shell.querySelector('iframe');let dragging=false;let lastX=0;let lastY=0;function panBy(dx,dy){{let moved=false;try{{if(frame&&frame.contentWindow){{frame.contentWindow.scrollBy(dx,dy);moved=true;}}}}catch(e){{}}shell.scrollLeft+=dx;shell.scrollTop+=dy;return moved;}}capture.addEventListener('mousedown',e=>{{if(e.button!==0)return;dragging=true;lastX=e.clientX;lastY=e.clientY;shell.classList.add('dragging');e.preventDefault();}});window.addEventListener('mousemove',e=>{{if(!dragging)return;const dx=lastX-e.clientX;const dy=lastY-e.clientY;lastX=e.clientX;lastY=e.clientY;panBy(dx,dy);e.preventDefault();}});window.addEventListener('mouseup',()=>{{if(!dragging)return;dragging=false;shell.classList.remove('dragging');}});capture.addEventListener('wheel',e=>{{panBy(e.deltaX,e.deltaY);e.preventDefault();}},{{passive:false}});}});}}document.addEventListener('DOMContentLoaded',()=>{{const no=document.getElementById('ecoConfirmNo');const yes=document.getElementById('ecoConfirmYes');const modal=document.getElementById('ecoConfirmModal');if(no)no.addEventListener('click',ecoCloseConfirm);if(modal)modal.addEventListener('click',(e)=>{{if(e.target===modal)ecoCloseConfirm();}});if(yes)yes.addEventListener('click',()=>{{if(!ecoPendingForm)return;const f=ecoPendingForm;const s=ecoPendingSubmitter;ecoPendingForm=null;ecoPendingSubmitter=null;const m=document.getElementById('ecoConfirmModal');if(m)m.style.display='none';f.setAttribute('data-confirmed','1');if(s){{s.click();}}else{{f.requestSubmit();}}setTimeout(()=>f.removeAttribute('data-confirmed'),300);}});document.querySelectorAll('form').forEach(f=>{{f.addEventListener('submit',(e)=>{{if(f.getAttribute('data-confirmed')==='1')return;const submitter=e.submitter;const needs=(submitter&&(submitter.hasAttribute('data-confirm-message')||submitter.hasAttribute('data-confirm-title')))||(f.hasAttribute('data-confirm-message')||f.hasAttribute('data-confirm-title'));if(needs){{e.preventDefault();ecoShowConfirm(f,submitter);}}}},true);}});initPdfPanning();}});</script></body></html>")
+    return HTMLResponse(f"<!doctype html><html lang='de'><head><meta charset='utf-8'><title>{esc(title)}</title>{css}<script>function copyText(id){{const el=document.getElementById(id); if(!el)return; el.select(); el.setSelectionRange(0,999999); navigator.clipboard?navigator.clipboard.writeText(el.value):document.execCommand('copy');}}let workingPoll=null;function updateWorkingProgress(d){{try{{const pct=document.getElementById('workingProgressText');const bar=document.getElementById('workingProgressBar');const file=document.getElementById('workingFile');if(!d)return;const p=Number(d.percent||0);if(pct){{const total=Number(d.total||0);const cur=Number(d.current||0);pct.textContent=total?('Dokument '+cur+' von '+total+' · '+p+' %'):(p+' %');}}if(bar)bar.style.width=Math.max(0,Math.min(100,p))+'%';if(file)file.textContent=d.current_file?('Aktuell: '+d.current_file):(d.message||'');}}catch(e){{}}}}function startWorkingProgress(){{if(workingPoll)clearInterval(workingPoll);workingPoll=setInterval(async()=>{{try{{const r=await fetch('/test/massentest/progress?ts='+Date.now(),{{cache:'no-store'}});if(r.ok)updateWorkingProgress(await r.json());}}catch(e){{}}}},900);}}function showWorking(text,useProgress=true){{const ov=document.getElementById('workingOverlay'); if(!ov)return; if(workingPoll){{clearInterval(workingPoll);workingPoll=null;}} const msg=document.getElementById('workingText'); if(msg&&text)msg.textContent=text; const pct=document.getElementById('workingProgressText'); if(pct)pct.textContent=useProgress?'Fortschritt wird vorbereitet ...':'Sollwerte für dieses Dokument werden gespeichert ...'; const bar=document.getElementById('workingProgressBar'); if(bar)bar.style.width='0%'; const file=document.getElementById('workingFile'); if(file)file.textContent=''; ov.style.display='flex'; if(useProgress)startWorkingProgress();}}document.addEventListener('DOMContentLoaded',()=>{{document.querySelectorAll('form').forEach(f=>{{f.addEventListener('submit',(e)=>{{setTimeout(()=>{{if(!e.defaultPrevented)showWorking(f.getAttribute('data-working')||'Bitte warten – die WebUI arbeitet ...',f.getAttribute('data-progress')!=='0');}},80);}});}});document.querySelectorAll('a[data-working]').forEach(a=>a.addEventListener('click',()=>showWorking(a.getAttribute('data-working'),a.getAttribute('data-progress')!=='0')));}});</script></head><body><div id='workingOverlay' class='working-overlay'><div class='working-box'><div class='spinner'></div><div><div class='working-title'>Verarbeitung läuft</div><div id='workingText' class='working-sub'>Bitte warten – die WebUI arbeitet ...</div><div id='workingProgressText' class='working-sub' style='margin-top:8px;font-weight:900'>Fortschritt wird vorbereitet ...</div><div class='progress-wrap' style='margin-top:8px;width:320px;max-width:100%'><div id='workingProgressBar' class='progress-bar' style='width:0%'></div></div><div id='workingFile' class='working-sub' style='margin-top:6px;max-width:340px;word-break:break-word'></div></div></div></div><div class='top'><div class='top-line'><h1>ecoDMS Control Center <span class='muted small'>WebUI {APP_VERSION}{scan_version_text}</span></h1><div class='area-badges'>{area_badges}</div></div></div><div class='nav'>{nav}</div><main class='wrap'>{body}</main><div id='ecoConfirmModal' class='eco-modal-backdrop' role='dialog' aria-modal='true' aria-hidden='true'><div id='ecoConfirmBox' class='eco-modal'><div class='eco-modal-head'><h2 id='ecoConfirmTitle' class='eco-modal-title'>Aktion bestätigen</h2></div><div class='eco-modal-body'><div id='ecoConfirmMessage' class='eco-modal-message'></div><div id='ecoConfirmDetails' class='eco-modal-details' style='display:none'></div></div><div class='eco-modal-actions'><button id='ecoConfirmNo' class='eco-modal-cancel' type='button'>Nein, abbrechen</button><button id='ecoConfirmYes' class='eco-modal-ok' type='button'>Ja, ausführen</button></div></div></div><script>let ecoPendingForm=null;let ecoPendingSubmitter=null;function ecoShowConfirm(form,submitter){{ecoPendingForm=form;ecoPendingSubmitter=submitter||null;const modal=document.getElementById('ecoConfirmModal');const box=document.getElementById('ecoConfirmBox');const title=document.getElementById('ecoConfirmTitle');const msg=document.getElementById('ecoConfirmMessage');const det=document.getElementById('ecoConfirmDetails');const yes=document.getElementById('ecoConfirmYes');if(!modal||!box)return false;const src=submitter||form;title.textContent=src.getAttribute('data-confirm-title')||form.getAttribute('data-confirm-title')||'Aktion bestätigen';msg.textContent=src.getAttribute('data-confirm-message')||form.getAttribute('data-confirm-message')||'Diese Aktion wirklich ausführen?';const details=src.getAttribute('data-confirm-details')||form.getAttribute('data-confirm-details')||'';det.textContent=details;det.style.display=details?'block':'none';box.className='eco-modal '+(src.getAttribute('data-confirm-kind')||form.getAttribute('data-confirm-kind')||'');yes.textContent=src.getAttribute('data-confirm-ok')||form.getAttribute('data-confirm-ok')||'Ja, ausführen';modal.style.display='flex';modal.setAttribute('aria-hidden','false');return false;}}function ecoCloseConfirm(){{const modal=document.getElementById('ecoConfirmModal');if(modal){{modal.style.display='none';modal.setAttribute('aria-hidden','true');}}ecoPendingForm=null;ecoPendingSubmitter=null;}}function initPdfPanning(){{document.querySelectorAll('[data-pdf-pan]').forEach(shell=>{{if(shell.dataset.panReady==='1')return;shell.dataset.panReady='1';const capture=shell.querySelector('.qc-pdf-pan-capture')||shell;let dragging=false;let lastX=0;let lastY=0;function startDrag(e){{if(e.button!==0)return;dragging=true;lastX=e.clientX;lastY=e.clientY;shell.classList.add('dragging');e.preventDefault();}}function stopDrag(){{if(!dragging)return;dragging=false;shell.classList.remove('dragging');}}capture.addEventListener('mousedown',startDrag);window.addEventListener('mousemove',e=>{{if(!dragging)return;const dx=lastX-e.clientX;const dy=lastY-e.clientY;lastX=e.clientX;lastY=e.clientY;shell.scrollLeft+=dx;shell.scrollTop+=dy;e.preventDefault();}});window.addEventListener('mouseup',stopDrag);window.addEventListener('blur',stopDrag);capture.addEventListener('wheel',e=>{{shell.scrollLeft+=e.deltaX;shell.scrollTop+=e.deltaY;e.preventDefault();}},{{passive:false}});}});}}document.addEventListener('DOMContentLoaded',()=>{{const no=document.getElementById('ecoConfirmNo');const yes=document.getElementById('ecoConfirmYes');const modal=document.getElementById('ecoConfirmModal');if(no)no.addEventListener('click',ecoCloseConfirm);if(modal)modal.addEventListener('click',(e)=>{{if(e.target===modal)ecoCloseConfirm();}});if(yes)yes.addEventListener('click',()=>{{if(!ecoPendingForm)return;const f=ecoPendingForm;const s=ecoPendingSubmitter;ecoPendingForm=null;ecoPendingSubmitter=null;const m=document.getElementById('ecoConfirmModal');if(m)m.style.display='none';f.setAttribute('data-confirmed','1');if(s){{s.click();}}else{{f.requestSubmit();}}setTimeout(()=>f.removeAttribute('data-confirmed'),300);}});document.querySelectorAll('form').forEach(f=>{{f.addEventListener('submit',(e)=>{{if(f.getAttribute('data-confirmed')==='1')return;const submitter=e.submitter;const needs=(submitter&&(submitter.hasAttribute('data-confirm-message')||submitter.hasAttribute('data-confirm-title')))||(f.hasAttribute('data-confirm-message')||f.hasAttribute('data-confirm-title'));if(needs){{e.preventDefault();ecoShowConfirm(f,submitter);}}}},true);}});initPdfPanning();}});</script></body></html>")
 
 
 
@@ -5372,6 +5372,37 @@ def massentest_result_values_html(row: dict[str, str]) -> tuple[str, str, bool]:
     return ist_rows, compare_html, bool(soll_count and diffs)
 
 
+def massentest_pdf_review_panel_html(row_id: str, zoom: int = 90) -> str:
+    rid = quote(row_id)
+    return f"""
+        <div class='qc-fast-pdf'>
+          <div class='qc-pdf-pan-shell' data-pdf-pan>
+            <iframe loading='lazy' src='/test/massentest/pdf/{rid}#page=1&zoom={int(zoom)}'></iframe>
+            <div class='qc-pdf-pan-capture' aria-label='PDF mit gedrueckter Maustaste verschieben'></div>
+          </div>
+          <div class='qc-pdf-pan-hint'>PDF mit gedrueckter linker Maustaste verschieben. Scrollleisten bleiben nutzbar.</div>
+        </div>
+    """
+
+
+def render_document_review(title: str, row_id: str, right_html: str, *, subtitle: str = "", badge: str = "Dokumentenprüfung", back_html: str = "", flash: str = "", zoom: int = 90) -> str:
+    subtitle_html = f"<p class='muted small'>{esc(subtitle)}</p>" if subtitle else ""
+    return f"""
+    {back_html}
+    {flash}
+    <div class='card qc-fast-card'>
+      <div class='section-head'><h2>{esc(title)}</h2><span class='count-badge'>{esc(badge)}</span></div>
+      {subtitle_html}
+      <div class='qc-fast-review'>
+        {massentest_pdf_review_panel_html(row_id, zoom)}
+        <div class='qc-fast-panel'>
+          {right_html}
+        </div>
+      </div>
+    </div>
+    """
+
+
 @app.get("/test/massentest/result/{row_id}", response_class=HTMLResponse)
 def massentest_result(row_id: str, msg: str = "") -> HTMLResponse:
     rows = massentest_read_results()
@@ -5429,10 +5460,7 @@ def massentest_result(row_id: str, msg: str = "") -> HTMLResponse:
             quality_hint_html = "<div class='massentest-alert'>Hinweis: Lieferant fehlt oder Dokumenttyp ist unbekannt. Bitte PDF-Vorschau prüfen und ggf. Sollwerte bearbeiten oder Test nicht bestanden wählen.</div>"
     except Exception:
         quality_hint_html = ""
-    body = f"""
-    {flash}
-    <div class='card result-focus'><div class='section-head'><h2>Testergebnis: {esc(file_name)}</h2><span class='mini-tag'>Massentest</span></div>
-      <p class='muted small'>Ergebnis prüfen, PDF öffnen, Sollwerte bearbeiten oder Aufgabe aktualisieren.</p>
+    right_html = f"""
       <div class='resultbar'>
         <a class='btn2' href='/test/massentest#mtrow-{esc(row_id)}'>← Zurück zur Übersicht</a>
         {pdf_button}
@@ -5441,13 +5469,9 @@ def massentest_result(row_id: str, msg: str = "") -> HTMLResponse:
       {permanent_actions_html}
       {quality_hint_html}
       {auto_pass_html}
-      <div class='result-grid'><div class='result-card'><h3>1. Erkannte Ist-Werte</h3><table>{ist_rows}</table></div><div class='result-card'><h3>2. Soll/Ist-Prüfung</h3>{compare_html}</div></div>
-      <div class='massentest-detail-preview'>
-        <b>PDF-Vorschau Seite 1</b>
-        <div class='muted small'>Direkt unter den Werten zum schnellen Gegenprüfen. Für Details Lupe/Großansicht öffnen.</div>
-        <iframe loading='lazy' src='/test/massentest/pdf/{quote(row_id)}#page=1&zoom=85'></iframe>
-        <div class='massentest-detail-preview-actions'><a class='btn2' target='_blank' href='/test/massentest/pdf-view/{quote(row_id)}'>🔍 Große Vorschau / Lupe</a><form method='post' action='/test/massentest/open-reader/{quote(row_id)}' style='display:inline'><button class='btn2' type='submit'>PDF im Reader öffnen</button></form></div>
-      </div>
+      <div class='result-card'><h3>1. Erkannte Ist-Werte</h3><table>{ist_rows}</table></div>
+      <div class='result-card' style='margin-top:12px'><h3>2. Soll/Ist-Prüfung</h3>{compare_html}</div>
+      <div class='massentest-detail-preview-actions'><a class='btn2' target='_blank' href='/test/massentest/pdf-view/{quote(row_id)}'>Große Vorschau / Lupe</a><form method='post' action='/test/massentest/open-reader/{quote(row_id)}' style='display:inline'><button class='btn2' type='submit'>PDF im Reader öffnen</button></form></div>
       <details class='card' style='box-shadow:none;margin-top:14px'><summary><b>Massentest-Daten</b></summary><table>
         <tr><td>Alter Dateiname</td><td>{esc(row.get('alter_dateiname',''))}</td></tr>
         <tr><td>Neuer Dateiname</td><td>{esc(row.get('neuer_dateiname',''))}</td></tr>
@@ -5455,8 +5479,16 @@ def massentest_result(row_id: str, msg: str = "") -> HTMLResponse:
         <tr><td>Aufgabe</td><td>{esc(row.get('aufgabe_id',''))}</td></tr>
         <tr><td>Letzter Test</td><td>{esc(row.get('letzter_test',''))}</td></tr>
       </table></details>
-    </div>
     """
+    body = render_document_review(
+        f"Testergebnis: {file_name}",
+        row_id,
+        right_html,
+        subtitle="Ergebnis prüfen, Sollwerte bearbeiten oder Aufgabe aktualisieren. Die PDF-Vorschau bleibt links im Blick.",
+        badge="Massentest",
+        flash=flash,
+        zoom=90,
+    )
     return layout("Massentest-Testergebnis", body)
 
 
@@ -5829,13 +5861,7 @@ def massentest_fachlich_view(row_id: str, msg: str = "") -> HTMLResponse:
     <div class='card qc-fast-card'>
       <div class='section-head'><h2>Fachliche Validierung</h2><span class='count-badge'>Schnellprüfung</span></div>
       <div class='qc-fast-review'>
-        <div class='qc-fast-pdf'>
-          <div class='qc-pdf-pan-shell' data-pdf-pan>
-            <iframe loading='lazy' src='/test/massentest/pdf/{rid}#page=1&zoom=90'></iframe>
-            <div class='qc-pdf-pan-capture' aria-label='PDF mit gedrueckter Maustaste verschieben'></div>
-          </div>
-          <div class='qc-pdf-pan-hint'>PDF mit gedrueckter linker Maustaste verschieben. Scrollleisten bleiben nutzbar.</div>
-        </div>
+        {massentest_pdf_review_panel_html(rid, 90)}
         <div class='qc-fast-panel'>
           <div class='hint qc-fast-decision'>
             <b>Prüfentscheidung</b><br>
@@ -5980,13 +6006,7 @@ def massentest_detail(row_id: str, msg: str = "", source: str = "") -> HTMLRespo
     <div class='card qc-fast-card'>
       <div class='section-head'><h2>Fachliche Validierung – Sollwerte bearbeiten</h2><span class='count-badge'>Schnellprüfung</span></div>
       <div class='qc-fast-review'>
-        <div class='qc-fast-pdf'>
-          <div class='qc-pdf-pan-shell' data-pdf-pan>
-            <iframe loading='lazy' src='/test/massentest/pdf/{quote(row_id)}#page=1&zoom=90'></iframe>
-            <div class='qc-pdf-pan-capture' aria-label='PDF mit gedrueckter Maustaste verschieben'></div>
-          </div>
-          <div class='qc-pdf-pan-hint'>PDF mit gedrueckter linker Maustaste verschieben. Scrollleisten bleiben nutzbar.</div>
-        </div>
+        {massentest_pdf_review_panel_html(row_id, 90)}
         <div class='qc-fast-panel'>
           <div class='qc-fast-status'>
             <div class='hint'><b>Technischer Status</b><br>{tech_status_html}</div>
@@ -6009,22 +6029,17 @@ def massentest_detail(row_id: str, msg: str = "", source: str = "") -> HTMLRespo
     </div>
     """
         return layout("Sollwerte bearbeiten", body)
-    body = f"""
-    <div class='top-actions'><div><b>Massentest-Sollwerte</b></div><div>{prev_link} {next_link} <a class='btn2' href='{back_href}'>← Zurück zur Prüfliste</a></div></div>
-    {flash}
-    <div class='card'>
-      <h2>{esc(row.get('alter_dateiname','Massentest-Dokument'))}</h2>
+    top_actions = f"<div class='top-actions'><div><b>Massentest-Sollwerte</b></div><div>{prev_link} {next_link} <a class='btn2' href='{back_href}'>← Zurück zur Prüfliste</a></div></div>"
+    right_html = f"""
       {detail_status_html}
       <div class='grid' style='grid-template-columns:1fr 1fr'>
         <div class='hint'><b>Originaldatei</b><br><span class='folder-name'>{esc(row.get('alter_dateiname',''))}</span></div>
         <div class='hint'><b>Neuer Dateiname</b><br><span class='folder-name'>{esc(row.get('neuer_dateiname',''))}</span></div>
       </div>
-      <p style='margin-top:12px'>{pdf_link}</p>
-      <p class='muted small'>PDF-Pfad im Massentest: <span class='folder-name'>{esc(str(p) if p else '')}</span></p>
       <div class='hint small' style='margin-top:10px'>Prüfentscheidung und Aufgabenstatus befinden sich gesammelt unterhalb der Soll-/Ist-Werte.</div>
-    </div>
-    <div class='card massentest-review-card'>
-      <h2>Soll-/Ist-Werte</h2>
+      <div style='margin-top:12px'>{pdf_link}</div>
+      <p class='muted small'>PDF-Pfad im Massentest: <span class='folder-name'>{esc(str(p) if p else '')}</span></p>
+      <h3>Soll-/Ist-Werte</h3>
       <form method='post' action='/test/massentest/review/{quote(row_id)}' data-working='Prüfentscheidung wird gespeichert...'>
         <input type='hidden' name='source' value='{esc(source_norm)}'>
         <table class='massentest-review-table'><tr><th>Feld</th><th>Ist-Wert</th><th>Soll-Wert</th><th>Status</th></tr>{vergleich_rows}</table>
@@ -6038,16 +6053,19 @@ def massentest_detail(row_id: str, msg: str = "", source: str = "") -> HTMLRespo
           <button class='btn2' name='action' value='nur_notiz' type='submit'>Nur speichern</button>
         </div>
       </form>
-      <div class='massentest-detail-preview'>
-        <b>PDF-Vorschau Seite 1</b>
-        <div class='muted small'>Direkt unter den Soll-/Ist-Werten zum schnellen Gegenprüfen. Für Details Lupe/Großansicht öffnen.</div>
-        <iframe loading='lazy' src='/test/massentest/pdf/{quote(row_id)}#page=1&zoom=85'></iframe>
-        <div class='massentest-detail-preview-actions'><a class='btn2' target='_blank' href='/test/massentest/pdf-view/{quote(row_id)}'>🔍 Große Vorschau / Lupe</a><form method='post' action='/test/massentest/open-reader/{quote(row_id)}' style='display:inline'><button class='btn2' type='submit'>PDF im Reader öffnen</button></form></div>
-      </div>
-    </div>
-    <div class='top-actions'><div>{prev_link} {next_link}</div><a class='btn2' href='{back_href}'>← Zurück zur Prüfliste</a></div>
-    <div class='card small muted'>Lauf: {esc(row.get('lauf_id',''))} · OCR: {esc(row.get('ocr_qualitaet',''))} · Verarbeitung: {esc(row.get('status',''))} · Aufgabe: {esc(row.get('aufgabe_id',''))} · Hinweis: {esc(row.get('hinweis',''))}</div>
+      <div class='massentest-detail-preview-actions'><a class='btn2' target='_blank' href='/test/massentest/pdf-view/{quote(row_id)}'>Große Vorschau / Lupe</a><form method='post' action='/test/massentest/open-reader/{quote(row_id)}' style='display:inline'><button class='btn2' type='submit'>PDF im Reader öffnen</button></form></div>
+      <div class='card small muted' style='box-shadow:none;margin-top:12px'>Lauf: {esc(row.get('lauf_id',''))} · OCR: {esc(row.get('ocr_qualitaet',''))} · Verarbeitung: {esc(row.get('status',''))} · Aufgabe: {esc(row.get('aufgabe_id',''))} · Hinweis: {esc(row.get('hinweis',''))}</div>
     """
+    body = render_document_review(
+        str(row.get('alter_dateiname', 'Massentest-Dokument') or 'Massentest-Dokument'),
+        row_id,
+        right_html,
+        subtitle="PDF links, Soll-/Ist-Werte und Entscheidungen rechts.",
+        badge="Massentest",
+        back_html=top_actions,
+        flash=flash,
+        zoom=90,
+    )
     return layout("Massentest-Prüfung", body)
 
 
