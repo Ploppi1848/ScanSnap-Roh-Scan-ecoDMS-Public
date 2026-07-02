@@ -1,8 +1,29 @@
 # Changelog WebUI 4.0
 
+## Sprint 5F - Supplier Trace
+
+Status: umgesetzt, Auswertung im naechsten Regressionstest
+
+Ziel:
+
+- Lieferantenpipeline transparent machen
+- Lieferantenaenderungen mit `SUPPLIER_TRACE` protokollieren
+- Ursache falscher Lieferantenwerte vor dem Supplier Guard sichtbar machen
+
+Umsetzung:
+
+- Trace-Schreiber fuer `_debug_text/supplier_trace_<timestamp>.txt`
+- Trace bei `safe_set_meta(...)`
+- Vorher/Nachher-Trace fuer wichtige Lieferantenphasen
+- keine OCR-Volltexte im Trace
+
+Pruefung:
+
+- `python -m py_compile _service\ecodms_scan_service.py` erfolgreich
+
 ## Sprint 5E-B - Lieferantenentscheidung Guard
 
-Status: umgesetzt, Regressionstest noch offen
+Status: getestet, keine Regressionen, keine messbare Wirkung
 
 Ziel:
 

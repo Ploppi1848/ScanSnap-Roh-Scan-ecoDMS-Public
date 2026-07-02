@@ -2,19 +2,20 @@
 
 Aktueller Branch: develop
 
-Letzter abgeschlossener Sprint: Sprint 5E-A
+Letzter abgeschlossener Sprint: Sprint 5E-B
 
-Aktueller Sprint: Sprint 5E-B
+Aktueller Sprint: Sprint 5F
 
 Ziel:
 
-- Lieferantenentscheidung gegen schwache spaete Gewinner stabilisieren
-- falsche Lieferantenfolgefehler in Dateinamen reduzieren
-- Guard fuer Amtsgericht, Telekom, Amazon, LVM, Sparda, E-Mail-Adressen und OCR-Fragmente
+- Lieferantenpipeline transparent machen
+- Entscheidungswege mit `SUPPLIER_TRACE` nachvollziehbar protokollieren
+- Ursache falscher Lieferantenwerte vor dem Supplier Guard identifizieren
 
 Rahmen:
 
-- kleiner isolierter Scan-Service-Guard
+- Analyse- und Logging-Sprint
+- keine fachliche Logikaenderung
 - keine WebUI-Aenderungen
 - keine Refactoring-Arbeiten
 - keine Referenzdaten uebernehmen
@@ -22,4 +23,5 @@ Rahmen:
 
 Naechster moeglicher Schritt:
 
-- Buildvergleich / Regressionstest fuer Sprint 5E-B
+- Regressionstest mit Supplier Trace auswerten
+- danach Sprint 5G gezielte Korrektur der erkannten Pipeline-Stufe

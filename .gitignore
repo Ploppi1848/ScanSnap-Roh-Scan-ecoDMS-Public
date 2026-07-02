@@ -98,3 +98,16 @@ _massentest/ergebnisse/massentest_fortschritt.json
 
 # Build-Backups
 _release_4_0/*backup*/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Python-Cache
+.pytest_cache/
+.mypy_cache/
+
+# macOS
+.DS_Store

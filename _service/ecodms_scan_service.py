@@ -5336,6 +5336,39 @@ def _set_status_unbekannt_v573(meta: dict, feld: str) -> None:
 SAFE_META_PROTECTED_FIELDS = {"LIEFERANT", "DOKUMENTTYP", "RECHNR", "KUNDENNR", "GESAMTBETRAG"}
 
 
+try:
+    SUPPLIER_TRACE_DATEI = DEBUG_TEXT_ORDNER / f"supplier_trace_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+except Exception:
+    SUPPLIER_TRACE_DATEI = None
+
+
+def supplier_trace(step: str, old_value, new_value, reason: str = "", score=None, source: str = "") -> None:
+    """Schreibt nur Lieferantenaenderungen, ohne OCR-Volltext zu protokollieren."""
+    old_norm = _safe_meta_norm(old_value)
+    new_norm = _safe_meta_norm(new_value)
+    if old_norm == new_norm:
+        return
+    score_text = "" if score is None else str(score)
+    line = (
+        f"SUPPLIER_TRACE | Schritt: {step or ''} | Alt: {old_norm} | Neu: {new_norm} | "
+        f"Grund: {reason or ''} | Score: {score_text} | Quelle: {source or ''}"
+    )
+    try:
+        logging.info(line)
+    except Exception:
+        pass
+    try:
+        if SUPPLIER_TRACE_DATEI is not None:
+            SUPPLIER_TRACE_DATEI.parent.mkdir(parents=True, exist_ok=True)
+            with open(SUPPLIER_TRACE_DATEI, "a", encoding="utf-8") as f:
+                f.write(line + "\n")
+    except Exception as e:
+        try:
+            logging.warning(f"SUPPLIER_TRACE konnte nicht geschrieben werden: {e}")
+        except Exception:
+            pass
+
+
 def _safe_meta_norm(value) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip())
 
@@ -5517,18 +5550,21 @@ def safe_set_meta(meta: dict, field: str, value, reason: str = "", force: bool =
     if force or field not in SAFE_META_PROTECTED_FIELDS:
         meta[field] = new_value
         if field == "LIEFERANT":
+            supplier_trace("safe_set_meta", current, new_value, reason="force/nicht geschuetztes Feld", source=reason)
             _supplier_decision_log(current, new_value, reason, "force/nicht geschuetztes Feld", True)
         return True
     if not _safe_meta_is_plausible(field, current):
         meta[field] = new_value
         logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen leerem/schwachem Ausgangswert ({reason})")
         if field == "LIEFERANT":
+            supplier_trace("safe_set_meta", current, new_value, reason="leerem/schwachem Ausgangswert", source=reason)
             _supplier_decision_log(current, new_value, reason, "leerem/schwachem Ausgangswert", True)
         return True
     if _safe_meta_norm_key(current) == _safe_meta_norm_key(new_value):
         meta[field] = new_value
         logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen normalisierter Variante ({reason})")
         if field == "LIEFERANT":
+            supplier_trace("safe_set_meta", current, new_value, reason="normalisierte Variante", source=reason)
             _supplier_decision_log(current, new_value, reason, "normalisierter Variante", True)
         return True
     if field == "LIEFERANT":
@@ -5536,6 +5572,7 @@ def safe_set_meta(meta: dict, field: str, value, reason: str = "", force: bool =
         if allowed:
             meta[field] = new_value
             logging.info(f"SAFE_META: LIEFERANT='{new_value}' erlaubt wegen {why}; vorher '{current}' ({reason})")
+            supplier_trace("safe_set_meta", current, new_value, reason=why, source=reason)
             _supplier_decision_log(current, new_value, reason, why, True)
             return True
         logging.info(f"SAFE_META: LIEFERANT bleibt '{current}', '{new_value}' blockiert wegen {why} ({reason})")
@@ -12331,5 +12368,60 @@ if _korrigiere_felder_v54_orig_670 is not None:
 
 try:
     logging.info("Scan-Service Erweiterung geladen: 6.7 Supplier Guard")
+except Exception:
+    pass
+
+
+# ============================================================
+# SCAN-SERVICE 6.8 - SUPPLIER TRACE
+# ============================================================
+# Ziel: Lieferantenentscheidungen nachvollziehbar machen, ohne die
+# fachliche Erkennungslogik zu veraendern.
+
+
+def _supplier_trace_wrap_phase_680(func, step: str, source: str):
+    def _wrapped(*args, **kwargs):
+        meta_before = None
+        for arg in reversed(args):
+            if isinstance(arg, dict):
+                meta_before = arg
+                break
+        old_supplier = str((meta_before or {}).get("LIEFERANT", "") or "")
+        result = func(*args, **kwargs)
+        meta_after = result if isinstance(result, dict) else meta_before
+        new_supplier = str((meta_after or {}).get("LIEFERANT", "") or "")
+        supplier_trace(step, old_supplier, new_supplier, reason="Phase hat Lieferant geaendert", source=source)
+        return result
+    return _wrapped
+
+
+def _supplier_trace_install_680(name: str, step: str, source: str) -> None:
+    try:
+        func = globals().get(name)
+        if callable(func) and not getattr(func, "_supplier_trace_wrapped_680", False):
+            wrapped = _supplier_trace_wrap_phase_680(func, step, source)
+            setattr(wrapped, "_supplier_trace_wrapped_680", True)
+            globals()[name] = wrapped
+    except Exception as e:
+        logging.warning(f"SUPPLIER_TRACE Wrapper konnte fuer {name} nicht installiert werden: {e}")
+
+
+for _supplier_trace_name_680, _supplier_trace_step_680, _supplier_trace_source_680 in [
+    ("_apply_restklassifizierung_591", "5.9.1 Restklassifizierung", "Fallback/Dateiname/Kontext"),
+    ("_apply_lieferantenentscheidung_593", "5.9.3 Lieferantenentscheidung", "Restfall/Kontext"),
+    ("_apply_restfaelle_5102", "5.10.2 Restfaelle", "Restfall"),
+    ("_apply_generisch_5110", "5.11.0 Generikerkennung", "Kopfbereich/Regex/Fallback"),
+    ("_apply_quality_600", "6.0 Qualitaetsoffensive", "Regex/Kontext"),
+    ("_apply_lieferantenoffensive_610", "6.1 Lieferantenoffensive", "Regex/Kontext"),
+    ("_apply_betraege_nummern_630", "6.3 Betraege/Nummern", "Kontext"),
+    ("_apply_stabilisierung_641", "6.4.1 Stabilisierung", "Stabilisierung"),
+    ("_apply_medizinische_lieferanten_650", "6.5 Medizinische Lieferanten", "Kopfbereich/Score"),
+    ("_apply_supplier_guard_670", "6.7 Supplier Guard", "Guard/Konfiguration"),
+]:
+    _supplier_trace_install_680(_supplier_trace_name_680, _supplier_trace_step_680, _supplier_trace_source_680)
+
+
+try:
+    logging.info("Scan-Service Erweiterung geladen: 6.8 Supplier Trace")
 except Exception:
     pass
