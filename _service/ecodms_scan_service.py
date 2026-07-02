@@ -11930,3 +11930,237 @@ try:
     logging.info("Scan-Service Erweiterung geladen: 6.5 medizinische Lieferanten")
 except Exception:
     pass
+
+
+# ============================================================
+# SCAN-SERVICE 6.6 - LABEL/WERT-BLOCKERKENNUNG NUMMERN
+# ============================================================
+# Ziel: Nummern aus OCR-Bloecken erkennen, in denen mehrere Labels und
+# Werte untereinander stehen. Keine lieferantenspezifischen Hartwerte.
+
+_erzeuge_meta_daten_orig_660 = erzeuge_meta_daten
+try:
+    _korrigiere_felder_v54_orig_660 = korrigiere_felder_v54
+except Exception:
+    _korrigiere_felder_v54_orig_660 = None
+
+
+def _label_block_lines_660(text: str) -> list[str]:
+    try:
+        t = normalisiere_ocr_text(text or "")
+    except Exception:
+        t = str(text or "")
+    return [re.sub(r"\s+", " ", z).strip() for z in t.splitlines() if z and z.strip()]
+
+
+def _label_block_label_660(line: str) -> str:
+    raw = str(line or "").strip()
+    low = raw.lower()
+    # Reihenfolge ist wichtig: Rechnungsdatum darf nicht als Rechnungsnummer gelten.
+    if re.search(r"\brechnungs\s*[- ]?\s*datum\b|\brechnung\s*datum\b", low, re.IGNORECASE):
+        return "RECHDATUM"
+    if re.search(
+        r"\b(rechnungs\s*[- ]?\s*n\s*\.?\s*r\.?|rechnungs\s*[- ]?\s*nr\.?|"
+        r"rechnungsnummer|rechnung\s+nr\.?|rechn\.\s*[- ]?\s*nr\.?)\b",
+        low,
+        re.IGNORECASE,
+    ):
+        return "RECHNR"
+    if re.search(
+        r"\b(kunden\s*[- ]?\s*n\s*\.?\s*r\.?|kunden\s*[- ]?\s*nr\.?|"
+        r"kundennummer|kunden\s+nr\.?|kd\.\s*[- ]?\s*nr\.?)\b",
+        low,
+        re.IGNORECASE,
+    ):
+        return "KUNDENNR"
+    return ""
+
+
+def _label_block_strip_label_660(line: str) -> str:
+    value = str(line or "")
+    patterns = [
+        r"rechnungs\s*[- ]?\s*datum",
+        r"rechnung\s*datum",
+        r"rechnungs\s*[- ]?\s*n\s*\.?\s*r\.?",
+        r"rechnungs\s*[- ]?\s*nr\.?",
+        r"rechnungsnummer",
+        r"rechnung\s+nr\.?",
+        r"rechn\.\s*[- ]?\s*nr\.?",
+        r"kunden\s*[- ]?\s*n\s*\.?\s*r\.?",
+        r"kunden\s*[- ]?\s*nr\.?",
+        r"kundennummer",
+        r"kunden\s+nr\.?",
+        r"kd\.\s*[- ]?\s*nr\.?",
+    ]
+    for pat in patterns:
+        value = re.sub(pat, " ", value, flags=re.IGNORECASE)
+    return value.strip(" :;,.|-")
+
+
+def _label_block_value_660(field: str, value: str) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    raw_l = raw.lower()
+    if any(x in raw_l for x in ["eur", "euro", "retoure", "gutschrift", "gesamt", "betrag"]):
+        logging.info("LABEL_BLOCK: Kandidat verworfen wegen Betrags-/Gutschriftkontext | feld=%s | wert='%s'", field, raw)
+        return ""
+    if re.search(r"\d+[,.]\d{2}", raw):
+        logging.info("LABEL_BLOCK: Kandidat verworfen wegen Betrag | feld=%s | wert='%s'", field, raw)
+        return ""
+    if re.fullmatch(r"\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}", raw):
+        return ""
+    digits = re.sub(r"\D", "", raw)
+    if field == "RECHNR":
+        if re.fullmatch(r"\d{8,12}", digits):
+            return digits
+    if field == "KUNDENNR":
+        if re.fullmatch(r"\d{6,10}", digits):
+            return digits
+    logging.info("LABEL_BLOCK: Kandidat verworfen wegen Plausibilitaet | feld=%s | wert='%s'", field, raw)
+    return ""
+
+
+def extract_label_value_blocks(text: str) -> dict:
+    """Extrahiert RECHNR/KUNDENNR aus Labelbloecken mit versetzten Werten."""
+    lines = _label_block_lines_660(text)
+    result: dict[str, str] = {}
+
+    # 1) Direktform: Label und Wert in derselben Zeile.
+    for line in lines:
+        field = _label_block_label_660(line)
+        if field not in {"RECHNR", "KUNDENNR"}:
+            continue
+        tail = _label_block_strip_label_660(line)
+        value = _label_block_value_660(field, tail)
+        if value and field not in result:
+            result[field] = value
+            logging.info("LABEL_BLOCK: Direktwert erkannt | feld=%s | wert=%s | zeile='%s'", field, value, line[:160])
+
+    # 2) Direktform mit Labelzeile und Wert in der Folgezeile.
+    for idx, line in enumerate(lines):
+        field = _label_block_label_660(line)
+        if field not in {"RECHNR", "KUNDENNR"} or field in result:
+            continue
+        if _label_block_strip_label_660(line):
+            continue
+        for next_line in lines[idx + 1:idx + 5]:
+            if _label_block_label_660(next_line):
+                break
+            value = _label_block_value_660(field, next_line)
+            if value:
+                result[field] = value
+                logging.info("LABEL_BLOCK: Folgezeilenwert erkannt | feld=%s | wert=%s | label='%s'", field, value, line[:120])
+                break
+
+    # 3) Blockform: mehrere Labels untereinander, Werte darunter in gleicher Reihenfolge.
+    for idx, line in enumerate(lines):
+        first_field = _label_block_label_660(line)
+        if first_field not in {"RECHNR", "KUNDENNR", "RECHDATUM"}:
+            continue
+        labels = []
+        j = idx
+        while j < len(lines):
+            field = _label_block_label_660(lines[j])
+            if not field or _label_block_strip_label_660(lines[j]):
+                break
+            labels.append(field)
+            j += 1
+            if len(labels) >= 6:
+                break
+        if len(labels) < 2 or not ({"RECHNR", "KUNDENNR"} & set(labels)):
+            continue
+
+        values = []
+        for value_line in lines[j:j + 12]:
+            if _label_block_label_660(value_line):
+                break
+            if re.search(r"(kundenservice|www\.|iban|bic|ust|mwst|telefon|e-mail|email|artikel|menge|preis)", value_line, re.IGNORECASE):
+                continue
+            # Fuer die Positionszuordnung reicht ein Rohwert; Plausibilitaet erfolgt feldbezogen.
+            if re.search(r"\d", value_line):
+                values.append(value_line)
+            if len(values) >= len(labels):
+                break
+        if not values:
+            continue
+
+        logging.info("LABEL_BLOCK: Labelblock erkannt | labels=%s | werte=%s", labels, values[:len(labels)])
+        for pos, field in enumerate(labels):
+            if field not in {"RECHNR", "KUNDENNR"} or field in result:
+                continue
+            if pos >= len(values):
+                continue
+            value = _label_block_value_660(field, values[pos])
+            if value:
+                result[field] = value
+                logging.info("LABEL_BLOCK: Blockwert zugeordnet | feld=%s | wert=%s | position=%s", field, value, pos)
+
+    return result
+
+
+def _label_block_is_invoice_context_660(text: str, meta: dict) -> bool:
+    typ = _safe_meta_norm_key((meta or {}).get("DOKUMENTTYP", ""))
+    if typ and "rechnung" not in typ:
+        return False
+    lower = str(text or "").lower()
+    return bool(re.search(r"rechnungs\s*[- ]?\s*n\s*\.?\s*r|rechnungsnummer|kunden\s*[- ]?\s*n\s*\.?\s*r|kundennummer", lower, re.IGNORECASE))
+
+
+def _apply_label_wert_blockerkennung_660(text: str, pdf_pfad, meta_daten: dict) -> dict:
+    meta = dict(meta_daten or {})
+    full_text = str(text or "")
+    if not full_text:
+        try:
+            full_text = _debug_text_for_pdf_591(pdf_pfad)
+        except Exception:
+            full_text = ""
+    if not _label_block_is_invoice_context_660(full_text, meta):
+        return meta
+
+    found = extract_label_value_blocks(full_text)
+    if not found:
+        return meta
+
+    for field in ("RECHNR", "KUNDENNR"):
+        value = found.get(field, "")
+        if not value:
+            continue
+        current = str(meta.get(field, "") or "").strip()
+        current_digits = re.sub(r"\D", "", current)
+        if field == "RECHNR" and current_digits and len(current_digits) >= 8:
+            logging.info("LABEL_BLOCK: Uebernahme blockiert, vorhandene RECHNR plausibel | alt=%s | neu=%s", current, value)
+            continue
+        if field == "KUNDENNR" and current_digits and len(current_digits) >= 6:
+            logging.info("LABEL_BLOCK: Uebernahme blockiert, vorhandene KUNDENNR plausibel | alt=%s | neu=%s", current, value)
+            continue
+        if safe_set_meta(meta, field, value, reason="6.6 Label/Wert-Block"):
+            logging.info("LABEL_BLOCK: Uebernommen | feld=%s | wert=%s", field, value)
+        else:
+            logging.info("LABEL_BLOCK: Uebernahme blockiert durch SAFE_META | feld=%s | wert=%s | alt=%s", field, value, current)
+    return meta
+
+
+def erzeuge_meta_daten(pdf_pfad: Path, erkannter_text: str | None = None):
+    meta = _erzeuge_meta_daten_orig_660(pdf_pfad, erkannter_text)
+    try:
+        return _apply_label_wert_blockerkennung_660(erkannter_text or "", pdf_pfad, meta)
+    except Exception as e:
+        logging.warning(f"6.6 Label/Wert-Blockerkennung konnte nicht angewendet werden: {e}")
+        return meta
+
+
+if _korrigiere_felder_v54_orig_660 is not None:
+    def korrigiere_felder_v54(text: str, meta_daten: dict) -> dict:
+        meta = _korrigiere_felder_v54_orig_660(text, meta_daten)
+        try:
+            return _apply_label_wert_blockerkennung_660(text, None, meta)
+        except Exception as e:
+            logging.warning(f"6.6 Label/Wert-Blockerkennung in korrigiere_felder_v54 konnte nicht angewendet werden: {e}")
+            return meta
+
+
+try:
+    logging.info("Scan-Service Erweiterung geladen: 6.6 Label/Wert-Blockerkennung Nummern")
+except Exception:
+    pass
