@@ -1,5 +1,22 @@
 # Changelog WebUI 4.0
 
+## Sprint 5E-A - Analyse Neuer Dateiname
+
+Status: gestartet
+
+Ziel:
+
+- Analyse der 42 Dokumente mit Abweichung im Feld `Neuer Dateiname`
+- Ursachencluster fuer fehlerhafte Dateinamen bilden
+- Prioritaeten fuer Sprint 5E-B ableiten
+
+Rahmen:
+
+- keine Codeaenderungen
+- keine WebUI-Aenderungen
+- keine Refactoring-Arbeiten
+- keine Referenz- oder Sollwertaenderungen
+
 ## Sprint 5D - Generische Label/Wert-Blockerkennung fuer Nummernfelder
 
 Status: getestet und abgeschlossen
