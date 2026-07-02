@@ -2,15 +2,15 @@
 
 Aktueller Branch: develop
 
-Letzter abgeschlossener Sprint: Sprint 5E-B
+Letzter abgeschlossener Sprint: Sprint 5F
 
-Aktueller Sprint: Sprint 5F
+Aktueller Sprint: Sprint 5G
 
 Ziel:
 
-- Lieferantenpipeline transparent machen
-- Entscheidungswege mit `SUPPLIER_TRACE` nachvollziehbar protokollieren
-- Ursache falscher Lieferantenwerte vor dem Supplier Guard identifizieren
+- Lieferanten-Kandidatenliste sichtbar machen
+- Kandidaten, Scores, Quellen und Gewinner mit `SUPPLIER_CANDIDATES` protokollieren
+- problematische Dokumente wie Franke, Lehner, Bausparkasse, Sparda, Bonprix/Amazon und Telekom analysierbar machen
 
 Rahmen:
 
@@ -23,5 +23,5 @@ Rahmen:
 
 Naechster moeglicher Schritt:
 
-- Regressionstest mit Supplier Trace auswerten
-- danach Sprint 5G gezielte Korrektur der erkannten Pipeline-Stufe
+- Regressionstest mit Supplier Candidates auswerten
+- danach gezielte Korrektur der erkannten Kandidaten-/Gewinnerstufe

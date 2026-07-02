@@ -1193,6 +1193,22 @@ def finde_mapping_wert(text: str, eintraege: list[dict], feldname: str) -> str:
         for suchwort in eintrag["suchwoerter"]:
             if suchwort.lower() in text_lower:
                 logging.info(f"{feldname} erkannt: {eintrag['name']} über Suchwort '{suchwort}'")
+                if str(feldname or "").strip().lower() == "lieferant":
+                    try:
+                        supplier_candidates_log(
+                            "finde_mapping_wert",
+                            winner=eintrag["name"],
+                            candidates=[{
+                                "name": eintrag["name"],
+                                "score": "",
+                                "source": "Konfiguration/Texttreffer",
+                                "reason": f"erster Mappingtreffer ueber Suchwort: {suchwort}",
+                            }],
+                            source="Konfiguration/Texttreffer",
+                            reason="Fallback ohne Score",
+                        )
+                    except Exception:
+                        pass
                 return eintrag["name"]
 
     logging.info(f"{feldname} nicht erkannt.")
@@ -1283,9 +1299,29 @@ def finde_lieferant_kandidat_bewertet(text: str, eintraege: list[dict]) -> str:
                     candidates.append((score, -idx, name, sw, line[:120]))
     if not candidates:
         logging.info("Lieferant nicht erkannt.")
+        try:
+            supplier_candidates_log(
+                "finde_lieferant_kandidat_bewertet",
+                winner="",
+                candidates=[],
+                source="Konfiguration/Kopfbereich",
+                reason="keine Kandidaten mit Mindestscore",
+            )
+        except Exception:
+            pass
         return ""
     candidates.sort(reverse=True, key=lambda x: (x[0], x[1], len(x[2])))
     score, neg_idx, name, sw, line = candidates[0]
+    try:
+        supplier_candidates_log(
+            "finde_lieferant_kandidat_bewertet",
+            winner=name,
+            candidates=candidates[:10],
+            source="Konfiguration/Kopfbereich",
+            reason=f"Gewinner nach Score/Kopfnaehe; Score {score}",
+        )
+    except Exception:
+        pass
     logging.info(f"Lieferant erkannt: {name} ueber Suchwort '{sw}' / Score {score} / Kopfzeile {abs(neg_idx)} / Kontext '{line}'")
     return name
 
@@ -5341,6 +5377,13 @@ try:
 except Exception:
     SUPPLIER_TRACE_DATEI = None
 
+try:
+    SUPPLIER_CANDIDATES_DATEI = DEBUG_TEXT_ORDNER / f"supplier_candidates_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+except Exception:
+    SUPPLIER_CANDIDATES_DATEI = None
+
+_SUPPLIER_CURRENT_DATEI = ""
+
 
 def supplier_trace(step: str, old_value, new_value, reason: str = "", score=None, source: str = "") -> None:
     """Schreibt nur Lieferantenaenderungen, ohne OCR-Volltext zu protokollieren."""
@@ -5365,6 +5408,81 @@ def supplier_trace(step: str, old_value, new_value, reason: str = "", score=None
     except Exception as e:
         try:
             logging.warning(f"SUPPLIER_TRACE konnte nicht geschrieben werden: {e}")
+        except Exception:
+            pass
+
+
+def _supplier_current_file() -> str:
+    return str(globals().get("_SUPPLIER_CURRENT_DATEI", "") or "")
+
+
+def supplier_candidates_log(
+    step: str,
+    winner: str = "",
+    candidates: list | None = None,
+    source: str = "",
+    reason: str = "",
+    file_name: str = "",
+) -> None:
+    """Schreibt Kandidatenlisten ohne OCR-Volltext."""
+    file_name = str(file_name or _supplier_current_file() or "").strip()
+    candidates = candidates or []
+    seen = set()
+    clean_candidates = []
+    for cand in candidates:
+        if isinstance(cand, dict):
+            name = str(cand.get("name", "") or "").strip()
+            score = cand.get("score", "")
+            cand_source = str(cand.get("source", "") or source or "").strip()
+            cand_reason = str(cand.get("reason", "") or "").strip()
+        else:
+            try:
+                score, _neg_idx, name, sw, _line = cand
+                cand_source = source or "Konfiguration/Kopfbereich"
+                cand_reason = f"Suchwort: {sw}"
+            except Exception:
+                continue
+        if not name:
+            continue
+        key = (_safe_meta_norm_key(name), cand_source)
+        if key in seen:
+            continue
+        seen.add(key)
+        clean_candidates.append({
+            "name": name,
+            "score": score,
+            "source": cand_source,
+            "reason": cand_reason,
+        })
+        if len(clean_candidates) >= 10:
+            break
+
+    header = (
+        f"SUPPLIER_CANDIDATES | Datei: {file_name} | Schritt: {step or ''} | "
+        f"Gewinner: {winner or ''} | Quelle: {source or ''} | Grund: {reason or ''}"
+    )
+    lines = [header]
+    if clean_candidates:
+        for idx, cand in enumerate(clean_candidates, 1):
+            lines.append(
+                f"  {idx}. {cand['name']} | Score: {cand['score']} | "
+                f"Quelle: {cand['source']} | Grund: {cand['reason']}"
+            )
+    else:
+        lines.append("  Keine strukturierte Kandidatenliste verfuegbar")
+
+    try:
+        logging.info(header)
+    except Exception:
+        pass
+    try:
+        if SUPPLIER_CANDIDATES_DATEI is not None:
+            SUPPLIER_CANDIDATES_DATEI.parent.mkdir(parents=True, exist_ok=True)
+            with open(SUPPLIER_CANDIDATES_DATEI, "a", encoding="utf-8") as f:
+                f.write("\n".join(lines) + "\n")
+    except Exception as e:
+        try:
+            logging.warning(f"SUPPLIER_CANDIDATES konnte nicht geschrieben werden: {e}")
         except Exception:
             pass
 
@@ -11889,6 +12007,21 @@ def _med_header_supplier_candidate_650(text: str) -> tuple[str, int, str]:
         return "", -999, ""
     candidates.sort(reverse=True, key=lambda x: (x[0], x[1], len(x[2])))
     score, neg_idx, candidate, line = candidates[0]
+    try:
+        supplier_candidates_log(
+            "6.5 Medizinische Lieferanten",
+            winner=candidate,
+            candidates=[{
+                "name": cand,
+                "score": cand_score,
+                "source": "medizinischer Kopfbereich",
+                "reason": f"Kopfzeile {abs(cand_neg_idx)}",
+            } for cand_score, cand_neg_idx, cand, _cand_line in candidates[:10]],
+            source="medizinischer Kopfbereich",
+            reason=f"Gewinner nach medizinischem Score {score}",
+        )
+    except Exception:
+        pass
     logging.info(
         "SUPPLIER_DECISION: medizinischer Kandidat gefunden | kandidat='%s' | score=%s | kopfbereich=%s | zeile='%s'",
         candidate,
@@ -12391,6 +12524,14 @@ def _supplier_trace_wrap_phase_680(func, step: str, source: str):
         meta_after = result if isinstance(result, dict) else meta_before
         new_supplier = str((meta_after or {}).get("LIEFERANT", "") or "")
         supplier_trace(step, old_supplier, new_supplier, reason="Phase hat Lieferant geaendert", source=source)
+        if _safe_meta_norm(old_supplier) != _safe_meta_norm(new_supplier):
+            supplier_candidates_log(
+                step,
+                winner=new_supplier,
+                candidates=[],
+                source=source,
+                reason="Keine strukturierte Kandidatenliste verfuegbar; Gewinner aus Phasenaenderung",
+            )
         return result
     return _wrapped
 
@@ -12423,5 +12564,32 @@ for _supplier_trace_name_680, _supplier_trace_step_680, _supplier_trace_source_6
 
 try:
     logging.info("Scan-Service Erweiterung geladen: 6.8 Supplier Trace")
+except Exception:
+    pass
+
+
+# ============================================================
+# SCAN-SERVICE 6.9 - SUPPLIER CANDIDATE CONTEXT
+# ============================================================
+# Ziel: Dateiname fuer SUPPLIER_CANDIDATES setzen, ohne fachliche Logik.
+
+_erzeuge_meta_daten_orig_690 = erzeuge_meta_daten
+
+
+def erzeuge_meta_daten(pdf_pfad: Path, erkannter_text: str | None = None):
+    global _SUPPLIER_CURRENT_DATEI
+    old_file = _SUPPLIER_CURRENT_DATEI
+    try:
+        _SUPPLIER_CURRENT_DATEI = Path(pdf_pfad).name if pdf_pfad else ""
+    except Exception:
+        _SUPPLIER_CURRENT_DATEI = ""
+    try:
+        return _erzeuge_meta_daten_orig_690(pdf_pfad, erkannter_text)
+    finally:
+        _SUPPLIER_CURRENT_DATEI = old_file
+
+
+try:
+    logging.info("Scan-Service Erweiterung geladen: 6.9 Supplier Candidate Context")
 except Exception:
     pass

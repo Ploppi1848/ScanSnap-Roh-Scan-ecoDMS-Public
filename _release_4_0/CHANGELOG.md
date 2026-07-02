@@ -1,8 +1,31 @@
 # Changelog WebUI 4.0
 
-## Sprint 5F - Supplier Trace
+## Sprint 5G - Supplier Candidates
 
 Status: umgesetzt, Auswertung im naechsten Regressionstest
+
+Ziel:
+
+- Lieferanten-Kandidatenliste sichtbar machen
+- Kandidaten, Scores, Quellen und Gewinnerentscheidungen protokollieren
+- nachvollziehbar machen, ob der korrekte Lieferant ueberhaupt Kandidat war
+
+Umsetzung:
+
+- neue Diagnoseausgabe `_debug_text/supplier_candidates_<timestamp>.txt`
+- Marker `SUPPLIER_CANDIDATES`
+- Top 10 Kandidaten aus `finde_lieferant_kandidat_bewertet(...)`
+- Mapping-Fallback aus `finde_mapping_wert(...)`
+- medizinische Kandidaten aus `6.5 Medizinische Lieferanten`
+- unstrukturierte Gewinner aus Phasen-Fallbacks
+
+Pruefung:
+
+- `python -m py_compile _service\ecodms_scan_service.py` erfolgreich
+
+## Sprint 5F - Supplier Trace
+
+Status: umgesetzt und getestet
 
 Ziel:
 
