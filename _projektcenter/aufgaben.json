@@ -316,7 +316,7 @@
     "quelle": "Massentest Amtsgericht Anderes 26.02.2020.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Amtsgericht Anderes 26.02.2020.pdf\nNeuer Dateiname: 2020_02_26_LVM_X704929513529X.pdf\nPDF im Massentest: Amtsgericht Anderes 26.02.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0006-amtsgericht-anderes-26-02-2020-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_02_26_LVM_X704929513529X.pdf\nLIEFERANT=LVM\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=26.02.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=X704929513529X\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=302,50\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_02_26_Grundbuchbezirk_Altenbochum.pdf\nLIEFERANT=Grundbuchbezirk Altenbochum\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=26.02.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nFachliche Prüfung nicht bestanden\nreihenfolge der seiten im PDF falsch\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0006-amtsgericht-anderes-26-02-2020-pdf\nSollwerte korrigieren: /test/massentest/detail/mt-0006-amtsgericht-anderes-26-02-2020-pdf?source=fachlich\n=== ENDE ===",
     "erstellt": "2026-06-21 15:05:41",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-035",
@@ -699,9 +699,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf\nNeuer Dateiname: 2026_07_01_VfL_Bochum_1848.pdf\nPDF im Massentest: VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf\nLink WebUI: /test/massentest/detail/mt-0120-vfl-bochum-1848-gmbh-co-kgaa-anderes-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_VfL_Bochum_1848.pdf\nLIEFERANT=VfL Bochum 1848\nDOKUMENTTYP=Reservierung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_VfL_Bochum_1848.pdf\nLIEFERANT=VfL Bochum 1848\nDOKUMENTTYP=Reservierung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:44] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf\nNeuer Dateiname: 2026_07_02_VfL_Bochum_1848.pdf\nPDF im Massentest: VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf\nLink WebUI: /test/massentest/detail/mt-0120-vfl-bochum-1848-gmbh-co-kgaa-anderes-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_VfL_Bochum_1848.pdf\nLIEFERANT=VfL Bochum 1848\nDOKUMENTTYP=Reservierung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_VfL_Bochum_1848.pdf\nLIEFERANT=VfL Bochum 1848\nDOKUMENTTYP=Reservierung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:08] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-26 15:05:43",
-    "aktualisiert": "2026-07-01 18:18:44"
+    "aktualisiert": "2026-07-02 07:34:08"
   },
   {
     "id": "pc-070",
@@ -712,7 +712,7 @@
     "quelle": "Massentest Sparda-Bank West eG Information 11.12.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparda-Bank West eG Information 11.12.2019.pdf\nNeuer Dateiname: 2019_12_11_LVM.pdf\nPDF im Massentest: Sparda-Bank West eG Information 11.12.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0108-sparda-bank-west-eg-information-11-12-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_12_11_LVM.pdf\nLIEFERANT=LVM\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=11.12.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_12_11_Sparda_Bank_912417.pdf\nLIEFERANT=Sparda Bank\nDOKUMENTTYP=Infoschreiben\nDOKUMENTDATUM=11.12.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=912417\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-26 15:05:52",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-071",
@@ -732,9 +732,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Sparkasse Bochum Information 07.09.2018.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparkasse Bochum Information 07.09.2018.pdf\nNeuer Dateiname: 2026_07_01_Sparkasse_Bochum.pdf\nPDF im Massentest: Sparkasse Bochum Information 07.09.2018.pdf\nLink WebUI: /test/massentest/detail/mt-0110-sparkasse-bochum-information-07-09-2018-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Sparkasse_Bochum.pdf\nLIEFERANT=Sparkasse Bochum\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Sparkasse_Bochum.pdf\nLIEFERANT=Sparkasse Bochum\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:44] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparkasse Bochum Information 07.09.2018.pdf\nNeuer Dateiname: 2026_07_02_Sparkasse_Bochum.pdf\nPDF im Massentest: Sparkasse Bochum Information 07.09.2018.pdf\nLink WebUI: /test/massentest/detail/mt-0110-sparkasse-bochum-information-07-09-2018-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Sparkasse_Bochum.pdf\nLIEFERANT=Sparkasse Bochum\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Sparkasse_Bochum.pdf\nLIEFERANT=Sparkasse Bochum\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:08] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-26 17:19:09",
-    "aktualisiert": "2026-07-01 18:18:44"
+    "aktualisiert": "2026-07-02 07:34:08"
   },
   {
     "id": "pc-073",
@@ -745,7 +745,7 @@
     "quelle": "Massentest Sparda-Bank West eG Kontoauszug 03.09.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparda-Bank West eG Kontoauszug 03.09.2019.pdf\nNeuer Dateiname: 2019_10_02_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Sparda-Bank West eG Kontoauszug 03.09.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0109-sparda-bank-west-eg-kontoauszug-03-09-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_10_02_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Kontoauszug\nDOKUMENTDATUM=02.10.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_10_02_Sparda_Bank.pdf\nLIEFERANT=Sparda Bank\nDOKUMENTTYP=Kontoauszug\nDOKUMENTDATUM=02.10.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-26 17:19:17",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-074",
@@ -756,18 +756,18 @@
     "quelle": "Massentest Sparda-Bank West eG Anderes 30.01.2020.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparda-Bank West eG Anderes 30.01.2020.pdf\nNeuer Dateiname: 2008_12_02_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Sparda-Bank West eG Anderes 30.01.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0107-sparda-bank-west-eg-anderes-30-01-2020-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2008_12_02_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Darlehensvertrag\nDOKUMENTDATUM=02.12.2008\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2008_12_02_Sparda_Bank.pdf\nLIEFERANT=Sparda Bank\nDOKUMENTTYP=Infoschreiben\nDOKUMENTDATUM=02.12.2008\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-26 17:19:51",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-075",
     "titel": "Massentest prüfen: LVM Versicherungen Anderes 02.03.2020.pdf",
     "bereich": "Massentest",
-    "status": "erledigt",
+    "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest LVM Versicherungen Anderes 02.03.2020.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: LVM Versicherungen Anderes 02.03.2020.pdf\nNeuer Dateiname: 2020_03_02_LVM_Versicherung_0250013611.0_.1_.2.pdf\nPDF im Massentest: LVM Versicherungen Anderes 02.03.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_03_02_LVM_Versicherung_0250013611.0_.1_.2.pdf\nLIEFERANT=LVM Versicherung\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=02.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=0250013611.0/.1/.2\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_03_02_LVM_Versicherung_0250013611.0_.1_.2.pdf\nLIEFERANT=LVM Versicherung\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=02.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=0250013611.0/.1/.2\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nFachliche Prüfung nicht bestanden\nReihenfolge im PDF faslch\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf\nSollwerte korrigieren: /test/massentest/detail/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf?source=fachlich\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 09:46:55] Massentest fehlerfrei: Soll/Ist identisch.",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: LVM Versicherungen Anderes 02.03.2020.pdf\nNeuer Dateiname: 2020_03_02_Aufsichtsratsvorsitzender_Eckhard_Uhlenberg,_Vorstand_Dr._Mathias_Kleuke_0250013611.0_.1_.2.pdf\nPDF im Massentest: LVM Versicherungen Anderes 02.03.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_03_02_Aufsichtsratsvorsitzender_Eckhard_Uhlenberg,_Vorstand_Dr._Mathias_Kleuke_0250013611.0_.1_.2.pdf\nLIEFERANT=Aufsichtsratsvorsitzender: Eckhard Uhlenberg, Vorstand: Dr. Mathias Kleuker (Vorsitzender)\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=02.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=0250013611.0/.1/.2\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_03_02_LVM_Versicherung_0250013611.0_.1_.2.pdf\nLIEFERANT=LVM Versicherung\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=02.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=0250013611.0/.1/.2\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nFachliche Prüfung nicht bestanden\nReihenfolge im PDF faslch\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf\nSollwerte korrigieren: /test/massentest/detail/mt-0088-lvm-versicherungen-anderes-02-03-2020-pdf?source=fachlich\n=== ENDE ===",
     "erstellt": "2026-06-26 17:20:03",
-    "aktualisiert": "2026-07-01 09:46:55"
+    "aktualisiert": "2026-07-02 08:12:39"
   },
   {
     "id": "pc-076",
@@ -787,9 +787,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Skyline Therapie Bochum GmbH Anderes 21.04.2026.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Skyline Therapie Bochum GmbH Anderes 21.04.2026.pdf\nNeuer Dateiname: 2026_04_21_Skyline_Therapie_Bochum_GmbH_SPR-794.pdf\nPDF im Massentest: Skyline Therapie Bochum GmbH Anderes 21.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0104-skyline-therapie-bochum-gmbh-anderes-21-04-2026-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_21_Skyline_Therapie_Bochum_GmbH_SPR-794.pdf\nLIEFERANT=Skyline Therapie Bochum GmbH\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=21.04.2026\nRECHNR=SPR-794\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=2,75\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_21_Skyline_Therapie_Bochum_SPR-794.pdf\nLIEFERANT=Skyline Therapie Bochum\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=21.04.2026\nRECHNR=SPR-794\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=2,75\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Skyline Therapie Bochum GmbH Anderes 21.04.2026.pdf\nNeuer Dateiname: 2026_04_21_SKYLINE_THERAPIE_BOCHUM_SPR-794.pdf\nPDF im Massentest: Skyline Therapie Bochum GmbH Anderes 21.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0104-skyline-therapie-bochum-gmbh-anderes-21-04-2026-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_21_SKYLINE_THERAPIE_BOCHUM_SPR-794.pdf\nLIEFERANT=SKYLINE THERAPIE BOCHUM\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=21.04.2026\nRECHNR=SPR-794\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=2,75\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_21_Skyline_Therapie_Bochum_SPR-794.pdf\nLIEFERANT=Skyline Therapie Bochum\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=21.04.2026\nRECHNR=SPR-794\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=2,75\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:17:24",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-078",
@@ -798,9 +798,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Simone Hepp Rechnung 20.06.2023.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Simone Hepp Rechnung 20.06.2023.pdf\nNeuer Dateiname: 2023_06_20_Tierarztpraxis_20231370.pdf\nPDF im Massentest: Simone Hepp Rechnung 20.06.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0102-simone-hepp-rechnung-20-06-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_06_20_Tierarztpraxis_20231370.pdf\nLIEFERANT=Tierarztpraxis\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.06.2023\nRECHNR=20231370\nAKTENZEICHEN=\nKUNDENNR=457\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=34,22\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_06_20_Tierarztpraxis_Judith_Schönenstein_20231370.pdf\nLIEFERANT=Tierarztpraxis Judith Schönenstein\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.06.2023\nRECHNR=20231370\nAKTENZEICHEN=\nKUNDENNR=457\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=34,22\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Simone Hepp Rechnung 20.06.2023.pdf\nNeuer Dateiname: 2023_06_20_info@tierarzt-schoenenstei_n.de_20231370.pdf\nPDF im Massentest: Simone Hepp Rechnung 20.06.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0102-simone-hepp-rechnung-20-06-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_06_20_info@tierarzt-schoenenstei_n.de_20231370.pdf\nLIEFERANT=info@tierarzt-schoenenstei n.de\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.06.2023\nRECHNR=20231370\nAKTENZEICHEN=\nKUNDENNR=457\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=34,22\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_06_20_Tierarztpraxis_Judith_Schönenstein_20231370.pdf\nLIEFERANT=Tierarztpraxis Judith Schönenstein\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.06.2023\nRECHNR=20231370\nAKTENZEICHEN=\nKUNDENNR=457\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=34,22\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:24:19",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-079",
@@ -822,7 +822,7 @@
     "quelle": "Massentest Polizeipräsidium Information 01.05.2018.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Polizeipräsidium Information 01.05.2018.pdf\nNeuer Dateiname: 2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nPDF im Massentest: Polizeipräsidium Information 01.05.2018.pdf\nLink WebUI: /test/massentest/detail/mt-0093-polizeipr-sidium-information-01-05-2018-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nLIEFERANT=Polizeipräsidium Bochum\nDOKUMENTTYP=Polizeibehörde\nDOKUMENTDATUM=23.04.2018\nRECHNR=2081001526524\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nLIEFERANT=Polizeipräsidium Bochum\nDOKUMENTTYP=Polizeibehörde\nDOKUMENTDATUM=23.04.2018\nRECHNR=2081001526524\nAKTENZEICHEN=2081001526524\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:33:26",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-081",
@@ -833,7 +833,7 @@
     "quelle": "Massentest Stadtwerke Bochum Netz GmbH Information 05.01.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Stadtwerke Bochum Netz GmbH Information 05.01.2024.pdf\nNeuer Dateiname: 2024_01_05_Amtsgericht_Bochum.pdf\nPDF im Massentest: Stadtwerke Bochum Netz GmbH Information 05.01.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0114-stadtwerke-bochum-netz-gmbh-information-05-01-20\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_01_05_Amtsgericht_Bochum.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Zählerstandserfassung\nDOKUMENTDATUM=05.01.2024\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_01_05_Maingau_Energie.pdf\nLIEFERANT=Maingau Energie\nDOKUMENTTYP=Zählerstandserfassung\nDOKUMENTDATUM=05.01.2024\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nDas ist ein typischer ausreißer. der absender uns lierenat sind maingau energie und nicht stadtwerke bochum\n=== ENDE ===",
     "erstellt": "2026-06-27 13:38:58",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-082",
@@ -855,7 +855,7 @@
     "quelle": "Massentest bonprix Handelsges. mbH Rechnung 30.11.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handelsges. mbH Rechnung 30.11.2024.pdf\nNeuer Dateiname: 2024_11_30_Bonprix.pdf\nPDF im Massentest: bonprix Handelsges. mbH Rechnung 30.11.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0022-bonprix-handelsges-mbh-rechnung-30-11-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_11_30_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=30.11.2024\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=193,73\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_11_30_Bonprix_8383995199.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=30.11.2024\nRECHNR=8383995199\nAKTENZEICHEN=\nKUNDENNR=52407820\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=193,73\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:47:11",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-084",
@@ -877,7 +877,7 @@
     "quelle": "Massentest bonprix Handelsges. mbH Rechnung 05.07.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handelsges. mbH Rechnung 05.07.2025.pdf\nNeuer Dateiname: 2025_07_05_Bonprix.pdf\nPDF im Massentest: bonprix Handelsges. mbH Rechnung 05.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0021-bonprix-handelsges-mbh-rechnung-05-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_05_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=05.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=19,99\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_05_Bonprix_8398320687.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=05.07.2025\nRECHNR=8398320687\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=19,99\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:53:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-086",
@@ -888,7 +888,7 @@
     "quelle": "Massentest BongardstraBe 25 Information 07.10.2021.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: BongardstraBe 25 Information 07.10.2021.pdf\nNeuer Dateiname: 2021_10_07_Rechtsanwälte_Leones.pdf\nPDF im Massentest: BongardstraBe 25 Information 07.10.2021.pdf\nLink WebUI: /test/massentest/detail/mt-0016-bongardstrabe-25-information-07-10-2021-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2021_10_07_Rechtsanwälte_Leones.pdf\nLIEFERANT=Rechtsanwälte Leones\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=07.10.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2021_10_07_Rechtsanwälte_Leones.pdf\nLIEFERANT=Rechtsanwälte Leones\nDOKUMENTTYP=Schreiben Rechtsanwalt\nDOKUMENTDATUM=07.10.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:54:27",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-087",
@@ -899,7 +899,7 @@
     "quelle": "Massentest Der Oberbürgermeister Anderes 09.07.2018.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Der Oberbürgermeister Anderes 09.07.2018.pdf\nNeuer Dateiname: 2018_07_09_Stadt_Bochum_301333710436516.pdf\nPDF im Massentest: Der Oberbürgermeister Anderes 09.07.2018.pdf\nLink WebUI: /test/massentest/detail/mt-0028-der-oberb-rgermeister-anderes-09-07-2018-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2018_07_09_Stadt_Bochum_301333710436516.pdf\nLIEFERANT=Stadt Bochum\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=09.07.2018\nRECHNR=301333710436516\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2018_07_09_Stadt_Bochum_301333710436516.pdf\nLIEFERANT=Stadt Bochum\nDOKUMENTTYP=Bußgeld\nDOKUMENTDATUM=09.07.2018\nRECHNR=301333710436516\nAKTENZEICHEN=301333710436516\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 13:55:17",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-088",
@@ -910,7 +910,7 @@
     "quelle": "Massentest Rathaus Bochum Anderes 04.01.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Rathaus Bochum Anderes 04.01.2019.pdf\nNeuer Dateiname: 2019_01_04_Amtsgericht_Bochum_900061987714704.pdf\nPDF im Massentest: Rathaus Bochum Anderes 04.01.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0097-rathaus-bochum-anderes-04-01-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_01_04_Amtsgericht_Bochum_900061987714704.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Hundesteuerbescheid\nDOKUMENTDATUM=04.01.2019\nRECHNR=900061987714704\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_01_04_Stadt_Bochum_9000619877147.pdf\nLIEFERANT=Stadt Bochum\nDOKUMENTTYP=Hundesteuerbescheid\nDOKUMENTDATUM=04.01.2019\nRECHNR=9000619877147\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 17:29:14",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-089",
@@ -921,7 +921,7 @@
     "quelle": "Massentest Lieferadresse Anderes 23.03.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lieferadresse Anderes 23.03.2025.pdf\nNeuer Dateiname: 2025_03_23_Amazon_6873154.pdf\nPDF im Massentest: Lieferadresse Anderes 23.03.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0083-lieferadresse-anderes-23-03-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_03_23_Amazon_6873154.pdf\nLIEFERANT=Amazon\nDOKUMENTTYP=Bestellbestätigung\nDOKUMENTDATUM=23.03.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=6873154\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_03_23_Genius_6873154.pdf\nLIEFERANT=Genius\nDOKUMENTTYP=Bestellbestätigung\nDOKUMENTDATUM=23.03.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=6873154\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nFachliche Prüfung nicht bestanden\nfalsche Blattreihenfolge\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0083-lieferadresse-anderes-23-03-2025-pdf\nSollwerte korrigieren: /test/massentest/detail/mt-0083-lieferadresse-anderes-23-03-2025-pdf?source=fachlich\n=== ENDE ===",
     "erstellt": "2026-06-27 17:31:47",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-090",
@@ -943,7 +943,7 @@
     "quelle": "Massentest Name Vertrag 03.06.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Name Vertrag 03.06.2019.pdf\nNeuer Dateiname: 2019_06_03_Stadt_Bochum.pdf\nPDF im Massentest: Name Vertrag 03.06.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0091-name-vertrag-03-06-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_06_03_Stadt_Bochum.pdf\nLIEFERANT=Stadt Bochum\nDOKUMENTTYP=Kaufvertrag\nDOKUMENTDATUM=03.06.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_06_03_Allgemeiner_deutscher_Fahrradclub.pdf\nLIEFERANT=Allgemeiner deutscher Fahrradclub\nDOKUMENTTYP=Kaufvertrag\nDOKUMENTDATUM=03.06.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=2600,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 20:43:21",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-092",
@@ -963,9 +963,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Kassenzettel 14.05.25.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Kassenzettel 14.05.25.pdf\nNeuer Dateiname: 2026_07_01_Rossmann.pdf\nPDF im Massentest: Kassenzettel 14.05.25.pdf\nLink WebUI: /test/massentest/detail/mt-0072-kassenzettel-14-05-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Rossmann.pdf\nLIEFERANT=Rossmann\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=51,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Rossmann.pdf\nLIEFERANT=Rossmann\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=51,00\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Kassenzettel 14.05.25.pdf\nNeuer Dateiname: 2026_07_02_Rossmann.pdf\nPDF im Massentest: Kassenzettel 14.05.25.pdf\nLink WebUI: /test/massentest/detail/mt-0072-kassenzettel-14-05-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Rossmann.pdf\nLIEFERANT=Rossmann\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=51,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Rossmann.pdf\nLIEFERANT=Rossmann\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=51,00\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:07] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-27 20:45:48",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 07:34:07"
   },
   {
     "id": "pc-094",
@@ -987,7 +987,7 @@
     "quelle": "Massentest Sparda-Bank West eG Anderes 29.10.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Sparda-Bank West eG Anderes 29.10.2019.pdf\nNeuer Dateiname: 2019_10_29_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Sparda-Bank West eG Anderes 29.10.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0106-sparda-bank-west-eg-anderes-29-10-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_10_29_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Kontoauszug\nDOKUMENTDATUM=29.10.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_10_29_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Informationsschreiben Bank\nDOKUMENTDATUM=29.10.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 21:23:57",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-096",
@@ -996,9 +996,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Staatsanwaltschaft Information 18.12.2024.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Staatsanwaltschaft Information 18.12.2024.pdf\nNeuer Dateiname: 2026_07_01_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nPDF im Massentest: Staatsanwaltschaft Information 18.12.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nLIEFERANT=Staatsanwaltschaft Bochum\nDOKUMENTTYP=Ermittlungsverfahren\nDOKUMENTDATUM=\nRECHNR=822 Js 796124\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nLIEFERANT=Staatsanwaltschaft Bochum\nDOKUMENTTYP=Ermittlungsverfahren\nDOKUMENTDATUM=\nRECHNR=822 Js 796124\nAKTENZEICHEN=822 Js 796124\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nAktenzeichen 822 Js 796124 eigenes Feld oder wir definieren ein Feld was in nAusnahmefällen für Nummern genutzt werden kann\r\nFachliche Prüfung nicht bestanden\r\nFachliche Prüfung nicht bestanden – Sollwerte oder erkannte Werte prüfen.\r\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf\r\nSollwerte korrigieren: /test/massentest/detail/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf?source=fachlich\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Staatsanwaltschaft Information 18.12.2024.pdf\nNeuer Dateiname: 2026_07_02_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nPDF im Massentest: Staatsanwaltschaft Information 18.12.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nLIEFERANT=Staatsanwaltschaft Bochum\nDOKUMENTTYP=Ermittlungsverfahren\nDOKUMENTDATUM=\nRECHNR=822 Js 796124\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Staatsanwaltschaft_Bochum_822_Js_796124.pdf\nLIEFERANT=Staatsanwaltschaft Bochum\nDOKUMENTTYP=Ermittlungsverfahren\nDOKUMENTDATUM=\nRECHNR=822 Js 796124\nAKTENZEICHEN=822 Js 796124\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nAktenzeichen 822 Js 796124 eigenes Feld oder wir definieren ein Feld was in nAusnahmefällen für Nummern genutzt werden kann\r\nFachliche Prüfung nicht bestanden\r\nFachliche Prüfung nicht bestanden – Sollwerte oder erkannte Werte prüfen.\r\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf\r\nSollwerte korrigieren: /test/massentest/detail/mt-0113-staatsanwaltschaft-information-18-12-2024-pdf?source=fachlich\n=== ENDE ===",
     "erstellt": "2026-06-27 21:24:34",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-097",
@@ -1020,7 +1020,7 @@
     "quelle": "Massentest Vorwerk Deutschland Stiftung _ Co. KG Rechnung 23.06.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Vorwerk Deutschland Stiftung _ Co. KG Rechnung 23.06.25.pdf\nNeuer Dateiname: 2025_06_23_Vorwerk_2528417645.pdf\nPDF im Massentest: Vorwerk Deutschland Stiftung _ Co. KG Rechnung 23.06.25.pdf\nLink WebUI: /test/massentest/detail/mt-0123-vorwerk-deutschland-stiftung-co-kg-rechnung-23-0\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_06_23_Vorwerk_2528417645.pdf\nLIEFERANT=Vorwerk\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.06.2025\nRECHNR=2528417645\nAKTENZEICHEN=\nKUNDENNR=0021752690\nAUFTRAGNR=\nBESTELLNR=2528417645\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=19,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_06_23_Vorwerk_2528417645.pdf\nLIEFERANT=Vorwerk\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.06.2025\nRECHNR=2528417645\nAKTENZEICHEN=\nKUNDENNR=0021752690\nAUFTRAGNR=\nBESTELLNR=2528417645\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=1549,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 21:39:06",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-099",
@@ -1031,7 +1031,7 @@
     "quelle": "Massentest Vorwerk Store Bochum Rechnung 26.11.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Vorwerk Store Bochum Rechnung 26.11.25.pdf\nNeuer Dateiname: 2025_11_26_Vorwerk_6231225244.pdf\nPDF im Massentest: Vorwerk Store Bochum Rechnung 26.11.25.pdf\nLink WebUI: /test/massentest/detail/mt-0124-vorwerk-store-bochum-rechnung-26-11-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_11_26_Vorwerk_6231225244.pdf\nLIEFERANT=Vorwerk\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=26.11.2025\nRECHNR=6231225244\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=6231225244\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=1789,80\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_11_26_Vorwerk_6231225244.pdf\nLIEFERANT=Vorwerk\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=26.11.2025\nRECHNR=6231225244\nAKTENZEICHEN=\nKUNDENNR=21752690\nAUFTRAGNR=\nBESTELLNR=6231225244\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=1789,80\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-27 21:39:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-100",
@@ -1051,9 +1051,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest 29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: 29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf\nNeuer Dateiname: 2026_07_01_Handwerksbetrieb_Kend_251145.pdf\nPDF im Massentest: 29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf\nLink WebUI: /test/massentest/detail/mt-0002-29032026-alarmanlagen-video-berwachnung-tresore-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Handwerksbetrieb_Kend_251145.pdf\nLIEFERANT=Handwerksbetrieb Kend\nDOKUMENTTYP=Angebot\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=251145\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Wiedemann_Sicherheitstechnik_251145.pdf\nLIEFERANT=Wiedemann Sicherheitstechnik\nDOKUMENTTYP=Lieferschein\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=251145\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: 29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf\nNeuer Dateiname: 2026_07_02_Handwerksbetrieb_Kend_251145.pdf\nPDF im Massentest: 29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf\nLink WebUI: /test/massentest/detail/mt-0002-29032026-alarmanlagen-video-berwachnung-tresore-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Handwerksbetrieb_Kend_251145.pdf\nLIEFERANT=Handwerksbetrieb Kend\nDOKUMENTTYP=Angebot\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=251145\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Wiedemann_Sicherheitstechnik_251145.pdf\nLIEFERANT=Wiedemann Sicherheitstechnik\nDOKUMENTTYP=Lieferschein\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=251145\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-28 16:19:19",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-102",
@@ -1064,7 +1064,7 @@
     "quelle": "Massentest Allianz Lebensversicherungs-AG Information 22.08.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Allianz Lebensversicherungs-AG Information 22.08.2022.pdf\nNeuer Dateiname: 2022_08_22_Allianz_Lebensversicherungs-AG.pdf\nPDF im Massentest: Allianz Lebensversicherungs-AG Information 22.08.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0005-allianz-lebensversicherungs-ag-information-22-08\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_08_22_Allianz_Lebensversicherungs-AG.pdf\nLIEFERANT=Allianz Lebensversicherungs-AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=22.08.2022\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=HerrAL-0040705725Heinz-GeorgHeppGoystr.4a44803Bochum22.08.2022Bittevervollst\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_08_22_Allianz_Lebensversicherungs-AG_AL-0040705725.pdf\nLIEFERANT=Allianz Lebensversicherungs-AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=22.08.2022\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=AL-0040705725\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nFachliche Prüfung nicht bestanden – Sollwerte oder erkannte Werte prüfen.\r\nFachliche Prüfansicht: /test/massentest/fachlich/mt-0005-allianz-lebensversicherungs-ag-information-22-08\r\nSollwerte korrigieren: /test/massentest/detail/mt-0005-allianz-lebensversicherungs-ag-information-22-08?source=fachlich\n=== ENDE ===",
     "erstellt": "2026-06-28 16:38:24",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-103",
@@ -1075,7 +1075,7 @@
     "quelle": "Massentest U_you Bochum-Weitmar _ Rechnung 07.07.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: U_you Bochum-Weitmar _ Rechnung 07.07.25.pdf\nNeuer Dateiname: 2025_07_07_U_you_Bochum-Weitmar_16236.pdf\nPDF im Massentest: U_you Bochum-Weitmar _ Rechnung 07.07.25.pdf\nLink WebUI: /test/massentest/detail/mt-0119-u-you-bochum-weitmar-rechnung-07-07-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_07_U_you_Bochum-Weitmar_16236.pdf\nLIEFERANT=U you Bochum-Weitmar\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=07.07.2025\nRECHNR=16236\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=60,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_07_U_&_you_Bochum-Weitmar_16236.pdf\nLIEFERANT=U&you Bochum-Weitmar\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=07.07.2025\nRECHNR=16236\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=60,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-28 17:57:16",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-104",
@@ -1084,9 +1084,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Tibisco Haustierservice Information 26.02.2024.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Tibisco Haustierservice Information 26.02.2024.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Tibisco Haustierservice Information 26.02.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0116-tibisco-haustierservice-information-26-02-2024-p\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Medizinischer Fragebogen\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Tibisco_Haustierservice.pdf\nLIEFERANT=Tibisco Haustierservice\nDOKUMENTTYP=Wichtige Kundenmitteilung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Tibisco Haustierservice Information 26.02.2024.pdf\nNeuer Dateiname: 2026_07_02_Unbekannt.pdf\nPDF im Massentest: Tibisco Haustierservice Information 26.02.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0116-tibisco-haustierservice-information-26-02-2024-p\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Medizinischer Fragebogen\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Tibisco_Haustierservice.pdf\nLIEFERANT=Tibisco Haustierservice\nDOKUMENTTYP=Wichtige Kundenmitteilung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-28 18:28:45",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-105",
@@ -1097,7 +1097,7 @@
     "quelle": "Massentest Bausparkasse Schwäbisch Hall AG Information 01.12.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Bausparkasse Schwäbisch Hall AG Information 01.12.2019.pdf\nNeuer Dateiname: 2019_12_01_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Bausparkasse Schwäbisch Hall AG Information 01.12.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0012-bausparkasse-schw-bisch-hall-ag-information-01-1\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_12_01_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Darlehensvertrag\nDOKUMENTDATUM=01.12.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_12_01_Bausparkasse_Schwäbisch_Hall_AG.pdf\nLIEFERANT=Bausparkasse Schwäbisch Hall AG\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=01.12.2019\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=16 067 086 A 01\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nfalsche seitenreihenfolge in der PDF\n=== ENDE ===",
     "erstellt": "2026-06-28 18:30:53",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-106",
@@ -1108,7 +1108,7 @@
     "quelle": "Massentest Bongardstr. 31 Information 20.02.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Bongardstr. 31 Information 20.02.2025.pdf\nNeuer Dateiname: 2025_02_20_megi_mobility_GmbH.pdf\nPDF im Massentest: Bongardstr. 31 Information 20.02.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0015-bongardstr-31-information-20-02-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_02_20_megi_mobility_GmbH.pdf\nLIEFERANT=megi mobility GmbH\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=20.02.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_02_20_Anwaltskanzlei_Messler_&_Messler.pdf\nLIEFERANT=Anwaltskanzlei Messler & Messler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.02.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=159,94\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:32:45",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-107",
@@ -1119,7 +1119,7 @@
     "quelle": "Massentest bonprix Handeisges Rechnung 23.08.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handeisges Rechnung 23.08.2025.pdf\nNeuer Dateiname: 2025_08_23_Bonprix.pdf\nPDF im Massentest: bonprix Handeisges Rechnung 23.08.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0018-bonprix-handeisges-rechnung-23-08-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_08_23_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=95,86\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_08_23_Bonprix_8401588910.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=8401588910\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=95,86\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:38:20",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-108",
@@ -1130,7 +1130,7 @@
     "quelle": "Massentest bonprix Handelsges. mbH Rechnung 02.07.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handelsges. mbH Rechnung 02.07.2025.pdf\nNeuer Dateiname: 2025_07_02_Bonprix.pdf\nPDF im Massentest: bonprix Handelsges. mbH Rechnung 02.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0019-bonprix-handelsges-mbh-rechnung-02-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_02_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=02.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=140,91\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_02_Bonprix_8398099852.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=02.07.2025\nRECHNR=8398099852\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=140,91\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:45:57",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-109",
@@ -1141,7 +1141,7 @@
     "quelle": "Massentest bonprix Handelsges. mbH Rechnung 05.07.2025 (2) .pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handelsges. mbH Rechnung 05.07.2025 (2) .pdf\nNeuer Dateiname: 2025_07_05_Bonprix.pdf\nPDF im Massentest: bonprix Handelsges. mbH Rechnung 05.07.2025 (2) .pdf\nLink WebUI: /test/massentest/detail/mt-0020-bonprix-handelsges-mbh-rechnung-05-07-2025-2-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_05_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=05.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=19,99\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_05_Bonprix_8398321250.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=05.07.2025\nRECHNR=8398321250\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=19,99\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:48:30",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-110",
@@ -1152,7 +1152,7 @@
     "quelle": "Massentest bonprix Handelsgesellschaft mbH Rechnung 13.05.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonprix Handelsgesellschaft mbH Rechnung 13.05.2025.pdf\nNeuer Dateiname: 2025_05_13_Bonprix.pdf\nPDF im Massentest: bonprix Handelsgesellschaft mbH Rechnung 13.05.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0023-bonprix-handelsgesellschaft-mbh-rechnung-13-05-2\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_05_13_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=13.05.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=103,96\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_05_13_Bonprix_8393971997.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=13.05.2025\nRECHNR=8393971997\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=103,96\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:52:45",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-111",
@@ -1163,7 +1163,7 @@
     "quelle": "Massentest Santander Consumer Bank AG Rechnung 15.07.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Santander Consumer Bank AG Rechnung 15.07.2022.pdf\nNeuer Dateiname: 2022_07_15_Santander_Consumer_Bank_AG_394733.pdf\nPDF im Massentest: Santander Consumer Bank AG Rechnung 15.07.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0099-santander-consumer-bank-ag-rechnung-15-07-2022-p\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_07_15_Santander_Consumer_Bank_AG_394733.pdf\nLIEFERANT=Santander Consumer Bank AG\nDOKUMENTTYP=Finanzierung\nDOKUMENTDATUM=15.07.2022\nRECHNR=394733\nAKTENZEICHEN=\nKUNDENNR=1240604\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=2207141851\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_07_15_Ofen.de_AA_Kaminwelt_394733.pdf\nLIEFERANT=Ofen.de AA Kaminwelt\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.07.2022\nRECHNR=394733\nAKTENZEICHEN=\nKUNDENNR=1240604\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=2207141851\nGESAMTBETRAG=1754,99\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:54:02",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-112",
@@ -1174,7 +1174,7 @@
     "quelle": "Massentest reichelt elektronik GmbH _ Co. KG Rechnung 07.07.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: reichelt elektronik GmbH _ Co. KG Rechnung 07.07.25.pdf\nNeuer Dateiname: 2025_07_07_Reichelt_Elektronik_GmbH_P1534646.pdf\nPDF im Massentest: reichelt elektronik GmbH _ Co. KG Rechnung 07.07.25.pdf\nLink WebUI: /test/massentest/detail/mt-0098-reichelt-elektronik-gmbh-co-kg-rechnung-07-07-25\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_07_Reichelt_Elektronik_GmbH_P1534646.pdf\nLIEFERANT=Reichelt Elektronik GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=07.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=P1534646\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_07_Reichelt_Elektronik_GmbH_P1534646.pdf\nLIEFERANT=Reichelt Elektronik GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=07.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=P1534646\nGESAMTBETRAG=162,95\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:55:30",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-113",
@@ -1183,9 +1183,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest BRN94DDF8539961_000810.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: BRN94DDF8539961_000810.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: BRN94DDF8539961_000810.pdf\nLink WebUI: /test/massentest/detail/mt-0024-brn94ddf8539961-000810-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Gutschrift\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Sparda_Bank.pdf\nLIEFERANT=Sparda Bank\nDOKUMENTTYP=Kontoauszüge\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: BRN94DDF8539961_000810.pdf\nNeuer Dateiname: 2026_07_02_Unbekannt.pdf\nPDF im Massentest: BRN94DDF8539961_000810.pdf\nLink WebUI: /test/massentest/detail/mt-0024-brn94ddf8539961-000810-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Gutschrift\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Sparda_Bank.pdf\nLIEFERANT=Sparda Bank\nDOKUMENTTYP=Kontoauszüge\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:56:27",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-114",
@@ -1196,7 +1196,7 @@
     "quelle": "Massentest Büromarkt Böttcher AG Rechnung 17.07.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Büromarkt Böttcher AG Rechnung 17.07.2024.pdf\nNeuer Dateiname: 2024_07_17_Böttcher_AG_320243244819.pdf\nPDF im Massentest: Büromarkt Böttcher AG Rechnung 17.07.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0025-b-romarkt-b-ttcher-ag-rechnung-17-07-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_07_17_Böttcher_AG_320243244819.pdf\nLIEFERANT=Böttcher AG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=17.07.2024\nRECHNR=innerhalb\nAKTENZEICHEN=\nKUNDENNR=320243244819\nAUFTRAGNR=320243244819\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=96,06\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_07_17_Böttcher_AG_320243244819.pdf\nLIEFERANT=Böttcher AG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=17.07.2024\nRECHNR=320243244819\nAKTENZEICHEN=\nKUNDENNR=36614318\nAUFTRAGNR=A24003160710\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=96,06\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:57:45",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-115",
@@ -1207,7 +1207,7 @@
     "quelle": "Massentest D ul Rechnung 04.03.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: D ul Rechnung 04.03.2024.pdf\nNeuer Dateiname: 2024_03_04_Unbekannt_2024-03-00364.pdf\nPDF im Massentest: D ul Rechnung 04.03.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0026-d-ul-rechnung-04-03-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_03_04_Unbekannt_2024-03-00364.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=04.03.2024\nRECHNR=2024-03-00364\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=60,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_03_04_Dipl._Psych._Tobis_Vielhaber_2024-03-00364.pdf\nLIEFERANT=Dipl. Psych. Tobis Vielhaber\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=04.03.2024\nRECHNR=2024-03-00364\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=60,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 09:59:34",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-116",
@@ -1218,7 +1218,7 @@
     "quelle": "Massentest Polizeipräsidium Information 01.05.2018_005_002.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Polizeipräsidium Information 01.05.2018_005_002.pdf\nNeuer Dateiname: 2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nPDF im Massentest: Polizeipräsidium Information 01.05.2018_005_002.pdf\nLink WebUI: /test/massentest/detail/mt-0094-polizeipr-sidium-information-01-05-2018-005-002-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nLIEFERANT=Polizeipräsidium Bochum\nDOKUMENTTYP=Polizeibehörde\nDOKUMENTDATUM=23.04.2018\nRECHNR=2081001526524\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2018_04_23_Polizeipräsidium_Bochum_2081001526524.pdf\nLIEFERANT=Polizeipräsidium Bochum\nDOKUMENTTYP=Polizeibehörde\nDOKUMENTDATUM=23.04.2018\nRECHNR=2081001526524\nAKTENZEICHEN=2081001526524\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 10:00:15",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-117",
@@ -1229,7 +1229,7 @@
     "quelle": "Massentest Nikolaos Rigas Vertrag 30.11.2021.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Nikolaos Rigas Vertrag 30.11.2021.pdf\nNeuer Dateiname: 2012_09_24_Kündigung_des_bestehenden_Mietvertrags.pdf\nPDF im Massentest: Nikolaos Rigas Vertrag 30.11.2021.pdf\nLink WebUI: /test/massentest/detail/mt-0092-nikolaos-rigas-vertrag-30-11-2021-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2012_09_24_Kündigung_des_bestehenden_Mietvertrags.pdf\nLIEFERANT=Kündigung des bestehenden Mietvertrags\nDOKUMENTTYP=Bescheinigung\nDOKUMENTDATUM=24.09.2012\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2012_09_24_Kündigung_des_bestehenden_Mietvertrags.pdf\nLIEFERANT=Kündigung des bestehenden Mietvertrags\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=24.09.2012\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 10:01:11",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-118",
@@ -1240,7 +1240,7 @@
     "quelle": "Massentest Media Markt TV-HiFi-Elektro GmbH Bochum Kassenzettel 30.03.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Media Markt TV-HiFi-Elektro GmbH Bochum Kassenzettel 30.03.2026.pdf\nNeuer Dateiname: 2026_03_30_Media_Markt_TV-HiFi-Elektro_GmbH_41391814.pdf\nPDF im Massentest: Media Markt TV-HiFi-Elektro GmbH Bochum Kassenzettel 30.03.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0090-media-markt-tv-hifi-elektro-gmbh-bochum-kassenze\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_03_30_Media_Markt_TV-HiFi-Elektro_GmbH_41391814.pdf\nLIEFERANT=Media Markt TV-HiFi-Elektro GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=30.03.2026\nRECHNR=41391814\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=M016-47157-R-C\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_03_30_Media_Markt_TV-HiFi-Elektro_GmbH_41391814.pdf\nLIEFERANT=Media Markt TV-HiFi-Elektro GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=30.03.2026\nRECHNR=41391814\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=M016-47157-R-C\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=227,16\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 10:02:22",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-119",
@@ -1249,9 +1249,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Lowenstein Medical Anderes 07.11.2025.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lowenstein Medical Anderes 07.11.2025.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Lowenstein Medical Anderes 07.11.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0086-lowenstein-medical-anderes-07-11-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Löwenstein_Medical.pdf\nLIEFERANT=Löwenstein Medical\nDOKUMENTTYP=Lieferschein\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lowenstein Medical Anderes 07.11.2025.pdf\nNeuer Dateiname: 2026_07_02_Löwenstein_Medical.pdf\nPDF im Massentest: Lowenstein Medical Anderes 07.11.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0086-lowenstein-medical-anderes-07-11-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Löwenstein_Medical.pdf\nLIEFERANT=Löwenstein Medical\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Löwenstein_Medical.pdf\nLIEFERANT=Löwenstein Medical\nDOKUMENTTYP=Lieferschein\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 11:47:29",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-120",
@@ -1262,7 +1262,7 @@
     "quelle": "Massentest Lieferadresse Rechnung 24.11.2023.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lieferadresse Rechnung 24.11.2023.pdf\nNeuer Dateiname: 2023_11_29_MMS_E-COMMERCE_GMBH_B100230000639399.pdf\nPDF im Massentest: Lieferadresse Rechnung 24.11.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0085-lieferadresse-rechnung-24-11-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_11_29_MMS_E-COMMERCE_GMBH_B100230000639399.pdf\nLIEFERANT=MMS E-COMMERCE GMBH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=29.11.2023\nRECHNR=B100230000639399\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=201649010\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=194,61\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_11_29_MMS_E-COMMERCE_GMBH_B100230000639399.pdf\nLIEFERANT=MMS E-COMMERCE GMBH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=29.11.2023\nRECHNR=B100230000639399\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=201649010\nLIEFERSCHEINNR=201649010_1\nVERSICHERUNGSNR=\nGESAMTBETRAG=1218,90\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 11:49:13",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-121",
@@ -1273,7 +1273,7 @@
     "quelle": "Massentest Deutsche Post AG Information 09.03.2020.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Deutsche Post AG Information 09.03.2020.pdf\nNeuer Dateiname: 2020_03_09_Deutsche_Post_AG.pdf\nPDF im Massentest: Deutsche Post AG Information 09.03.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0029-deutsche-post-ag-information-09-03-2020-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_03_09_Deutsche_Post_AG.pdf\nLIEFERANT=Deutsche Post AG\nDOKUMENTTYP=Information\nDOKUMENTDATUM=09.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_03_09_Deutsche_Post_AG.pdf\nLIEFERANT=Deutsche Post AG\nDOKUMENTTYP=Privater Schritfverkehr\nDOKUMENTDATUM=09.03.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 11:50:41",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-122",
@@ -1284,7 +1284,7 @@
     "quelle": "Massentest Lidl Digital Deutschland GmbH _ Co. KG Rechnung 19.10.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lidl Digital Deutschland GmbH _ Co. KG Rechnung 19.10.2025.pdf\nNeuer Dateiname: 2025_10_19_Lidl_Digital_Deutschland_GmbH.pdf\nPDF im Massentest: Lidl Digital Deutschland GmbH _ Co. KG Rechnung 19.10.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0082-lidl-digital-deutschland-gmbh-co-kg-rechnung-19-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_10_19_Lidl_Digital_Deutschland_GmbH.pdf\nLIEFERANT=Lidl Digital Deutschland GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=19.10.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=02,11\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_10_19_Lidl_Digital_Deutschland_GmbH_9297598641.pdf\nLIEFERANT=Lidl Digital Deutschland GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=19.10.2025\nRECHNR=9297598641\nAKTENZEICHEN=\nKUNDENNR=1028231477\nAUFTRAGNR=\nBESTELLNR=3501466537\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=121,85\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 12:05:23",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-123",
@@ -1295,7 +1295,7 @@
     "quelle": "Massentest Deutsche Post AG Vertrag 10.10.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Deutsche Post AG Vertrag 10.10.2022.pdf\nNeuer Dateiname: 2022_10_10_Deutsche_Post_AG.pdf\nPDF im Massentest: Deutsche Post AG Vertrag 10.10.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0030-deutsche-post-ag-vertrag-10-10-2022-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_10_10_Deutsche_Post_AG.pdf\nLIEFERANT=Deutsche Post AG\nDOKUMENTTYP=Bescheinigung\nDOKUMENTDATUM=10.10.2022\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_10_10_Deutsche_Post_AG_4242019764628012.pdf\nLIEFERANT=Deutsche Post AG\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=10.10.2022\nRECHNR=\nAKTENZEICHEN=4242019764628012\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nes handelt sich um eine Kündigung einer Kreditkarte. Dummerweise wurde der Postbeleg angeheftet, so dass er die eigentlichen Inhalte ein wenig verdeckt.\n=== ENDE ===",
     "erstellt": "2026-06-29 13:34:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-124",
@@ -1306,7 +1306,7 @@
     "quelle": "Massentest DHL Paket GmbH Anderes 14.10.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: DHL Paket GmbH Anderes 14.10.2024.pdf\nNeuer Dateiname: 2024_10_14_DHL_Paket_GmbH_10.pdf\nPDF im Massentest: DHL Paket GmbH Anderes 14.10.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0031-dhl-paket-gmbh-anderes-14-10-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_10_14_DHL_Paket_GmbH_10.pdf\nLIEFERANT=DHL Paket GmbH\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=14.10.2024\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=10\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=0,85\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_10_14_DHL_Paket_GmbH_10.pdf\nLIEFERANT=DHL Paket GmbH\nDOKUMENTTYP=Infoschreiben\nDOKUMENTDATUM=14.10.2024\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=10\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=0,85\n\nNotiz / Abweichung:\nfalsche Reihenfolge der PDF Seiten\n=== ENDE ===",
     "erstellt": "2026-06-29 13:34:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-125",
@@ -1317,7 +1317,7 @@
     "quelle": "Massentest die smarte werkstatt Kassenzettel 04.04.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: die smarte werkstatt Kassenzettel 04.04.2025.pdf\nNeuer Dateiname: 2025_04_04_die_smarte_werkstatt_2500419.pdf\nPDF im Massentest: die smarte werkstatt Kassenzettel 04.04.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0032-die-smarte-werkstatt-kassenzettel-04-04-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_04_04_die_smarte_werkstatt_2500419.pdf\nLIEFERANT=die smarte werkstatt\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=04.04.2025\nRECHNR=2500419\nAKTENZEICHEN=\nKUNDENNR=25985\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=10,38\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_04_04_die_smarte_werkstatt_2500419.pdf\nLIEFERANT=die smarte werkstatt\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=04.04.2025\nRECHNR=2500419\nAKTENZEICHEN=\nKUNDENNR=25985\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=65,00\n\nNotiz / Abweichung:\nes handelt sich um drei unterschiedliche Rechnungen, die fälschlicherweise gesamt eingescannt wurden\n=== ENDE ===",
     "erstellt": "2026-06-29 13:34:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-126",
@@ -1328,7 +1328,7 @@
     "quelle": "Massentest die smarte werkstatt Rechnung 02.04.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: die smarte werkstatt Rechnung 02.04.2026.pdf\nNeuer Dateiname: 2026_04_02_die_smarte_werkstatt_2600366.pdf\nPDF im Massentest: die smarte werkstatt Rechnung 02.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0033-die-smarte-werkstatt-rechnung-02-04-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_02_die_smarte_werkstatt_2600366.pdf\nLIEFERANT=die smarte werkstatt\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=02.04.2026\nRECHNR=2600366\nAKTENZEICHEN=\nKUNDENNR=25985\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=54,62\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_02_die_smarte_werkstatt_2600366.pdf\nLIEFERANT=die smarte werkstatt\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=02.04.2026\nRECHNR=2600366\nAKTENZEICHEN=\nKUNDENNR=25985\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=65,00\n\nNotiz / Abweichung:\nes wurden fälschlicherweise drei dokumente zusammen eingescannt\n=== ENDE ===",
     "erstellt": "2026-06-29 13:34:35",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-127",
@@ -1361,7 +1361,7 @@
     "quelle": "Massentest DKV Deutsche Krankenversicherung AG Information 16.02.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: DKV Deutsche Krankenversicherung AG Information 16.02.2026.pdf\nNeuer Dateiname: 2026_02_16_Deutsche_Kreditbank_AG.pdf\nPDF im Massentest: DKV Deutsche Krankenversicherung AG Information 16.02.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0035-dkv-deutsche-krankenversicherung-ag-information-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_02_16_Deutsche_Kreditbank_AG.pdf\nLIEFERANT=Deutsche Kreditbank AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=16.02.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_02_16_DKB_Deutsche_Kreditbank.pdf\nLIEFERANT=DKB Deutsche Kreditbank\nDOKUMENTTYP=Infoschreiben\nDOKUMENTDATUM=16.02.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-130",
@@ -1372,7 +1372,7 @@
     "quelle": "Massentest Dr. med. Fahim Ayami Rechnung 06.05.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Dr. med. Fahim Ayami Rechnung 06.05.2026.pdf\nNeuer Dateiname: 2026_05_06_Unbekannt_DE31.pdf\nPDF im Massentest: Dr. med. Fahim Ayami Rechnung 06.05.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0036-dr-med-fahim-ayami-rechnung-06-05-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_05_06_Unbekannt_DE31.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=06.05.2026\nRECHNR=DE31\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_05_06_Dr._med._Fahim_Ayami_14511.pdf\nLIEFERANT=Dr. med. Fahim Ayami\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=06.05.2026\nRECHNR=14511\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=32,17\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-131",
@@ -1381,9 +1381,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Dr. med.dent.Axel Rechnung 15.04.2026.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Dr. med.dent.Axel Rechnung 15.04.2026.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Dr. med.dent.Axel Rechnung 15.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0037-dr-med-dent-axel-rechnung-15-04-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_15_Dr._med._dent._Axel_Vieler_31940.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.04.2026\nRECHNR=31940\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=183,25\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Dr. med.dent.Axel Rechnung 15.04.2026.pdf\nNeuer Dateiname: 2026_07_02_Dr._med._dent._Axel_Vieler.pdf\nPDF im Massentest: Dr. med.dent.Axel Rechnung 15.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0037-dr-med-dent-axel-rechnung-15-04-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Dr._med._dent._Axel_Vieler.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_15_Dr._med._dent._Axel_Vieler_31940.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.04.2026\nRECHNR=31940\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=183,25\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-132",
@@ -1392,9 +1392,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Dr. med.dent.Axel Rechnung 26.08.2025.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Dr. med.dent.Axel Rechnung 26.08.2025.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Dr. med.dent.Axel Rechnung 26.08.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0038-dr-med-dent-axel-rechnung-26-08-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_08_26_Dr._med._dent._Axel_Vieler_31154.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=26.08.2025\nRECHNR=31154\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=80,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Dr. med.dent.Axel Rechnung 26.08.2025.pdf\nNeuer Dateiname: 2026_07_02_Dr._med._dent._Axel_Vieler.pdf\nPDF im Massentest: Dr. med.dent.Axel Rechnung 26.08.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0038-dr-med-dent-axel-rechnung-26-08-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Dr._med._dent._Axel_Vieler.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_08_26_Dr._med._dent._Axel_Vieler_31154.pdf\nLIEFERANT=Dr. med. dent. Axel Vieler\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=26.08.2025\nRECHNR=31154\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=80,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-133",
@@ -1405,7 +1405,7 @@
     "quelle": "Massentest Eheleute Heinz-Georg und Information 18.08.2020.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Eheleute Heinz-Georg und Information 18.08.2020.pdf\nNeuer Dateiname: 2020_08_18_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Eheleute Heinz-Georg und Information 18.08.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0041-eheleute-heinz-georg-und-information-18-08-2020-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_08_18_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Informationsschreiben Bank\nDOKUMENTDATUM=18.08.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_08_18_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=18.08.2020\nRECHNR=\nAKTENZEICHEN=IBAN DE08 3606 0591 0000 9124 17\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-134",
@@ -1416,7 +1416,7 @@
     "quelle": "Massentest Elliot GmbH Rechnung 20.11.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Elliot GmbH Rechnung 20.11.2025.pdf\nNeuer Dateiname: 2025_11_20_Elliot_GmbH_R532643.pdf\nPDF im Massentest: Elliot GmbH Rechnung 20.11.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0042-elliot-gmbh-rechnung-20-11-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_11_20_Elliot_GmbH_R532643.pdf\nLIEFERANT=Elliot GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.11.2025\nRECHNR=R532643\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=E029380\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=14,45\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_11_20_Elliot_GmbH_R532643.pdf\nLIEFERANT=Elliot GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.11.2025\nRECHNR=R532643\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=E029380\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=22,10\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-135",
@@ -1425,9 +1425,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Flascheral Norge sch Kassenzettel.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Flascheral Norge sch Kassenzettel.pdf\nNeuer Dateiname: 2026_07_01_Waage.pdf\nPDF im Massentest: Flascheral Norge sch Kassenzettel.pdf\nLink WebUI: /test/massentest/detail/mt-0043-flascheral-norge-sch-kassenzettel-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Waage.pdf\nLIEFERANT=Waage\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=10,37\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Fleischrei_Norbert_Hirsch.pdf\nLIEFERANT=Fleischrei Norbert Hirsch\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=84,60\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Flascheral Norge sch Kassenzettel.pdf\nNeuer Dateiname: 2026_07_02_Waage.pdf\nPDF im Massentest: Flascheral Norge sch Kassenzettel.pdf\nLink WebUI: /test/massentest/detail/mt-0043-flascheral-norge-sch-kassenzettel-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Waage.pdf\nLIEFERANT=Waage\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=10,37\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Fleischrei_Norbert_Hirsch.pdf\nLIEFERANT=Fleischrei Norbert Hirsch\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=84,60\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-136",
@@ -1438,7 +1438,7 @@
     "quelle": "Massentest Franke GmbH _ Co. KG Anderes 04.02.2024.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Anderes 04.02.2024.pdf\nNeuer Dateiname: 2024_02_04_Amtsgericht_Bochum_PR1-2024.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Anderes 04.02.2024.pdf\nLink WebUI: /test/massentest/detail/mt-0044-franke-gmbh-co-kg-anderes-04-02-2024-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2024_02_04_Amtsgericht_Bochum_PR1-2024.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=04.02.2024\nRECHNR=PR1-2024\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nSOLL-WERTE:\nNEUER DATEINAME=2024_02_04_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR2-2024_605377.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=04.02.2024\nRECHNR=PR2-2024 / 605377\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-137",
@@ -1449,7 +1449,7 @@
     "quelle": "Massentest Franke GmbH _ Co. KG Anderes 23.07.2023.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Anderes 23.07.2023.pdf\nNeuer Dateiname: 2023_07_23_Amtsgericht_Bochum_PR2-2023.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Anderes 23.07.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0045-franke-gmbh-co-kg-anderes-23-07-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_07_23_Amtsgericht_Bochum_PR2-2023.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=23.07.2023\nRECHNR=PR2-2023\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=105,24\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_07_23_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR2-2023_604394.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.07.2023\nRECHNR=PR2-2023 / 604394\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=105,24\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-138",
@@ -1460,7 +1460,7 @@
     "quelle": "Massentest Franke GmbH _ Co. KG Kassenzettel 15.02.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Kassenzettel 15.02.2026.pdf\nNeuer Dateiname: 2026_02_15_Amtsgericht_Bochum_PR1-2026.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Kassenzettel 15.02.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0046-franke-gmbh-co-kg-kassenzettel-15-02-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_02_15_Amtsgericht_Bochum_PR1-2026.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=15.02.2026\nRECHNR=PR1-2026\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=408,94\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_02_15_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR1-2026_607096.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.02.2026\nRECHNR=PR1-2026 / 607096\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=408,94\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-139",
@@ -1471,7 +1471,7 @@
     "quelle": "Massentest Franke GmbH _ Co. KG Rechnung 16.02.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Rechnung 16.02.2025.pdf\nNeuer Dateiname: 2025_02_16_Amtsgericht_Bochum_PR1-2025.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Rechnung 16.02.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0047-franke-gmbh-co-kg-rechnung-16-02-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_02_16_Amtsgericht_Bochum_PR1-2025.pdf\nLIEFERANT=Amtsgericht Bochum\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=16.02.2025\nRECHNR=PR1-2025\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=399,44\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_02_16_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR1-2025_606095.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=16.02.2025\nRECHNR=PR1-2025 / 606095\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=399,44\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-140",
@@ -1480,9 +1480,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf\nNeuer Dateiname: 2025_07_20_Franke_GmbH_PR2-20251606374.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0048-franke-gmbh-co-kg-rechnung-20-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_20_Franke_GmbH_PR2-20251606374.pdf\nLIEFERANT=Franke GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.07.2025\nRECHNR=PR2-20251606374\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_20_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR2-20251606374.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.07.2025\nRECHNR=PR2-20251606374\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf\nNeuer Dateiname: 2025_07_20_Ft_anke_GmbH_PR2-20251606374.pdf\nPDF im Massentest: Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0048-franke-gmbh-co-kg-rechnung-20-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_20_Ft_anke_GmbH_PR2-20251606374.pdf\nLIEFERANT=Ft\"anke GmbH\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.07.2025\nRECHNR=PR2-20251606374\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_20_Gartenbau_und_Floristik_Franke_GmbH_&_Co._KG_PR2-20251606374.pdf\nLIEFERANT=Gartenbau und Floristik Franke GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=20.07.2025\nRECHNR=PR2-20251606374\nAKTENZEICHEN=\nKUNDENNR=14190\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=97,59\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-141",
@@ -1493,7 +1493,7 @@
     "quelle": "Massentest Friedemann Ahlmeyer Kassenzettel 15.05.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Friedemann Ahlmeyer Kassenzettel 15.05.25.pdf\nNeuer Dateiname: 2025_05_15_Ruhr_Apotheke_1402084110.pdf\nPDF im Massentest: Friedemann Ahlmeyer Kassenzettel 15.05.25.pdf\nLink WebUI: /test/massentest/detail/mt-0049-friedemann-ahlmeyer-kassenzettel-15-05-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_05_15_Ruhr_Apotheke_1402084110.pdf\nLIEFERANT=Ruhr Apotheke\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=15.05.2025\nRECHNR=1402084110\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=5,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_05_15_Ruhr_Apotheke_1402084110.pdf\nLIEFERANT=Ruhr Apotheke\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=15.05.2025\nRECHNR=1402084110\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=35,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-142",
@@ -1504,7 +1504,7 @@
     "quelle": "Massentest Gebers Kassenzettel 18.07.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Gebers Kassenzettel 18.07.2025.pdf\nNeuer Dateiname: 2025_07_18_Unbekannt.pdf\nPDF im Massentest: Gebers Kassenzettel 18.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0052-gebers-kassenzettel-18-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_18_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=18.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=79,95\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_18_Traumschloss_die_große_Bettenmarke_5050.pdf\nLIEFERANT=Traumschloss die große Bettenmarke\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=18.07.2025\nRECHNR=5050\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=79,95\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-143",
@@ -1515,7 +1515,7 @@
     "quelle": "Massentest hagebau Partner-Card Service Anderes 03.04.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: hagebau Partner-Card Service Anderes 03.04.2022.pdf\nNeuer Dateiname: 2022_04_03_Hagebau.pdf\nPDF im Massentest: hagebau Partner-Card Service Anderes 03.04.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0053-hagebau-partner-card-service-anderes-03-04-2022-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_04_03_Hagebau.pdf\nLIEFERANT=Hagebau\nDOKUMENTTYP=Angebot\nDOKUMENTDATUM=03.04.2022\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_04_03_Hagebau.pdf\nLIEFERANT=Hagebau\nDOKUMENTTYP=Infoschreiben\nDOKUMENTDATUM=03.04.2022\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\nfalsche Seitenreihenfolge im PDF\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-144",
@@ -1524,9 +1524,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Hanse Merkur Information 30.06.2025.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hanse Merkur Information 30.06.2025.pdf\nNeuer Dateiname: 2026_07_01_HanseMerkur_Speziale_Krankenversicherung_AG.pdf\nPDF im Massentest: Hanse Merkur Information 30.06.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0054-hanse-merkur-information-30-06-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_HanseMerkur_Speziale_Krankenversicherung_AG.pdf\nLIEFERANT=HanseMerkur Speziale Krankenversicherung AG\nDOKUMENTTYP=Unbekannt\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_05_21_HanseMerkur_Speziale_Krankenversicherung_AG_009975903827.pdf\nLIEFERANT=HanseMerkur Speziale Krankenversicherung AG\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=21.05.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=009975903827\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hanse Merkur Information 30.06.2025.pdf\nNeuer Dateiname: 2026_07_02_HanseMerkur_Speziale_Krankenversicherung_AG.pdf\nPDF im Massentest: Hanse Merkur Information 30.06.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0054-hanse-merkur-information-30-06-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_HanseMerkur_Speziale_Krankenversicherung_AG.pdf\nLIEFERANT=HanseMerkur Speziale Krankenversicherung AG\nDOKUMENTTYP=Unbekannt\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_05_21_HanseMerkur_Speziale_Krankenversicherung_AG_009975903827.pdf\nLIEFERANT=HanseMerkur Speziale Krankenversicherung AG\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=21.05.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=009975903827\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-145",
@@ -1537,7 +1537,7 @@
     "quelle": "Massentest HanseMerkur Speziale Krankenversicherung AG Information 30.03.2021.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: HanseMerkur Speziale Krankenversicherung AG Information 30.03.2021.pdf\nNeuer Dateiname: 2021_03_30_Speziale_Krankenversicherung_AG_009913958852SehrgeehrterHerrHepp.pdf\nPDF im Massentest: HanseMerkur Speziale Krankenversicherung AG Information 30.03.2021.pdf\nLink WebUI: /test/massentest/detail/mt-0055-hansemerkur-speziale-krankenversicherung-ag-info\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2021_03_30_Speziale_Krankenversicherung_AG_009913958852SehrgeehrterHerrHepp.pdf\nLIEFERANT=Speziale Krankenversicherung AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=30.03.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=009913958852SehrgeehrterHerrHepp\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2021_03_30_Hanse_Merkur_Speziale_Krankenversicherung_AG_009913958852.pdf\nLIEFERANT=Hanse Merkur Speziale Krankenversicherung AG\nDOKUMENTTYP=Kündigung\nDOKUMENTDATUM=30.03.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=009913958852\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-146",
@@ -1548,7 +1548,7 @@
     "quelle": "Massentest HAPPYsize Anderes 21.08.2023.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: HAPPYsize Anderes 21.08.2023.pdf\nNeuer Dateiname: 2023_08_21_Unbekannt_700072.pdf\nPDF im Massentest: HAPPYsize Anderes 21.08.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0056-happysize-anderes-21-08-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_08_21_Unbekannt_700072.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=21.08.2023\nRECHNR=700072\nAKTENZEICHEN=\nKUNDENNR=018832816\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=62,44\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_08_21_Happy_Size_700072.pdf\nLIEFERANT=Happy Size\nDOKUMENTTYP=Mahnung\nDOKUMENTDATUM=21.08.2023\nRECHNR=700072\nAKTENZEICHEN=\nKUNDENNR=018832816\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=62,44\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-147",
@@ -1559,7 +1559,7 @@
     "quelle": "Massentest Haufe Service Center GmbH Rechnung 14.05.25.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Haufe Service Center GmbH Rechnung 14.05.25.pdf\nNeuer Dateiname: 2025_05_14_Lexware_665799255.pdf\nPDF im Massentest: Haufe Service Center GmbH Rechnung 14.05.25.pdf\nLink WebUI: /test/massentest/detail/mt-0057-haufe-service-center-gmbh-rechnung-14-05-25-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_05_14_Lexware_665799255.pdf\nLIEFERANT=Lexware\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=14.05.2025\nRECHNR=Rechnungs\nAKTENZEICHEN=\nKUNDENNR=665799255\nAUFTRAGNR=227512920\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=44,90\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_05_14_Lexware_0665799255.pdf\nLIEFERANT=Lexware\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=14.05.2025\nRECHNR=0665799255\nAKTENZEICHEN=\nKUNDENNR=97460212\nAUFTRAGNR=227512920\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=44,90\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-148",
@@ -1570,7 +1570,7 @@
     "quelle": "Massentest Hauplzollamt Dortmund Anderes 13.01.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hauplzollamt Dortmund Anderes 13.01.2022.pdf\nNeuer Dateiname: 2022_01_13_Hauptzollamt_Dortmund_K120.8936.9025.pdf\nPDF im Massentest: Hauplzollamt Dortmund Anderes 13.01.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0058-hauplzollamt-dortmund-anderes-13-01-2022-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_01_13_Hauptzollamt_Dortmund_K120.8936.9025.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=13.01.2022\nRECHNR=K120.8936.9025\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K120.8936.9025\nGESAMTBETRAG=17,02\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_01_13_Hauptzollamt_Dortmund_K120.8936.9025.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=13.01.2022\nRECHNR=K120.8936.9025\nAKTENZEICHEN=Kennzeichen: BO HG 25\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=KFZFK1208936902510012022\nGESAMTBETRAG=33,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-149",
@@ -1581,7 +1581,7 @@
     "quelle": "Massentest Hauptaofamt Dortmund Anderes 13.12.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hauptaofamt Dortmund Anderes 13.12.2022.pdf\nNeuer Dateiname: 2022_12_13_Hauptzollamt_Dortmund_K120.4185.3243.pdf\nPDF im Massentest: Hauptaofamt Dortmund Anderes 13.12.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0059-hauptaofamt-dortmund-anderes-13-12-2022-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_12_13_Hauptzollamt_Dortmund_K120.4185.3243.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=13.12.2022\nRECHNR=K120.4185.3243\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K120.4185.3243\nGESAMTBETRAG=532,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_12_13_Hauptzollamt_Dortmund_K120.4185.3243.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=13.12.2022\nRECHNR=K120.4185.3243\nAKTENZEICHEN=Kennzeichen: BO HS 1998\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K120.4185.3243\nGESAMTBETRAG=532,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-150",
@@ -1592,7 +1592,7 @@
     "quelle": "Massentest Hauptzollamt Dortmund Anderes 07.02.2019.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hauptzollamt Dortmund Anderes 07.02.2019.pdf\nNeuer Dateiname: 2019_02_07_Hauptzollamt_Dortmund_95831040262106.pdf\nPDF im Massentest: Hauptzollamt Dortmund Anderes 07.02.2019.pdf\nLink WebUI: /test/massentest/detail/mt-0060-hauptzollamt-dortmund-anderes-07-02-2019-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_02_07_Hauptzollamt_Dortmund_95831040262106.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=07.02.2019\nRECHNR=95831040262106\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=30,01\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_02_07_Hauptzollamt_Dortmund_95831040262106.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=07.02.2019\nRECHNR=95831040262106\nAKTENZEICHEN=Kennzeichen: BO M 1410\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=KFZFK1169157756104022019\nGESAMTBETRAG=72,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-151",
@@ -1603,7 +1603,7 @@
     "quelle": "Massentest Hauptzollamt Dortmund Anderes 16.12.2022.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hauptzollamt Dortmund Anderes 16.12.2022.pdf\nNeuer Dateiname: 2022_12_16_Hauptzollamt_Dortmund_K116.9157.7561.pdf\nPDF im Massentest: Hauptzollamt Dortmund Anderes 16.12.2022.pdf\nLink WebUI: /test/massentest/detail/mt-0061-hauptzollamt-dortmund-anderes-16-12-2022-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2022_12_16_Hauptzollamt_Dortmund_K116.9157.7561.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=16.12.2022\nRECHNR=K116.9157.7561\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K116.9157.7561\nGESAMTBETRAG=61,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2022_12_16_Hauptzollamt_Dortmund_K116.9157.7561.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=16.12.2022\nRECHNR=K116.9157.7561\nAKTENZEICHEN=Kennzeichen: BO M 1410\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K116.9157.7561\nGESAMTBETRAG=61,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-152",
@@ -1614,7 +1614,7 @@
     "quelle": "Massentest Hauptzollamt Dortmund Anderes 27.10.2018.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hauptzollamt Dortmund Anderes 27.10.2018.pdf\nNeuer Dateiname: 2019_01_31_Hauptzollamt_Dortmund_K113.7205.9917.pdf\nPDF im Massentest: Hauptzollamt Dortmund Anderes 27.10.2018.pdf\nLink WebUI: /test/massentest/detail/mt-0062-hauptzollamt-dortmund-anderes-27-10-2018-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2019_01_31_Hauptzollamt_Dortmund_K113.7205.9917.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=31.01.2019\nRECHNR=K113.7205.9917\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K113.7205.9917\nGESAMTBETRAG=30,01\n\nSOLL-WERTE:\nNEUER DATEINAME=2019_01_31_Hauptzollamt_Dortmund_K113.7205.9917.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=31.01.2019\nRECHNR=K113.7205.9917\nAKTENZEICHEN=Kennzeichen: BO M 1099\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K113.7205.9917\nGESAMTBETRAG=23,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-153",
@@ -1625,7 +1625,7 @@
     "quelle": "Massentest Heinz-Georg Hepp Rechnung 23.08.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Heinz-Georg Hepp Rechnung 23.08.2025.pdf\nNeuer Dateiname: 2025_08_23_Amazon_26.pdf\nPDF im Massentest: Heinz-Georg Hepp Rechnung 23.08.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0067-heinz-georg-hepp-rechnung-23-08-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_08_23_Amazon_26.pdf\nLIEFERANT=Amazon\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=26\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=621654913\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=95,86\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_08_23_Bonprix_8401588910.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=8401588910\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=621654913\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=68,87\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-154",
@@ -1634,9 +1634,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Hepp, Simone Information 14.09.2017.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hepp, Simone Information 14.09.2017.pdf\nNeuer Dateiname: 2026_07_01_Klinik_Tecklenburger_Land.pdf\nPDF im Massentest: Hepp, Simone Information 14.09.2017.pdf\nLink WebUI: /test/massentest/detail/mt-0069-hepp-simone-information-14-09-2017-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Klinik_Tecklenburger_Land.pdf\nLIEFERANT=Klinik Tecklenburger Land\nDOKUMENTTYP=Medizinischer Fragebogen\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2017_09_14_St._Josef-Hospital_Bochum.pdf\nLIEFERANT=St. Josef-Hospital Bochum\nDOKUMENTTYP=OP Bericht\nDOKUMENTDATUM=14.09.2017\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Hepp, Simone Information 14.09.2017.pdf\nNeuer Dateiname: 2026_07_02_Klinik_Tecklenburger_Land.pdf\nPDF im Massentest: Hepp, Simone Information 14.09.2017.pdf\nLink WebUI: /test/massentest/detail/mt-0069-hepp-simone-information-14-09-2017-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Klinik_Tecklenburger_Land.pdf\nLIEFERANT=Klinik Tecklenburger Land\nDOKUMENTTYP=Medizinischer Fragebogen\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2017_09_14_St._Josef-Hospital_Bochum.pdf\nLIEFERANT=St. Josef-Hospital Bochum\nDOKUMENTTYP=OP Bericht\nDOKUMENTDATUM=14.09.2017\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-155",
@@ -1647,7 +1647,7 @@
     "quelle": "Massentest Kraftfahrt-Bundesamt Information 14.09.2016.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Kraftfahrt-Bundesamt Information 14.09.2016.pdf\nNeuer Dateiname: 2016_09_14_Unbekannt.pdf\nPDF im Massentest: Kraftfahrt-Bundesamt Information 14.09.2016.pdf\nLink WebUI: /test/massentest/detail/mt-0076-kraftfahrt-bundesamt-information-14-09-2016-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2016_09_14_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=14.09.2016\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2016_09_14_Kraftfahrt-Bundesamt.pdf\nLIEFERANT=Kraftfahrt-Bundesamt\nDOKUMENTTYP=Auskunft aus dem Fahreignungsregister\nDOKUMENTDATUM=14.09.2016\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-156",
@@ -1658,7 +1658,7 @@
     "quelle": "Massentest Kraftfahrt-Bundesamt Information 21.09.2016.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Kraftfahrt-Bundesamt Information 21.09.2016.pdf\nNeuer Dateiname: 2016_09_21_Unbekannt.pdf\nPDF im Massentest: Kraftfahrt-Bundesamt Information 21.09.2016.pdf\nLink WebUI: /test/massentest/detail/mt-0077-kraftfahrt-bundesamt-information-21-09-2016-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2016_09_21_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=21.09.2016\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2016_09_21_Kraftfahrt-Busndesamt.pdf\nLIEFERANT=Kraftfahrt-Busndesamt\nDOKUMENTTYP=Auskunft aus dem Fahreignungsregister\nDOKUMENTDATUM=21.09.2016\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-157",
@@ -1669,7 +1669,7 @@
     "quelle": "Massentest Lehner und Kollegen Rechnung 03.07.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lehner und Kollegen Rechnung 03.07.2025.pdf\nNeuer Dateiname: 2025_07_03_Telekom.pdf\nPDF im Massentest: Lehner und Kollegen Rechnung 03.07.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0079-lehner-und-kollegen-rechnung-03-07-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_07_03_Telekom.pdf\nLIEFERANT=Telekom\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=03.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=249,90\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_07_03_Lehner_und_Kollegen.pdf\nLIEFERANT=Lehner und Kollegen\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=03.07.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=249,90\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-158",
@@ -1680,7 +1680,7 @@
     "quelle": "Massentest Lehner und Kollegen Rechnung 12.02.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Lehner und Kollegen Rechnung 12.02.2025.pdf\nNeuer Dateiname: 2025_02_12_Telekom.pdf\nPDF im Massentest: Lehner und Kollegen Rechnung 12.02.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0080-lehner-und-kollegen-rechnung-12-02-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_02_12_Telekom.pdf\nLIEFERANT=Telekom\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=12.02.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=321,30\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_02_12_Lehner_&_Kollegen_2500099.pdf\nLIEFERANT=Lehner & Kollegen\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=12.02.2025\nRECHNR=2500099\nAKTENZEICHEN=57/25\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=321,30\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 14:06:38",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-159",
@@ -1700,9 +1700,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest 13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: 13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: 13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf\nLink WebUI: /test/massentest/detail/mt-0001-13042026-m-ssen-vermieter-eigenbedarf-begr-nden-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Zeitungsartikel\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Zeitungsartikel\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: 13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf\nNeuer Dateiname: 2026_07_02_Unbekannt.pdf\nPDF im Massentest: 13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf\nLink WebUI: /test/massentest/detail/mt-0001-13042026-m-ssen-vermieter-eigenbedarf-begr-nden-\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Zeitungsartikel\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Zeitungsartikel\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:05] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 07:34:05"
   },
   {
     "id": "pc-161",
@@ -1711,9 +1711,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Absender Anderes.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Absender Anderes.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Absender Anderes.pdf\nLink WebUI: /test/massentest/detail/mt-0003-absender-anderes-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Absender Anderes.pdf\nNeuer Dateiname: 2026_07_02_TIERÄRZTLICHE_BESCHEINIGUNG.pdf\nPDF im Massentest: Absender Anderes.pdf\nLink WebUI: /test/massentest/detail/mt-0003-absender-anderes-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_TIERÄRZTLICHE_BESCHEINIGUNG.pdf\nLIEFERANT=TIERÄRZTLICHE BESCHEINIGUNG\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_02_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 08:02:21] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 08:02:21"
   },
   {
     "id": "pc-162",
@@ -1722,9 +1722,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Anleitung Scansnap.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Anleitung Scansnap.pdf\nNeuer Dateiname: 2026_07_01_Unbekannt.pdf\nPDF im Massentest: Anleitung Scansnap.pdf\nLink WebUI: /test/massentest/detail/mt-0008-anleitung-scansnap-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Bedienungsanleitung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Bedienungsanleitung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Anleitung Scansnap.pdf\nNeuer Dateiname: 2026_07_02_Unbekannt.pdf\nPDF im Massentest: Anleitung Scansnap.pdf\nLink WebUI: /test/massentest/detail/mt-0008-anleitung-scansnap-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Bedienungsanleitung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Unbekannt.pdf\nLIEFERANT=\nDOKUMENTTYP=Bedienungsanleitung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:06] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 07:34:06"
   },
   {
     "id": "pc-163",
@@ -1744,9 +1744,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest BCSIT GmbH Information.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: BCSIT GmbH Information.pdf\nNeuer Dateiname: 2026_07_01_BCSIT_GmbH.pdf\nPDF im Massentest: BCSIT GmbH Information.pdf\nLink WebUI: /test/massentest/detail/mt-0014-bcsit-gmbh-information-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_BCSIT_GmbH.pdf\nLIEFERANT=BCSIT GmbH\nDOKUMENTTYP=Information\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_BCSIT_GmbH.pdf\nLIEFERANT=BCSIT GmbH\nDOKUMENTTYP=Information\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: BCSIT GmbH Information.pdf\nNeuer Dateiname: 2026_07_02_BCSIT_GmbH.pdf\nPDF im Massentest: BCSIT GmbH Information.pdf\nLink WebUI: /test/massentest/detail/mt-0014-bcsit-gmbh-information-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_BCSIT_GmbH.pdf\nLIEFERANT=BCSIT GmbH\nDOKUMENTTYP=Information\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_BCSIT_GmbH.pdf\nLIEFERANT=BCSIT GmbH\nDOKUMENTTYP=Information\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:06] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 07:34:06"
   },
   {
     "id": "pc-165",
@@ -1766,9 +1766,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Heinz-Georg Hepp Kassenzettel.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Heinz-Georg Hepp Kassenzettel.pdf\nNeuer Dateiname: 2026_07_01_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nPDF im Massentest: Heinz-Georg Hepp Kassenzettel.pdf\nLink WebUI: /test/massentest/detail/mt-0065-heinz-georg-hepp-kassenzettel-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nLIEFERANT=Privatbrauerei Moritz Fiege GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nLIEFERANT=Privatbrauerei Moritz Fiege GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:43] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Heinz-Georg Hepp Kassenzettel.pdf\nNeuer Dateiname: 2026_07_02_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nPDF im Massentest: Heinz-Georg Hepp Kassenzettel.pdf\nLink WebUI: /test/massentest/detail/mt-0065-heinz-georg-hepp-kassenzettel-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nLIEFERANT=Privatbrauerei Moritz Fiege GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf\nLIEFERANT=Privatbrauerei Moritz Fiege GmbH & Co. KG\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:07] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:43"
+    "aktualisiert": "2026-07-02 07:34:07"
   },
   {
     "id": "pc-167",
@@ -1810,9 +1810,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Simone Hepp Vertrag.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Simone Hepp Vertrag.pdf\nNeuer Dateiname: 2026_07_01_ADAC_Versicherung_AG.pdf\nPDF im Massentest: Simone Hepp Vertrag.pdf\nLink WebUI: /test/massentest/detail/mt-0103-simone-hepp-vertrag-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_ADAC_Versicherung_AG.pdf\nLIEFERANT=ADAC Versicherung AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_ADAC_Versicherung_AG.pdf\nLIEFERANT=ADAC Versicherung AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:44] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Simone Hepp Vertrag.pdf\nNeuer Dateiname: 2026_07_02_ADAC_Versicherung_AG.pdf\nPDF im Massentest: Simone Hepp Vertrag.pdf\nLink WebUI: /test/massentest/detail/mt-0103-simone-hepp-vertrag-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_ADAC_Versicherung_AG.pdf\nLIEFERANT=ADAC Versicherung AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_ADAC_Versicherung_AG.pdf\nLIEFERANT=ADAC Versicherung AG\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:07] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:44"
+    "aktualisiert": "2026-07-02 07:34:07"
   },
   {
     "id": "pc-171",
@@ -1821,9 +1821,9 @@
     "status": "offen",
     "prioritaet": "mittel",
     "quelle": "Massentest Skyline Therapie Bochum GmbH Information 15.04.2026.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Skyline Therapie Bochum GmbH Information 15.04.2026.pdf\nNeuer Dateiname: 2026_04_15_Skyline_Therapie_Bochum_GmbH_SPR-785.pdf\nPDF im Massentest: Skyline Therapie Bochum GmbH Information 15.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0105-skyline-therapie-bochum-gmbh-information-15-04-2\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_15_Skyline_Therapie_Bochum_GmbH_SPR-785.pdf\nLIEFERANT=Skyline Therapie Bochum GmbH\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=15.04.2026\nRECHNR=SPR-785\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=42,42\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_15_Skyline_Therapie_Bochum_SPR-785.pdf\nLIEFERANT=Skyline Therapie Bochum\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.04.2026\nRECHNR=SPR-785\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=42,42\n\nNotiz / Abweichung:\n\n=== ENDE ===",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Skyline Therapie Bochum GmbH Information 15.04.2026.pdf\nNeuer Dateiname: 2026_04_15_SKYLINE_THERAPIE_BOCHUM_SPR-785.pdf\nPDF im Massentest: Skyline Therapie Bochum GmbH Information 15.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0105-skyline-therapie-bochum-gmbh-information-15-04-2\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_15_SKYLINE_THERAPIE_BOCHUM_SPR-785.pdf\nLIEFERANT=SKYLINE THERAPIE BOCHUM\nDOKUMENTTYP=Behörde\nDOKUMENTDATUM=15.04.2026\nRECHNR=SPR-785\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=42,42\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_15_Skyline_Therapie_Bochum_SPR-785.pdf\nLIEFERANT=Skyline Therapie Bochum\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=15.04.2026\nRECHNR=SPR-785\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=42,42\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-172",
@@ -1843,9 +1843,9 @@
     "status": "erledigt",
     "prioritaet": "mittel",
     "quelle": "Massentest Weicken _ Schmidt GmbH Rechnung.pdf",
-    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Weicken _ Schmidt GmbH Rechnung.pdf\nNeuer Dateiname: 2026_07_01_Weicken_&_Schmidt_GmbH.pdf\nPDF im Massentest: Weicken _ Schmidt GmbH Rechnung.pdf\nLink WebUI: /test/massentest/detail/mt-0125-weicken-schmidt-gmbh-rechnung-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_01_Weicken_&_Schmidt_GmbH.pdf\nLIEFERANT=Weicken & Schmidt GmbH\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=83,48\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_06_30_Weicken_&_Schmidt_GmbH.pdf\nLIEFERANT=Weicken & Schmidt GmbH\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=83,48\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-01 18:18:44] Soll/Ist fehlerfrei",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Weicken _ Schmidt GmbH Rechnung.pdf\nNeuer Dateiname: 2026_07_02_Weicken_&_Schmidt_GmbH.pdf\nPDF im Massentest: Weicken _ Schmidt GmbH Rechnung.pdf\nLink WebUI: /test/massentest/detail/mt-0125-weicken-schmidt-gmbh-rechnung-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_07_02_Weicken_&_Schmidt_GmbH.pdf\nLIEFERANT=Weicken & Schmidt GmbH\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=83,48\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_07_01_Weicken_&_Schmidt_GmbH.pdf\nLIEFERANT=Weicken & Schmidt GmbH\nDOKUMENTTYP=Kassenbon\nDOKUMENTDATUM=\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=83,48\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 07:34:08] Soll/Ist fehlerfrei",
     "erstellt": "2026-06-29 16:29:01",
-    "aktualisiert": "2026-07-01 18:18:44"
+    "aktualisiert": "2026-07-02 07:34:08"
   },
   {
     "id": "pc-174",
@@ -1867,7 +1867,7 @@
     "quelle": "Massentest Anderes 18.01.2023.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Anderes 18.01.2023.pdf\nNeuer Dateiname: 2023_01_18_Hauptzollamt_Dortmund_K122.0045.3253.pdf\nPDF im Massentest: Anderes 18.01.2023.pdf\nLink WebUI: /test/massentest/detail/mt-0007-anderes-18-01-2023-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2023_01_18_Hauptzollamt_Dortmund_K122.0045.3253.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=18.01.2023\nRECHNR=K122.0045.3253\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K122.0045.3253\nGESAMTBETRAG=218,00\n\nSOLL-WERTE:\nNEUER DATEINAME=2023_01_18_Hauptzollamt_Dortmund_K122.0045.3253.pdf\nLIEFERANT=Hauptzollamt Dortmund\nDOKUMENTTYP=Kraftfahrzeugsteuerbescheid\nDOKUMENTDATUM=18.01.2023\nRECHNR=K122.0045.3253\nAKTENZEICHEN=Kennzeichen BO MX 1410\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=K122.0045.3253\nGESAMTBETRAG=218,00\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-30 13:59:37",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-176",
@@ -1878,7 +1878,7 @@
     "quelle": "Massentest bonpdx Handelagm. mbH Rechnung 23.08.2025.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: bonpdx Handelagm. mbH Rechnung 23.08.2025.pdf\nNeuer Dateiname: 2025_08_23_Bonprix.pdf\nPDF im Massentest: bonpdx Handelagm. mbH Rechnung 23.08.2025.pdf\nLink WebUI: /test/massentest/detail/mt-0017-bonpdx-handelagm-mbh-rechnung-23-08-2025-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2025_08_23_Bonprix.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=95,86\n\nSOLL-WERTE:\nNEUER DATEINAME=2025_08_23_Bonprix_8401588910.pdf\nLIEFERANT=Bonprix\nDOKUMENTTYP=Rechnung\nDOKUMENTDATUM=23.08.2025\nRECHNR=8401588910\nAKTENZEICHEN=\nKUNDENNR=321658393\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=95,86\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-30 13:59:37",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-177",
@@ -1889,7 +1889,7 @@
     "quelle": "Massentest Techniker Information 18.03.2026.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Techniker Information 18.03.2026.pdf\nNeuer Dateiname: 2026_03_18_Techniker_Krankenkasse_S286761349.pdf\nPDF im Massentest: Techniker Information 18.03.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0115-techniker-information-18-03-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_03_18_Techniker_Krankenkasse_S286761349.pdf\nLIEFERANT=Techniker Krankenkasse\nDOKUMENTTYP=Versicherung\nDOKUMENTDATUM=18.03.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=S286761349\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_03_18_Techniker_Krankenkasse_S286761349.pdf\nLIEFERANT=Techniker Krankenkasse\nDOKUMENTTYP=Informationsschreiben Krankenkasse\nDOKUMENTDATUM=18.03.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=S286761349\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-06-30 14:02:18",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-178",
@@ -1900,7 +1900,7 @@
     "quelle": "Massentest Bausparkasse Schwäbisch Hall AG Information 05.02.2020.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Bausparkasse Schwäbisch Hall AG Information 05.02.2020.pdf\nNeuer Dateiname: 2020_02_05_Sparda-Bank_West_eG.pdf\nPDF im Massentest: Bausparkasse Schwäbisch Hall AG Information 05.02.2020.pdf\nLink WebUI: /test/massentest/detail/mt-0013-bausparkasse-schw-bisch-hall-ag-information-05-0\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2020_02_05_Sparda-Bank_West_eG.pdf\nLIEFERANT=Sparda-Bank West eG\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=05.02.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2020_02_05_Bausparkasse_Schwäbisch_Hall_AG.pdf\nLIEFERANT=Bausparkasse Schwäbisch Hall AG\nDOKUMENTTYP=Informationsschreiben\nDOKUMENTDATUM=05.02.2020\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-07-01 18:18:31",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
   },
   {
     "id": "pc-179",
@@ -1911,6 +1911,17 @@
     "quelle": "Massentest LEONES Rechtsanwälte Information 20.08.2021.pdf",
     "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: LEONES Rechtsanwälte Information 20.08.2021.pdf\nNeuer Dateiname: 2021_08_20_Rechtsanwälte_Leones.pdf\nPDF im Massentest: LEONES Rechtsanwälte Information 20.08.2021.pdf\nLink WebUI: /test/massentest/detail/mt-0081-leones-rechtsanw-lte-information-20-08-2021-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2021_08_20_Rechtsanwälte_Leones.pdf\nLIEFERANT=Rechtsanwälte Leones\nDOKUMENTTYP=Medizinischer Fragebogen\nDOKUMENTDATUM=20.08.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2021_08_20_Rechtsanwälte_Leones.pdf\nLIEFERANT=Rechtsanwälte Leones\nDOKUMENTTYP=Schreiben Rechtsanwalt\nDOKUMENTDATUM=20.08.2021\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===",
     "erstellt": "2026-07-01 18:18:31",
-    "aktualisiert": "2026-07-01 22:17:49"
+    "aktualisiert": "2026-07-02 08:13:24"
+  },
+  {
+    "id": "pc-180",
+    "titel": "Massentest prüfen: Heinz-Georg Hepp Information 24.04.2026.pdf",
+    "bereich": "Massentest",
+    "status": "erledigt",
+    "prioritaet": "mittel",
+    "quelle": "Massentest Heinz-Georg Hepp Information 24.04.2026.pdf",
+    "notiz": "=== MASSENTEST AUFGABE ===\nAlter Dateiname: Heinz-Georg Hepp Information 24.04.2026.pdf\nNeuer Dateiname: 2026_04_24_Dr._med._U._Neukirchen_Rüsenacker_1_44799_Bochum.pdf\nPDF im Massentest: Heinz-Georg Hepp Information 24.04.2026.pdf\nLink WebUI: /test/massentest/detail/mt-0064-heinz-georg-hepp-information-24-04-2026-pdf\nFachlich validiert: Nein\n\nIST-WERTE:\nNEUER DATEINAME=2026_04_24_Dr._med._U._Neukirchen_Rüsenacker_1_44799_Bochum.pdf\nLIEFERANT=Dr. med. U. Neukirchen Rüsenacker 1 44799 Bochum\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=24.04.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nSOLL-WERTE:\nNEUER DATEINAME=2026_04_24_Orthopädische_Facharztpraxis_Dr._med._Uta_Neukirchen.pdf\nLIEFERANT=Orthopädische Facharztpraxis Dr. med. Uta Neukirchen\nDOKUMENTTYP=Ärztliche Bescheinigung\nDOKUMENTDATUM=24.04.2026\nRECHNR=\nAKTENZEICHEN=\nKUNDENNR=\nAUFTRAGNR=\nBESTELLNR=\nLIEFERSCHEINNR=\nVERSICHERUNGSNR=\nGESAMTBETRAG=\n\nNotiz / Abweichung:\n\n=== ENDE ===\n\n[Automatisch erledigt 2026-07-02 08:13:23] Soll/Ist fehlerfrei",
+    "erstellt": "2026-07-02 08:02:13",
+    "aktualisiert": "2026-07-02 08:13:23"
   }
 ]

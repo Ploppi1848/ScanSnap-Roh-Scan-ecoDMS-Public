@@ -1199,6 +1199,107 @@ def finde_mapping_wert(text: str, eintraege: list[dict], feldname: str) -> str:
     return ""
 
 
+def _lieferant_header_lines(text: str) -> list[str]:
+    lines = [re.sub(r"\s+", " ", z).strip() for z in str(text or "").splitlines()]
+    return [z for z in lines if z]
+
+
+def _lieferant_context_bad(line: str) -> bool:
+    line_l = str(line or "").lower()
+    bad = [
+        "lieferadresse", "rechnungsadresse", "rechnungsempf", "empfaenger", "empfänger",
+        "heinz-georg hepp", "h.-g. hepp", "simone hepp", "iban", "bic", "bankverbindung",
+        "telefon", "telefax", "fax", "e-mail", "email", "www.", "http", "ust-id",
+        "steuernummer", "kunden-nr", "kundennummer", "seite ",
+    ]
+    return any(x in line_l for x in bad)
+
+
+def _lieferant_bank_name(name: str) -> bool:
+    return bool(re.search(r"\b(Bank|Sparkasse|Bausparkasse|Sparda)\b", str(name or ""), re.IGNORECASE))
+
+
+def _lieferant_bank_context(text: str) -> bool:
+    return bool(re.search(r"\b(Kontoauszug|Kontostand|Umsatz(?:anzeige|uebersicht|übersicht)?|Darlehen|Bauspar(?:vertrag)?|Kredit|Finanzierung|Baufinanzierung)\b", str(text or ""), re.IGNORECASE))
+
+
+def _lieferant_candidate_score(name: str, suchwort: str, line: str, line_index: int, full_text: str) -> int:
+    score = 0
+    name = str(name or "").strip()
+    suchwort = str(suchwort or "").strip()
+    line = str(line or "").strip()
+    if not name or not suchwort:
+        return -999
+    try:
+        if ist_unbrauchbarer_lieferant(name):
+            return -999
+    except Exception:
+        pass
+    if _lieferant_context_bad(line):
+        score -= 120
+    if line_index < 8:
+        score += 100
+    elif line_index < 20:
+        score += 75
+    elif line_index < 35:
+        score += 45
+    else:
+        score += 10
+    if len(suchwort) >= 10:
+        score += 12
+    if len(name) >= 12:
+        score += 10
+    if re.search(r"\b(GmbH|AG|eG|KG|UG|GbR|mbB|e\.K\.|Bank|Sparkasse|Bausparkasse|Amtsgericht|Stadt|Rathaus|Versicherung|Therapie|Praxis)\b", name, re.IGNORECASE):
+        score += 25
+    if name.lower() in line.lower():
+        score += 25
+    if _lieferant_bank_name(name) and not _lieferant_bank_context(full_text) and (line_index >= 3 or _lieferant_context_bad(line)):
+        score -= 160
+    if len(name.split()) == 1 and len(name) <= 6:
+        score -= 25
+    return score
+
+
+def finde_lieferant_kandidat_bewertet(text: str, eintraege: list[dict]) -> str:
+    """Konfigurationsbasierte Lieferantenerkennung mit Kopfbereich-/Kontextgewichtung."""
+    lines = _lieferant_header_lines(text)
+    if not lines:
+        return ""
+    candidates: list[tuple[int, int, str, str, str]] = []
+    for eintrag in eintraege:
+        name = str(eintrag.get("name") or "").strip()
+        for suchwort in eintrag.get("suchwoerter", []):
+            sw = str(suchwort or "").strip()
+            if not sw:
+                continue
+            sw_l = sw.lower()
+            for idx, line in enumerate(lines):
+                if sw_l not in line.lower():
+                    continue
+                context = " ".join(lines[max(0, idx - 2):min(len(lines), idx + 2)])
+                score = _lieferant_candidate_score(name, sw, context, idx, text)
+                if score >= 35:
+                    # Kopfnaehe als zweites Sortierkriterium: kleiner Index gewinnt.
+                    candidates.append((score, -idx, name, sw, line[:120]))
+    if not candidates:
+        logging.info("Lieferant nicht erkannt.")
+        return ""
+    candidates.sort(reverse=True, key=lambda x: (x[0], x[1], len(x[2])))
+    score, neg_idx, name, sw, line = candidates[0]
+    logging.info(f"Lieferant erkannt: {name} ueber Suchwort '{sw}' / Score {score} / Kopfzeile {abs(neg_idx)} / Kontext '{line}'")
+    return name
+
+
+def lieferant_mapping_hat_rohtreffer(text: str, eintraege: list[dict]) -> bool:
+    text_l = str(text or "").lower()
+    for eintrag in eintraege:
+        for suchwort in eintrag.get("suchwoerter", []):
+            sw = str(suchwort or "").strip().lower()
+            if sw and sw in text_l:
+                return True
+    return False
+
+
 def erkenne_lieferant(text: str) -> str:
     beispiel = (
         "# Lieferanten-Erkennung\n"
@@ -1223,6 +1324,12 @@ def erkenne_lieferant(text: str) -> str:
     )
 
     eintraege = lade_mapping_config(LIEFERANTEN_DATEI, beispiel)
+    kandidat = finde_lieferant_kandidat_bewertet(text, eintraege)
+    if kandidat:
+        return kandidat
+    if lieferant_mapping_hat_rohtreffer(text, eintraege):
+        logging.info("Lieferant nicht erkannt: nur schwache oder unplausible Konfigurationstreffer gefunden.")
+        return ""
     return finde_mapping_wert(text, eintraege, "Lieferant")
 
 
@@ -5269,6 +5376,35 @@ def _safe_meta_is_configured_supplier(value: str) -> bool:
         return False
 
 
+_SAFE_META_WEAK_LATE_SUPPLIERS = {
+    "amtsgericht bochum",
+    "telekom",
+    "amazon",
+    "lvm",
+    "lvm versicherung",
+    "santander",
+    "santander consumer bank",
+    "santander consumer bank ag",
+    "sparda bank west eg",
+    "sparda bank",
+}
+
+
+def _safe_meta_is_weak_late_supplier(value: str) -> bool:
+    key = _safe_meta_norm_key(value)
+    return key in _SAFE_META_WEAK_LATE_SUPPLIERS
+
+
+def _safe_meta_supplier_variant(current: str, new_value: str) -> bool:
+    cur_key = _safe_meta_norm_key(current)
+    new_key = _safe_meta_norm_key(new_value)
+    if not cur_key or not new_key:
+        return False
+    if cur_key == new_key:
+        return True
+    return cur_key in new_key or new_key in cur_key
+
+
 def _safe_meta_supplier_score(value: str) -> int:
     value = _safe_meta_norm(value)
     if not _safe_meta_is_plausible("LIEFERANT", value):
@@ -5293,6 +5429,18 @@ def _safe_meta_supplier_score(value: str) -> int:
     return score
 
 
+def _supplier_decision_log(old_value: str, new_value: str, source: str, reason: str, allowed: bool) -> None:
+    action = "erlaubt" if allowed else "blockiert"
+    logging.info(
+        "SUPPLIER_DECISION: %s | alt='%s' | neu='%s' | quelle='%s' | grund='%s'",
+        action,
+        _safe_meta_norm(old_value),
+        _safe_meta_norm(new_value),
+        source or "",
+        reason or "",
+    )
+
+
 def _safe_meta_supplier_decision(current: str, new_value: str) -> tuple[bool, str]:
     cur_score = _safe_meta_supplier_score(current)
     new_score = _safe_meta_supplier_score(new_value)
@@ -5300,8 +5448,21 @@ def _safe_meta_supplier_decision(current: str, new_value: str) -> tuple[bool, st
     new_key = _safe_meta_norm_key(new_value)
     if cur_key == new_key:
         return True, "normalisierte Lieferantenvariante"
+    if _safe_meta_supplier_variant(current, new_value) and new_score >= cur_score - 10:
+        return True, "plausible Lieferantenvariante"
     if new_score < 0:
         return False, "schwaecherer Kandidat"
+    if (
+        _safe_meta_is_weak_late_supplier(new_value)
+        and _safe_meta_is_plausible("LIEFERANT", current)
+        and (
+            _safe_meta_is_configured_supplier(current)
+            or cur_score >= 55
+            or (len(cur_key) >= 12 and len(cur_key.split()) >= 2)
+        )
+        and not _safe_meta_supplier_variant(current, new_value)
+    ):
+        return False, "spaeter schwacher Gewinner wuerde plausiblen Lieferanten ersetzen"
     if _safe_meta_is_configured_supplier(new_value) and not _safe_meta_is_configured_supplier(current):
         return True, "besserer Kandidat aus Lieferanten-Konfiguration"
     if new_score >= cur_score + 20:
@@ -5355,22 +5516,30 @@ def safe_set_meta(meta: dict, field: str, value, reason: str = "", force: bool =
     current = _safe_meta_norm(meta.get(field, ""))
     if force or field not in SAFE_META_PROTECTED_FIELDS:
         meta[field] = new_value
+        if field == "LIEFERANT":
+            _supplier_decision_log(current, new_value, reason, "force/nicht geschuetztes Feld", True)
         return True
     if not _safe_meta_is_plausible(field, current):
         meta[field] = new_value
         logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen leerem/schwachem Ausgangswert ({reason})")
+        if field == "LIEFERANT":
+            _supplier_decision_log(current, new_value, reason, "leerem/schwachem Ausgangswert", True)
         return True
     if _safe_meta_norm_key(current) == _safe_meta_norm_key(new_value):
         meta[field] = new_value
         logging.info(f"SAFE_META: {field}='{new_value}' erlaubt wegen normalisierter Variante ({reason})")
+        if field == "LIEFERANT":
+            _supplier_decision_log(current, new_value, reason, "normalisierter Variante", True)
         return True
     if field == "LIEFERANT":
         allowed, why = _safe_meta_supplier_decision(current, new_value)
         if allowed:
             meta[field] = new_value
             logging.info(f"SAFE_META: LIEFERANT='{new_value}' erlaubt wegen {why}; vorher '{current}' ({reason})")
+            _supplier_decision_log(current, new_value, reason, why, True)
             return True
         logging.info(f"SAFE_META: LIEFERANT bleibt '{current}', '{new_value}' blockiert wegen {why} ({reason})")
+        _supplier_decision_log(current, new_value, reason, why, False)
         return False
     if field == "DOKUMENTTYP":
         allowed, why = _safe_meta_doctype_decision(current, new_value)
@@ -10636,6 +10805,11 @@ def _extract_header_supplier_5110(text: str, pdf_pfad=None) -> str:
     raw_lines = [re.sub(r"\s+", " ", z).strip() for z in str(text or "").splitlines()]
     lines = [z for z in raw_lines if z]
     header = lines[:35]
+    extra_strong_patterns = [
+        r"\b(?:Rathaus|Amtsgericht|Landgericht|Hauptzollamt|Finanzamt|Polizeipraesidium|Polizeipr[aÃ¤]sidium)\s+[A-Z][A-Za-z.\-]+(?:\s+[A-Z][A-Za-z.\-]+)?\b",
+        r"\b(?:Sparda[-\s]*Bank|Bausparkasse|Sparkasse)\s+[A-Z][A-Za-z.\-]+(?:\s+[A-Z][A-Za-z.\-]+)?\b",
+        r"\b[A-Z][A-Za-z&.\- ]{2,}\s+(?:Therapie|Gartenbau|Versicherung|Bausparkasse)\b",
+    ]
 
     strong_patterns = [
         r"\bHandwerksbetrieb\s+[A-ZÄÖÜ][A-Za-zÄÖÜäöüß\-]+(?:\s+[A-ZÄÖÜ][A-Za-zÄÖÜäöüß\-]+)?",
@@ -10649,7 +10823,7 @@ def _extract_header_supplier_5110(text: str, pdf_pfad=None) -> str:
     for idx, line in enumerate(header):
         # nur die linke Seite von typischen Trennungen betrachten
         probe = re.split(r"\s{3,}|\t|\|", line)[0].strip()
-        for pat in strong_patterns:
+        for pat in extra_strong_patterns + strong_patterns:
             m = re.search(pat, probe, re.IGNORECASE)
             if m:
                 cand = _clean_supplier_5110(m.group(0))
@@ -10989,8 +11163,8 @@ def _apply_lieferantenoffensive_610(text: str, pdf_pfad, meta: dict) -> dict:
 
     def set_lief(v):
         if v:
-            meta["LIEFERANT"] = v
-            meta["LIEFERANT_STATUS"] = "BEKANNT"
+            if safe_set_meta(meta, "LIEFERANT", v, reason="6.1 Lieferantenoffensive"):
+                meta["LIEFERANT_STATUS"] = "BEKANNT"
 
     # OCR-typische Schreibfehler und Abkuerzungen
     if any(x in cl for x in ["physio point", "physio-point", "ptlyslo polnt", "physio polnt"]):
@@ -11203,8 +11377,8 @@ def _apply_betraege_nummern_630(text: str, pdf_pfad, meta: dict) -> dict:
                 meta["RECHNR"] = re.sub(r"\s+", " ", m.group(1)).strip()
                 logging.warning(f"6.3: Aktenzeichen als RECHNR erkannt: {meta['RECHNR']}")
         if str(meta.get("RECHNR") or "").strip():
-            meta["LIEFERANT"] = "Staatsanwaltschaft Bochum"
-            meta["LIEFERANT_STATUS"] = "BEKANNT"
+            if safe_set_meta(meta, "LIEFERANT", "Staatsanwaltschaft Bochum", reason="6.3 Aktenzeichen-Kontext"):
+                meta["LIEFERANT_STATUS"] = "BEKANNT"
             meta["DOKUMENTTYP"] = "Ermittlungsverfahren"
             meta["DOKUMENTTYP_STATUS"] = "BEKANNT"
 
@@ -11424,7 +11598,8 @@ def _apply_stabilisierung_641(text: str, pdf_pfad, meta_daten: dict) -> dict:
 
     # 2) Tintenfass-Kassenbon: OCR kann Tintenfass/Tintentass verfälschen.
     if any(x in tl for x in ["tintenfass", "tintentass", "tintenfäss", "tintenfass bochum"]) or "tintenfass" in fname:
-        meta["LIEFERANT"] = "Tintenfass"
+        if safe_set_meta(meta, "LIEFERANT", "Tintenfass", reason="6.4.1 Tintenfass-Stabilisierung"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT"
         meta["DOKUMENTTYP"] = "Kassenbon"
         amount = _first_amount_641(t, [
             r"(?:bonsumme|summe|gesamt|total|betrag|bar)\D{0,40}([0-9]{1,4}[,.][0-9]{2})",
@@ -11441,7 +11616,8 @@ def _apply_stabilisierung_641(text: str, pdf_pfad, meta_daten: dict) -> dict:
 
     # 3) Vorwerk: Kundennummer gezielt erkennen und MwSt nicht als Gesamtbetrag nehmen.
     if "vorwerk" in tl or "vorwerk" in fname or str(meta.get("LIEFERANT", "")).lower().startswith("vorwerk"):
-        meta["LIEFERANT"] = "Vorwerk"
+        if safe_set_meta(meta, "LIEFERANT", "Vorwerk", reason="6.4.1 Vorwerk-Stabilisierung"):
+            meta["LIEFERANT_STATUS"] = "BEKANNT"
         # Kundennummer/Kunden-Nr./Kunden-Nr erkennen.
         if not str(meta.get("KUNDENNR", "")).strip():
             m = re.search(r"Kunden\s*[- ]?\s*(?:Nr\.?|Nummer)\s*[:#]?\s*([0-9]{7,12})", t, re.IGNORECASE)
@@ -11495,5 +11671,262 @@ def erzeuge_meta_daten(pdf_pfad: Path, erkannter_text: str | None = None):
 
 try:
     logging.info("Scan-Service Erweiterung geladen: 6.4.1 Stabilisierung")
+except Exception:
+    pass
+
+
+# ============================================================
+# SCAN-SERVICE 6.5 - MEDIZINISCHE LIEFERANTEN GENERISCH
+# ============================================================
+# Ziel: Praxis-/Klinik-/Arztnamen im Kopfbereich generisch als starke
+# Lieferantenkandidaten behandeln, ohne Einzelfall-Kaskaden aufzubauen.
+
+_erzeuge_meta_daten_orig_650 = erzeuge_meta_daten
+try:
+    _korrigiere_felder_v54_orig_650 = korrigiere_felder_v54
+except Exception:
+    _korrigiere_felder_v54_orig_650 = None
+
+
+_MED_SUPPLIER_MARKERS_650 = [
+    "praxis", "gemeinschaftspraxis", "klinik", "krankenhaus", "hospital",
+    "medical", "medizin", "mvz", "dr", "dres", "professor", "prof",
+    "zahnarzt", "zahnmedizin", "facharzt", "tierarzt", "tieraerzt",
+    "tierarztpraxis", "haustier", "physiotherapie", "ergotherapie",
+    "therapie", "labor", "orthopaed", "orthopad",
+]
+
+_MED_SUPPLIER_FRAGMENTS_650 = {
+    "praxis", "gemeinschaftspraxis", "tierarztpraxis", "medical",
+    "krankenhaus", "klinik", "hospital", "medizin", "mvz", "dr", "dres",
+    "prof", "professor", "zahnarzt", "tierarzt", "therapie", "labor",
+}
+
+
+def _med_norm_650(value: str) -> str:
+    try:
+        return _safe_meta_norm_key(value)
+    except Exception:
+        return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+
+def _med_line_bad_650(line: str) -> bool:
+    key = _med_norm_650(line)
+    raw = str(line or "")
+    bad_parts = [
+        "heinz georg hepp", "h g hepp", "simone hepp", "patient",
+        "patientin", "versicherter", "versicherte", "geburtsdatum",
+        "geb datum", "geb am", "anschrift", "adresse", "empfaenger",
+        "rechnungsempfaenger", "lieferadresse", "kundennummer",
+        "kunden nr", "versicherungsnummer", "telefon", "telefax", "fax",
+        "e mail", "email", "www", "http", "iban", "bic",
+        "aufsichtsratsvorsitzender", "vorstand", "geschaeftsfuehrer",
+        "geschaftsfuehrer", "registergericht", "ust id", "hr b",
+        "versicherungsverein", "versicherung", "versicherungs ag",
+        "sparkasse", "swift", "bafin",
+    ]
+    if any(part in key for part in bad_parts):
+        return True
+    if re.search(r"\b\d{5}\b", raw):
+        return True
+    if re.search(r"\b(?:strasse|stra(?:ÃŸ|ß)e|ring|weg|platz|gasse)\s+\d+\b", raw, re.IGNORECASE):
+        return True
+    return False
+
+
+def _med_is_fragment_650(value: str) -> bool:
+    key = _med_norm_650(value)
+    if not key:
+        return True
+    if key in _MED_SUPPLIER_FRAGMENTS_650:
+        return True
+    words = key.split()
+    return len(words) == 1 and key in _MED_SUPPLIER_FRAGMENTS_650
+
+
+def _med_clean_candidate_650(line: str) -> str:
+    value = re.sub(r"\s+", " ", str(line or "")).strip(" :;,.|-")
+    value = re.sub(r"^(?:absender|praxis|klinik|lieferant)\s*[:\-]\s*", "", value, flags=re.IGNORECASE).strip()
+    value = re.sub(r"\s{2,}", " ", value).strip(" :;,.|-")
+    try:
+        value = bereinige_lieferantenname(value)
+    except Exception:
+        pass
+    return value.strip(" :;,.|-")
+
+
+def _med_enrich_candidate_650(candidate: str, context: str) -> str:
+    value = _safe_meta_norm(candidate)
+    if not value:
+        return ""
+    key = _med_norm_650(value)
+    ctx = _med_norm_650(context)
+    if (
+        re.search(r"\bdr\b", key)
+        and "praxis" not in key
+        and "facharzt" not in key
+        and "orthop" in ctx
+        and ("facharzt" in ctx or "fachaerzt" in ctx or "facharztin" in ctx)
+    ):
+        return f"Orthopädische Facharztpraxis {value}"
+    return value
+
+
+def _med_line_has_marker_650(line: str) -> bool:
+    key = _med_norm_650(line)
+    for marker in _MED_SUPPLIER_MARKERS_650:
+        marker_key = _med_norm_650(marker)
+        if not marker_key:
+            continue
+        if len(marker_key) <= 4:
+            if re.search(rf"\b{re.escape(marker_key)}\b", key):
+                return True
+        elif marker_key in key:
+            return True
+    return False
+
+
+def _med_candidate_score_650(candidate: str, line: str, idx: int) -> int:
+    candidate = _safe_meta_norm(candidate)
+    if not candidate or _med_line_bad_650(line) or _med_is_fragment_650(candidate):
+        return -999
+    key = _med_norm_650(candidate)
+    words = key.split()
+    if len(candidate) > 100 or len(words) >= 10:
+        return -999
+    if any(x in key for x in ["rechnung", "rechnungsnummer", "datum", "betrag", "seite"]):
+        return -80
+
+    score = 0
+    if idx < 8:
+        score += 120
+    elif idx < 18:
+        score += 85
+    elif idx < 35:
+        score += 45
+    else:
+        score += 10
+
+    if _med_line_has_marker_650(candidate):
+        score += 45
+    if re.search(r"\b(Dr\.|Dres\.|Prof\.|Professor|med\.|dent\.|Praxis|Klinik|Hospital|Medical|MVZ|Zahnarzt|Tierarzt|Therapie)\b", candidate, re.IGNORECASE):
+        score += 30
+    if len(words) >= 2:
+        score += 20
+    if len(candidate) >= 16:
+        score += 15
+    if len(words) == 1:
+        score -= 35
+    return score
+
+
+def _med_header_supplier_candidate_650(text: str) -> tuple[str, int, str]:
+    try:
+        t = normalisiere_ocr_text(text or "")
+    except Exception:
+        t = str(text or "")
+    if not t or not ist_medizinisches_dokument(t):
+        return "", -999, ""
+
+    raw_lines = [re.sub(r"\s+", " ", z).strip() for z in t.splitlines() if z.strip()]
+    lines = raw_lines[:35]
+    candidates: list[tuple[int, int, str, str]] = []
+
+    for idx, line in enumerate(lines):
+        if _med_line_bad_650(line):
+            logging.info(f"SUPPLIER_DECISION: medizinische Kopfzeile verworfen wegen Patient/Empfaenger | zeile='{line[:120]}'")
+            continue
+        if not _med_line_has_marker_650(line):
+            continue
+        candidate = _med_clean_candidate_650(line)
+        context = " ".join(lines[idx:min(len(lines), idx + 4)])
+        candidate = _med_enrich_candidate_650(candidate, context)
+        if _med_is_fragment_650(candidate):
+            logging.info(f"SUPPLIER_DECISION: medizinisches Fragment verworfen | kandidat='{candidate}' | kopfzeile={idx}")
+            continue
+        score = _med_candidate_score_650(candidate, line, idx)
+        if score >= 90:
+            candidates.append((score, -idx, candidate, line[:140]))
+
+    if not candidates:
+        return "", -999, ""
+    candidates.sort(reverse=True, key=lambda x: (x[0], x[1], len(x[2])))
+    score, neg_idx, candidate, line = candidates[0]
+    logging.info(
+        "SUPPLIER_DECISION: medizinischer Kandidat gefunden | kandidat='%s' | score=%s | kopfbereich=%s | zeile='%s'",
+        candidate,
+        score,
+        abs(neg_idx),
+        line,
+    )
+    return candidate, score, line
+
+
+def _med_should_force_650(current: str, candidate: str, score: int, text: str) -> bool:
+    current = _safe_meta_norm(current)
+    if not current:
+        return False
+    if _med_is_fragment_650(current):
+        return True
+    if _med_line_has_marker_650(current) and len(_med_norm_650(current).split()) >= 3:
+        return False
+    if score < 135:
+        return False
+    current_key = _med_norm_650(current)
+    top_key = _med_norm_650("\n".join([z for z in str(text or "").splitlines()[:25]]))
+    if current_key and current_key not in top_key:
+        return True
+    return False
+
+
+def _apply_medizinische_lieferanten_650(text: str, pdf_pfad, meta_daten: dict) -> dict:
+    meta = dict(meta_daten or {})
+    full_text = str(text or "")
+    if not full_text:
+        try:
+            full_text = _debug_text_for_pdf_591(pdf_pfad)
+        except Exception:
+            full_text = ""
+    candidate, score, line = _med_header_supplier_candidate_650(full_text)
+    if not candidate:
+        return meta
+
+    current = str(meta.get("LIEFERANT", "") or "").strip()
+    reason = "6.5 medizinischer Kopfbereich: vollstaendiger Name bevorzugt"
+    if _med_should_force_650(current, candidate, score, full_text):
+        old = current
+        safe_set_meta(meta, "LIEFERANT", candidate, reason=reason, force=True)
+        meta["LIEFERANT_STATUS"] = "BEKANNT"
+        logging.info(
+            "SUPPLIER_DECISION: medizinischer Kandidat bevorzugt | alt='%s' | neu='%s' | grund='Fragment/kein Kopfbereichstreffer'",
+            old,
+            candidate,
+        )
+    elif safe_set_meta(meta, "LIEFERANT", candidate, reason=reason):
+        meta["LIEFERANT_STATUS"] = "BEKANNT"
+    return meta
+
+
+def erzeuge_meta_daten(pdf_pfad: Path, erkannter_text: str | None = None):
+    meta = _erzeuge_meta_daten_orig_650(pdf_pfad, erkannter_text)
+    try:
+        return _apply_medizinische_lieferanten_650(erkannter_text or "", pdf_pfad, meta)
+    except Exception as e:
+        logging.warning(f"6.5 medizinische Lieferantenerkennung konnte nicht angewendet werden: {e}")
+        return meta
+
+
+if _korrigiere_felder_v54_orig_650 is not None:
+    def korrigiere_felder_v54(text: str, meta_daten: dict) -> dict:
+        meta = _korrigiere_felder_v54_orig_650(text, meta_daten)
+        try:
+            return _apply_medizinische_lieferanten_650(text, None, meta)
+        except Exception as e:
+            logging.warning(f"6.5 medizinische Lieferantenerkennung in korrigiere_felder_v54 konnte nicht angewendet werden: {e}")
+            return meta
+
+
+try:
+    logging.info("Scan-Service Erweiterung geladen: 6.5 medizinische Lieferanten")
 except Exception:
     pass

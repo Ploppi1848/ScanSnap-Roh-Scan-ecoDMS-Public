@@ -1,7 +1,7 @@
 [
   {
     "soll_dokumenttyp": "Zeitungsartikel",
-    "soll_neuer_dateiname": "2026_07_01_Unbekannt.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Unbekannt.pdf",
     "alter_dateiname": "13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf",
     "pdf_datei": "13042026_Müssen Vermieter Eigenbedarf begründen Prinzipiell besc.pdf",
     "id": "mt-0001-13042026-m-ssen-vermieter-eigenbedarf-begr-nden-"
@@ -10,14 +10,14 @@
     "soll_lieferant": "Wiedemann Sicherheitstechnik",
     "soll_dokumenttyp": "Lieferschein",
     "soll_lieferscheinnr": "251145",
-    "soll_neuer_dateiname": "2026_07_01_Wiedemann_Sicherheitstechnik_251145.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Wiedemann_Sicherheitstechnik_251145.pdf",
     "alter_dateiname": "29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf",
     "pdf_datei": "29032026__Alarmanlagen Videoüberwachnung _Tresore Wertschutzschr.pdf",
     "id": "mt-0002-29032026-alarmanlagen-video-berwachnung-tresore-"
   },
   {
     "soll_dokumenttyp": "Ärztliche Bescheinigung",
-    "soll_neuer_dateiname": "2026_07_01_Unbekannt.pdf",
+    "soll_neuer_dateiname": "2026_07_02_TIERÄRZTLICHE_BESCHEINIGUNG.pdf",
     "alter_dateiname": "Absender Anderes.pdf",
     "pdf_datei": "Absender Anderes.pdf",
     "id": "mt-0003-absender-anderes-pdf"
@@ -69,7 +69,7 @@
   },
   {
     "soll_dokumenttyp": "Bedienungsanleitung",
-    "soll_neuer_dateiname": "2026_07_01_Unbekannt.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Unbekannt.pdf",
     "alter_dateiname": "Anleitung Scansnap.pdf",
     "pdf_datei": "Anleitung Scansnap.pdf",
     "id": "mt-0008-anleitung-scansnap-pdf"
@@ -126,7 +126,7 @@
   {
     "soll_lieferant": "BCSIT GmbH",
     "soll_dokumenttyp": "Information",
-    "soll_neuer_dateiname": "2026_07_01_BCSIT_GmbH.pdf",
+    "soll_neuer_dateiname": "2026_07_02_BCSIT_GmbH.pdf",
     "alter_dateiname": "BCSIT GmbH Information.pdf",
     "pdf_datei": "BCSIT GmbH Information.pdf",
     "id": "mt-0014-bcsit-gmbh-information-pdf"
@@ -237,7 +237,7 @@
   {
     "soll_lieferant": "Sparda Bank",
     "soll_dokumenttyp": "Kontoauszüge",
-    "soll_neuer_dateiname": "2026_07_01_Sparda_Bank.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Sparda_Bank.pdf",
     "alter_dateiname": "BRN94DDF8539961_000810.pdf",
     "pdf_datei": "BRN94DDF8539961_000810.pdf",
     "id": "mt-0024-brn94ddf8539961-000810-pdf"
@@ -447,7 +447,7 @@
     "soll_lieferant": "Fleischrei Norbert Hirsch",
     "soll_dokumenttyp": "Kassenbon",
     "soll_gesamtbetrag": "84,60",
-    "soll_neuer_dateiname": "2026_07_01_Fleischrei_Norbert_Hirsch.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Fleischrei_Norbert_Hirsch.pdf",
     "alter_dateiname": "Flascheral Norge sch Kassenzettel.pdf",
     "pdf_datei": "Flascheral Norge sch Kassenzettel.pdf",
     "id": "mt-0043-flascheral-norge-sch-kassenzettel-pdf"
@@ -697,7 +697,7 @@
   {
     "soll_lieferant": "Privatbrauerei Moritz Fiege GmbH & Co. KG",
     "soll_dokumenttyp": "Rechnung",
-    "soll_neuer_dateiname": "2026_07_01_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Privatbrauerei_Moritz_Fiege_GmbH_&_Co._KG.pdf",
     "alter_dateiname": "Heinz-Georg Hepp Kassenzettel.pdf",
     "pdf_datei": "Heinz-Georg Hepp Kassenzettel.pdf",
     "id": "mt-0065-heinz-georg-hepp-kassenzettel-pdf"
@@ -769,7 +769,7 @@
     "soll_lieferant": "Rossmann",
     "soll_dokumenttyp": "Kassenbon",
     "soll_gesamtbetrag": "51,00",
-    "soll_neuer_dateiname": "2026_07_01_Rossmann.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Rossmann.pdf",
     "alter_dateiname": "Kassenzettel 14.05.25.pdf",
     "pdf_datei": "Kassenzettel 14.05.25.pdf",
     "id": "mt-0072-kassenzettel-14-05-25-pdf"
@@ -915,7 +915,7 @@
   {
     "soll_lieferant": "Löwenstein Medical",
     "soll_dokumenttyp": "Lieferschein",
-    "soll_neuer_dateiname": "2026_07_01_Löwenstein_Medical.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Löwenstein_Medical.pdf",
     "alter_dateiname": "Lowenstein Medical Anderes 07.11.2025.pdf",
     "pdf_datei": "Lowenstein Medical Anderes 07.11.2025.pdf",
     "id": "mt-0086-lowenstein-medical-anderes-07-11-2025-pdf"
@@ -1097,7 +1097,7 @@
   {
     "soll_lieferant": "ADAC Versicherung AG",
     "soll_dokumenttyp": "Versicherung",
-    "soll_neuer_dateiname": "2026_07_01_ADAC_Versicherung_AG.pdf",
+    "soll_neuer_dateiname": "2026_07_02_ADAC_Versicherung_AG.pdf",
     "alter_dateiname": "Simone Hepp Vertrag.pdf",
     "pdf_datei": "Simone Hepp Vertrag.pdf",
     "id": "mt-0103-simone-hepp-vertrag-pdf"
@@ -1164,7 +1164,7 @@
   {
     "soll_lieferant": "Sparkasse Bochum",
     "soll_dokumenttyp": "Informationsschreiben",
-    "soll_neuer_dateiname": "2026_07_01_Sparkasse_Bochum.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Sparkasse_Bochum.pdf",
     "alter_dateiname": "Sparkasse Bochum Information 07.09.2018.pdf",
     "pdf_datei": "Sparkasse Bochum Information 07.09.2018.pdf",
     "id": "mt-0110-sparkasse-bochum-information-07-09-2018-pdf"
@@ -1194,7 +1194,7 @@
     "soll_dokumenttyp": "Ermittlungsverfahren",
     "soll_rechnr": "822 Js 796124",
     "soll_aktenzeichen": "822 Js 796124",
-    "soll_neuer_dateiname": "2026_07_01_Staatsanwaltschaft_Bochum_822_Js_796124.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Staatsanwaltschaft_Bochum_822_Js_796124.pdf",
     "alter_dateiname": "Staatsanwaltschaft Information 18.12.2024.pdf",
     "pdf_datei": "Staatsanwaltschaft Information 18.12.2024.pdf",
     "id": "mt-0113-staatsanwaltschaft-information-18-12-2024-pdf"
@@ -1222,7 +1222,7 @@
   {
     "soll_lieferant": "Tibisco Haustierservice",
     "soll_dokumenttyp": "Wichtige Kundenmitteilung",
-    "soll_neuer_dateiname": "2026_07_01_Tibisco_Haustierservice.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Tibisco_Haustierservice.pdf",
     "alter_dateiname": "Tibisco Haustierservice Information 26.02.2024.pdf",
     "pdf_datei": "Tibisco Haustierservice Information 26.02.2024.pdf",
     "id": "mt-0116-tibisco-haustierservice-information-26-02-2024-p"
@@ -1262,7 +1262,7 @@
   {
     "soll_lieferant": "VfL Bochum 1848",
     "soll_dokumenttyp": "Reservierung",
-    "soll_neuer_dateiname": "2026_07_01_VfL_Bochum_1848.pdf",
+    "soll_neuer_dateiname": "2026_07_02_VfL_Bochum_1848.pdf",
     "alter_dateiname": "VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf",
     "pdf_datei": "VfL Bochum 1848 GmbH _ Co. KGaA Anderes.pdf",
     "id": "mt-0120-vfl-bochum-1848-gmbh-co-kgaa-anderes-pdf"
@@ -1316,7 +1316,7 @@
     "soll_lieferant": "Weicken & Schmidt GmbH",
     "soll_dokumenttyp": "Kassenbon",
     "soll_gesamtbetrag": "83,48",
-    "soll_neuer_dateiname": "2026_07_01_Weicken_&_Schmidt_GmbH.pdf",
+    "soll_neuer_dateiname": "2026_07_02_Weicken_&_Schmidt_GmbH.pdf",
     "alter_dateiname": "Weicken _ Schmidt GmbH Rechnung.pdf",
     "pdf_datei": "Weicken _ Schmidt GmbH Rechnung.pdf",
     "id": "mt-0125-weicken-schmidt-gmbh-rechnung-pdf"

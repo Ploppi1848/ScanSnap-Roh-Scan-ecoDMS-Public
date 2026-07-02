@@ -14,3 +14,11 @@
 2026-06-27 22:04:53|Lieferant|DHL Paket GmbH|DHL Paket GmbH Anderes 14.10.2024.pdf|Dokumenttyp=Kassenbon; Quelle=Dokumentenscan; MailAbsender=; Betreff=
 2026-06-27 22:04:56|Lieferant|Dr. med. dent. Axel Vieler|Dr. med.dent.Axel Rechnung 15.04.2026.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
 2026-06-27 22:05:14|Lieferant|Tintenfass|Tintenfass Kassenzettel 28.01.2026.pdf|Dokumenttyp=Kassenbon; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-01 22:33:51|Lieferant|Ft"anke GmbH|Franke GmbH _ Co. KG Rechnung 20.07.2025.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:01:40|Lieferant|TIERÄRZTLICHE BESCHEINIGUNG|Absender Anderes.pdf|Dokumenttyp=Ärztliche Bescheinigung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:01:47|Lieferant|Dr. med.dent.Axel Vieler,Buscheyplatz 15,44801 Bochum|Dr. med.dent.Axel Rechnung 15.04.2026.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:01:49|Lieferant|Dr. med.dent.Axel Vieler.Buschevalatz 15.44801 Bochum|Dr. med.dent.Axel Rechnung 26.08.2025.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:01:54|Lieferant|Dr. med. U. Neukirchen Rüsenacker 1 44799 Bochum|Heinz-Georg Hepp Information 24.04.2026.pdf|Dokumenttyp=Ärztliche Bescheinigung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:01:57|Lieferant|St. Josef-Hospital|Hepp, Simone Information 14.09.2017.pdf|Dokumenttyp=Medizinischer Fragebogen; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:02:01|Lieferant|Löwenstein Medical|Lowenstein Medical Anderes 07.11.2025.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
+2026-07-02 08:02:06|Lieferant|info@tierarzt-schoenenstei n.de|Simone Hepp Rechnung 20.06.2023.pdf|Dokumenttyp=Rechnung; Quelle=Dokumentenscan; MailAbsender=; Betreff=
