@@ -12164,3 +12164,172 @@ try:
     logging.info("Scan-Service Erweiterung geladen: 6.6 Label/Wert-Blockerkennung Nummern")
 except Exception:
     pass
+
+
+# ============================================================
+# SCAN-SERVICE 6.7 - SUPPLIER GUARD GEGEN SCHWACHE SPAETE GEWINNER
+# ============================================================
+# Ziel: Späte schwache Lieferantenwerte nicht stehen lassen, wenn im
+# Dokument ein staerkerer konfigurierter Lieferantenkandidat vorhanden ist.
+
+_erzeuge_meta_daten_orig_670 = erzeuge_meta_daten
+try:
+    _korrigiere_felder_v54_orig_670 = korrigiere_felder_v54
+except Exception:
+    _korrigiere_felder_v54_orig_670 = None
+
+
+def _supplier_guard_norm_670(value: str) -> str:
+    try:
+        return _safe_meta_norm_key(value)
+    except Exception:
+        return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+
+def _supplier_guard_top_670(text: str, lines: int = 35) -> str:
+    raw = [re.sub(r"\s+", " ", z).strip() for z in str(text or "").splitlines() if z.strip()]
+    return "\n".join(raw[:lines])
+
+
+def _supplier_guard_is_email_or_fragment_670(value: str) -> bool:
+    raw = str(value or "").strip()
+    key = _supplier_guard_norm_670(raw)
+    if not raw:
+        return False
+    if "@" in raw:
+        return True
+    if key in {"waage", "rechnung", "information", "lieferadresse", "zugang", "unbekannt"}:
+        return True
+    if len(raw) <= 4 and not re.search(r"\b(axa|lvm)\b", key):
+        return True
+    return False
+
+
+def _supplier_guard_is_weak_670(value: str) -> bool:
+    return _safe_meta_is_weak_late_supplier(value) or _supplier_guard_is_email_or_fragment_670(value)
+
+
+def _supplier_guard_has_strong_own_context_670(candidate: str, text: str, pdf_pfad=None) -> bool:
+    key = _supplier_guard_norm_670(candidate)
+    full = str(text or "")
+    top = _supplier_guard_top_670(full)
+    name = ""
+    try:
+        name = Path(pdf_pfad).name if pdf_pfad else ""
+    except Exception:
+        name = ""
+    probe = f"{name}\n{top}"
+
+    if key in {"amazon"}:
+        return bool(re.search(r"amazon\.de|Amazon\s+(?:EU|Services|Payments)|Verkauft\s+von\s+Amazon|Bestellnummer\s+\d{3}-\d{7}-\d{7}", probe, re.IGNORECASE))
+    if key in {"telekom"}:
+        return bool(re.search(r"Telekom\s+Deutschland|Deutsche\s+Telekom|telekom\.de|Festnetz[- ]Rechnung|Kundencenter", probe, re.IGNORECASE))
+    if key in {"amtsgericht bochum", "amtsgericht"}:
+        return bool(re.search(r"amtsgericht", name, re.IGNORECASE) or re.search(r"^\s*Amtsgericht\s+Bochum\b|Grundbuchamt|Grundbuchbezirk|Zentrale\s+Zahlstelle\s+Justiz|justiz\.nrw|ag-bochum", probe, re.IGNORECASE | re.MULTILINE))
+    if key in {"lvm", "lvm versicherung"}:
+        return bool(re.search(r"\blvm\b", name, re.IGNORECASE) or re.search(r"\bLVM\s+(?:Versicherung|Versicherungen|Lebensversicherung)|Landwirtschaftlicher\s+Versicherungsverein|lvm\.de", probe, re.IGNORECASE))
+    if key in {"sparda bank west eg", "sparda bank"}:
+        return bool(re.search(r"sparda", name, re.IGNORECASE) or re.search(r"Sparda[-\s]*Bank\s+West\s+eG|sparda[-\s]*west|sparda-west\.de|\bSparda\s+Bank\b", probe, re.IGNORECASE))
+    return False
+
+
+def _supplier_guard_config_candidate_670(text: str) -> str:
+    try:
+        beispiel = (
+            "# Lieferanten-Erkennung\n"
+            "# Format:\n"
+            "# Anzeigename|Suchwort1;Suchwort2;Suchwort3\n"
+            "Telekom|Telekom Deutschland GmbH;Deutsche Telekom;telekom.de\n"
+        )
+        eintraege = lade_mapping_config(LIEFERANTEN_DATEI, beispiel)
+        return finde_lieferant_kandidat_bewertet(text, eintraege)
+    except Exception as e:
+        logging.info(f"SUPPLIER_GUARD: Konfigurationskandidat nicht ermittelbar: {e}")
+        return ""
+
+
+def _supplier_guard_should_replace_670(current: str, candidate: str, text: str, pdf_pfad=None) -> tuple[bool, str]:
+    current = _safe_meta_norm(current)
+    candidate = _safe_meta_norm(candidate)
+    if not current or not candidate:
+        return False, "leer"
+    if _safe_meta_supplier_variant(current, candidate):
+        return False, "gleiche/nahe Variante"
+    if _supplier_guard_is_weak_670(candidate) and not _supplier_guard_has_strong_own_context_670(candidate, text, pdf_pfad):
+        return False, "Kandidat selbst waere schwach"
+    if _supplier_guard_has_strong_own_context_670(current, text, pdf_pfad):
+        return False, "aktueller Lieferant hat starken Eigenkontext"
+    cur_score = _safe_meta_supplier_score(current)
+    cand_score = _safe_meta_supplier_score(candidate)
+    if cand_score >= cur_score + 20:
+        return True, f"staerkerer Kandidat aus Konfiguration ({cand_score}>{cur_score})"
+    if _safe_meta_is_configured_supplier(candidate) and not _safe_meta_is_configured_supplier(current):
+        return True, "konfigurierter Kandidat ersetzt schwachen Endwert"
+    return False, f"Kandidat nicht stark genug ({cand_score}<={cur_score})"
+
+
+def _apply_supplier_guard_670(text: str, pdf_pfad, meta_daten: dict) -> dict:
+    meta = dict(meta_daten or {})
+    full_text = str(text or "")
+    if not full_text:
+        try:
+            full_text = _debug_text_for_pdf_591(pdf_pfad)
+        except Exception:
+            full_text = ""
+    try:
+        name = Path(pdf_pfad).name if pdf_pfad else str(meta.get("PDF_DATEI", "") or "")
+    except Exception:
+        name = str(meta.get("PDF_DATEI", "") or "")
+    combined = f"{name}\n{full_text}"
+    current = str(meta.get("LIEFERANT", "") or "").strip()
+    if not current or not _supplier_guard_is_weak_670(current):
+        return meta
+    if _supplier_guard_has_strong_own_context_670(current, combined, pdf_pfad):
+        logging.info("SUPPLIER_GUARD: schwacher Lieferant behalten wegen starkem Eigenkontext | lieferant='%s'", current)
+        return meta
+
+    candidate = _supplier_guard_config_candidate_670(combined)
+    allowed, why = _supplier_guard_should_replace_670(current, candidate, combined, pdf_pfad)
+    if allowed:
+        old = current
+        safe_set_meta(meta, "LIEFERANT", candidate, reason=f"6.7 SUPPLIER_GUARD: {why}", force=True)
+        meta["LIEFERANT_STATUS"] = "BEKANNT"
+        logging.info(
+            "SUPPLIER_GUARD: ersetzt | alt='%s' | neu='%s' | grund='%s'",
+            old,
+            candidate,
+            why,
+        )
+    else:
+        logging.info(
+            "SUPPLIER_GUARD: keine Aenderung | lieferant='%s' | kandidat='%s' | grund='%s'",
+            current,
+            candidate,
+            why,
+        )
+    return meta
+
+
+def erzeuge_meta_daten(pdf_pfad: Path, erkannter_text: str | None = None):
+    meta = _erzeuge_meta_daten_orig_670(pdf_pfad, erkannter_text)
+    try:
+        return _apply_supplier_guard_670(erkannter_text or "", pdf_pfad, meta)
+    except Exception as e:
+        logging.warning(f"6.7 Supplier Guard konnte nicht angewendet werden: {e}")
+        return meta
+
+
+if _korrigiere_felder_v54_orig_670 is not None:
+    def korrigiere_felder_v54(text: str, meta_daten: dict) -> dict:
+        meta = _korrigiere_felder_v54_orig_670(text, meta_daten)
+        try:
+            return _apply_supplier_guard_670(text, None, meta)
+        except Exception as e:
+            logging.warning(f"6.7 Supplier Guard in korrigiere_felder_v54 konnte nicht angewendet werden: {e}")
+            return meta
+
+
+try:
+    logging.info("Scan-Service Erweiterung geladen: 6.7 Supplier Guard")
+except Exception:
+    pass

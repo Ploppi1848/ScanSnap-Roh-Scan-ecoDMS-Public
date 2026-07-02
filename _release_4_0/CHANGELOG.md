@@ -1,8 +1,29 @@
 # Changelog WebUI 4.0
 
+## Sprint 5E-B - Lieferantenentscheidung Guard
+
+Status: umgesetzt, Regressionstest noch offen
+
+Ziel:
+
+- schwache spaete Lieferantengewinner stabilisieren
+- Dateinamenfolgefehler durch falsche Lieferanten reduzieren
+- echte Telekom-/Amazon-/Amtsgericht-/LVM-/Sparda-Dokumente weiterhin schuetzen
+
+Umsetzung:
+
+- isolierter Schluss-Guard im Scan-Service
+- Logging mit `SUPPLIER_GUARD`
+- keine Dateinamen-Hartkorrekturen
+- keine Referenz- oder Sollwertaenderungen
+
+Pruefung:
+
+- `python -m py_compile _service\ecodms_scan_service.py` erfolgreich
+
 ## Sprint 5E-A - Analyse Neuer Dateiname
 
-Status: gestartet
+Status: abgeschlossen
 
 Ziel:
 

@@ -2,19 +2,19 @@
 
 Aktueller Branch: develop
 
-Letzter abgeschlossener Sprint: Sprint 5D
+Letzter abgeschlossener Sprint: Sprint 5E-A
 
-Aktueller Sprint: Sprint 5E-A
+Aktueller Sprint: Sprint 5E-B
 
 Ziel:
 
-- Analyse fehlerhafter Dateinamen
-- 42 Dokumente mit Abweichung im Feld `Neuer Dateiname` fachlich gruppieren
-- Ursachen und Prioritaeten fuer Sprint 5E-B ableiten
+- Lieferantenentscheidung gegen schwache spaete Gewinner stabilisieren
+- falsche Lieferantenfolgefehler in Dateinamen reduzieren
+- Guard fuer Amtsgericht, Telekom, Amazon, LVM, Sparda, E-Mail-Adressen und OCR-Fragmente
 
 Rahmen:
 
-- keine Codeaenderungen
+- kleiner isolierter Scan-Service-Guard
 - keine WebUI-Aenderungen
 - keine Refactoring-Arbeiten
 - keine Referenzdaten uebernehmen
@@ -22,4 +22,4 @@ Rahmen:
 
 Naechster moeglicher Schritt:
 
-- Sprint 5E-B Umsetzung nach Analysefreigabe
+- Buildvergleich / Regressionstest fuer Sprint 5E-B
