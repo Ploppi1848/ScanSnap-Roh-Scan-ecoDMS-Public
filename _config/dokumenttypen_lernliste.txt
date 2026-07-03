@@ -1,5 +1,0 @@
-# Lernliste Dokumenttypen
-# Neue unbekannte Dokumenttypen werden hier automatisch eingetragen.
-# Geprüfte Zeilen können nach dokumenttypen_konfiguration.txt übernommen werden.
-2026-06-27 21:37:00|Dokumenttyp|Ermittlungsverfahren|Staatsanwaltschaft Anderes 04.11.2019.pdf|Lieferant=Staatsanwaltschaft Bochum; Quelle=Dokumentenscan
-2026-06-27 22:05:02|Dokumenttyp|Medizinishcer Fragebogen|Hepp, Simone Information 14.09.2017.pdf|Lieferant=; Quelle=Dokumentenscan

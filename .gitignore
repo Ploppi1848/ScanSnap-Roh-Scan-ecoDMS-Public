@@ -111,3 +111,32 @@ _release_4_0/*backup*/
 
 # macOS
 .DS_Store
+
+# -------------------------------------------------------
+# Private configuration and local data
+# -------------------------------------------------------
+_config/
+!_config_example/
+!_config_example/**
+_web_test/*
+!_web_test/
+!_web_test/README.md
+_massentest/ergebnisse/
+!_massentest/
+!_massentest/README.md
+_projektcenter/
+_debug_text/
+_logs/
+*.meta
+*.log
+*.csv
+
+# -------------------------------------------------------
+# Documents and private media
+# -------------------------------------------------------
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.testmeta
+_logo/

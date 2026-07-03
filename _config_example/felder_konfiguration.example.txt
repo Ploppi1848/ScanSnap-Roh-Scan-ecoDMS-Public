@@ -1,0 +1,7 @@
+# Beispiel: Felder
+# Format: FELDNAME|LABEL_VARIANTEN
+RECHDATUM|Rechnungsdatum;Datum
+RECHNR|Rechnungsnummer;Rechnungs-Nr.;Rechnung Nr.
+KUNDENNR|Kundennummer;Kunden-Nr.;Kd.-Nr.
+GESAMTBETRAG|Gesamtbetrag;Rechnungsbetrag;Zahlbetrag
+AKTENZEICHEN|Aktenzeichen;Geschaeftszeichen

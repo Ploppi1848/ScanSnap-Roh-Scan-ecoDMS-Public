@@ -1,0 +1,3 @@
+# Beispiel: Dokumentfilter
+# Format: REGELNAME|AKTIV|SUCHTEXT|AKTION
+Beispiel ignorieren|0|Beispieltext|IGNORIEREN

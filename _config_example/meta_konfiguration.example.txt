@@ -1,0 +1,4 @@
+# Beispiel: Metadaten
+QUELLE=Dokumentenscan
+STANDARD_DOKUMENTTYP=Information
+STANDARD_LIEFERANT=Unbekannt

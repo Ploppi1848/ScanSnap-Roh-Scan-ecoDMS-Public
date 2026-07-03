@@ -1,0 +1,5 @@
+# Beispiel: Dokumenttypen
+# Format: DOKUMENTTYP|SUCHWORT1;SUCHWORT2
+Rechnung|Rechnung;Rechnungsnummer;Gesamtbetrag
+Information|Information;Mitteilung;Hinweis
+Bescheid|Bescheid;Aktenzeichen;Kassenzeichen

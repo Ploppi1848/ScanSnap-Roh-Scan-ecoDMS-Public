@@ -1,0 +1,4 @@
+# Beispiel: Ablagekennung
+BOX=Ordner001
+BOX_PREFIX=BOX
+BOX_BESCHREIBUNG=Lokaler Beispielordner

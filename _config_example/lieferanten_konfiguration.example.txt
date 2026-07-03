@@ -1,0 +1,5 @@
+# Beispiel: Lieferanten
+# Format: LIEFERANT|SUCHWORT1;SUCHWORT2;SUCHWORT3
+Beispiel GmbH|Beispiel GmbH;beispiel.de
+Musterstadt Verwaltung|Musterstadt;Verwaltung;Bescheid
+Demo Versicherung AG|Demo Versicherung;Versicherungsnummer
